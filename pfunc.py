@@ -81,7 +81,7 @@ def initializeDisplay():
 
 	# # Pygame display	
 	screen = pygame.display.set_mode((pgvar.pygame_window_width, pgvar.pygame_window_height))
-	pygame.display.set_caption('My Program Name')
+	pygame.display.set_caption('Physics garage v0.01')
 
 	# # #  draw background
 	print moduleName, lineNum(), "- drawing background"

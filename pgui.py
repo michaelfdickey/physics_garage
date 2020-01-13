@@ -58,60 +58,73 @@ buttonExit["color"] = pgvar.UI_button_color
 buttonExit["group"] = "buttonExit"
 buttonExit["visible"] = True
 
-# # Pushy Buttons 
-# # these are only enabled while the mouse button is down
+## Simulation Control
 
-labelPushy = {}
-labelPushy["name"] = "pushy_label"
-labelPushy["origin_x"] = 0
-labelPushy["origin_y"] = pgvar.pygame_window_height - 120
-labelPushy["width"] =pgvar.UI_sideBar_width
-labelPushy["height"] = 20
-labelPushy["label_txt"] = "Pushy Buttons"
-labelPushy["type"] = "label"
-labelPushy["enabled"] = True
-labelPushy["color"] = pgvar.UI_label_color
-labelPushy["group"] = "pushy_buttons"
-labelPushy["visible"] = True
+lSimulationControl = {}
+lSimulationControl["name"] = "lSimulationControl"
+lSimulationControl["origin_x"] = 0
+lSimulationControl["origin_y"] = pgvar.pygame_window_height - 140
+lSimulationControl["width"] =pgvar.UI_sideBar_width
+lSimulationControl["height"] = 20
+lSimulationControl["label_txt"] = "Simulation Control:"
+lSimulationControl["type"] = "label"
+lSimulationControl["enabled"] = True
+lSimulationControl["color"] = pgvar.UI_label_color
+lSimulationControl["group"] = "SimulationControl"
+lSimulationControl["visible"] = True
 
-buttonCommand01 = {}
-buttonCommand01["name"] = "command01"
-buttonCommand01["origin_x"] = 0
-buttonCommand01["origin_y"] = pgvar.pygame_window_height - 60
-buttonCommand01["width"] = pgvar.UI_sideBar_width
-buttonCommand01["height"] = 20
-buttonCommand01["label_txt"] = "Command 01"
-buttonCommand01["type"] = "pushy"
-buttonCommand01["enabled"] = True
-buttonCommand01["color"] = pgvar.UI_button_color
-buttonCommand01["group"] = "command01"
-buttonCommand01["visible"] = True
+bPlaySimulation = {}
+bPlaySimulation["name"] = "bPlaySimulation"
+bPlaySimulation["origin_x"] = 0
+bPlaySimulation["origin_y"] = pgvar.pygame_window_height - 120
+bPlaySimulation["width"] = pgvar.UI_sideBar_width
+bPlaySimulation["height"] = 20
+bPlaySimulation["label_txt"] = "Play Simulation"
+bPlaySimulation["type"] = "pushy"
+bPlaySimulation["enabled"] = True
+bPlaySimulation["color"] = pgvar.UI_button_color
+bPlaySimulation["group"] = "SimulationControl"
+bPlaySimulation["visible"] = True
 
-buttonCommand02 = {}
-buttonCommand02["name"] = "command02"
-buttonCommand02["origin_x"] = 0
-buttonCommand02["origin_y"] = pgvar.pygame_window_height - 80
-buttonCommand02["width"] = pgvar.UI_sideBar_width
-buttonCommand02["height"] = 20
-buttonCommand02["label_txt"] = "Command 02"
-buttonCommand02["type"] = "pushy"
-buttonCommand02["enabled"] = True
-buttonCommand02["color"] = pgvar.UI_button_color
-buttonCommand02["group"] = "command02"
-buttonCommand02["visible"] = True
+bPauseSimulation = {}
+bPauseSimulation["name"] = "bPauseSimulation"
+bPauseSimulation["origin_x"] = 0
+bPauseSimulation["origin_y"] = pgvar.pygame_window_height - 100
+bPauseSimulation["width"] = pgvar.UI_sideBar_width
+bPauseSimulation["height"] = 20
+bPauseSimulation["label_txt"] = "Pause Simulation"
+bPauseSimulation["type"] = "pushy"
+bPauseSimulation["enabled"] = True
+bPauseSimulation["color"] = pgvar.UI_button_color
+bPauseSimulation["group"] = "SimulationControl"
+bPauseSimulation["visible"] = True
 
-buttonCommand03 = {}
-buttonCommand03["name"] = "command03"
-buttonCommand03["origin_x"] = 0
-buttonCommand03["origin_y"] = pgvar.pygame_window_height - 100
-buttonCommand03["width"] = pgvar.UI_sideBar_width
-buttonCommand03["height"] = 20
-buttonCommand03["label_txt"] = "Command 03"
-buttonCommand03["type"] = "pushy"
-buttonCommand03["enabled"] = True
-buttonCommand03["color"] = pgvar.UI_button_color
-buttonCommand03["group"] = "command03"
-buttonCommand03["visible"] = True
+bSaveSimulation = {}
+bSaveSimulation["name"] = "bSaveSimulation"
+bSaveSimulation["origin_x"] = 0
+bSaveSimulation["origin_y"] = pgvar.pygame_window_height - 80
+bSaveSimulation["width"] = pgvar.UI_sideBar_width
+bSaveSimulation["height"] = 20
+bSaveSimulation["label_txt"] = "Save Simulation"
+bSaveSimulation["type"] = "pushy"
+bSaveSimulation["enabled"] = True
+bSaveSimulation["color"] = pgvar.UI_button_color
+bSaveSimulation["group"] = "SimulationControl"
+bSaveSimulation["visible"] = True
+
+bClearSimulation = {}
+bClearSimulation["name"] = "bClearSimulation"
+bClearSimulation["origin_x"] = 0
+bClearSimulation["origin_y"] = pgvar.pygame_window_height - 60
+bClearSimulation["width"] = pgvar.UI_sideBar_width
+bClearSimulation["height"] = 20
+bClearSimulation["label_txt"] = "Clear Simulation"
+bClearSimulation["type"] = "pushy"
+bClearSimulation["enabled"] = True
+bClearSimulation["color"] = pgvar.UI_button_color
+bClearSimulation["group"] = "SimulationControl"
+bClearSimulation["visible"] = True
+
 
 # # Sticky Buttons 
 # # once clicked, they stay enabled, until clicked again which disables them
@@ -736,13 +749,17 @@ menu02popup01element08["visible"] = False																	# buttonVisible
 
 allButtons = {}
 allButtons[0] = buttonExit			# exit button
-allButtons[1] = buttonCommand01		# command 01
-allButtons[2] = buttonCommand02		# command 02
-allButtons[3] = buttonCommand03		# command 03
+
+# Simulation Control Buttons
+allButtons[1] = bPlaySimulation		
+allButtons[2] = bPauseSimulation		
+allButtons[3] = bSaveSimulation		
+allButtons[51] = bClearSimulation
+
 allButtons[4] = buttonSticky01		# sticky 01
 allButtons[5] = buttonSticky02		# sticky 02
 allButtons[6] = buttonSticky03		# sticky 03
-allButtons[7] = labelPushy			# pushy button group label
+allButtons[7] = lSimulationControl			# pushy button group label
 allButtons[8] = labelSticky			# stick button group label
 allButtons[9] = labelGroup01			# group01 label
 allButtons[10] = bGroup01Button01 	# group01 button 01
