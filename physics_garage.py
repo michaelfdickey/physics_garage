@@ -97,38 +97,19 @@ while running:
 					selected_button.buttonEnabled = True
 					print moduleName, pfunc.lineNum(), "clicked button is a pushy temporary button"
 
-					if selected_button.button_name == "command01":
-						print moduleName, pfunc.lineNum(), "you clicked command01"
-						pgui.buttonCommand01["enabled"] = True
-						pgui.buttonCommand01["color"] = pgvar.UI_button_click_color
+					if selected_button.button_name == "bPushyExample":
+						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
+						pgui.bPushyExample["enabled"] = True
+						pgui.bPushyExample["color"] = pgvar.UI_button_click_color
 						pfunc.defineButtons()
 						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event"
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 						print moduleName, pfunc.lineNum(), "running code for Command01"
-						# command01 function call goes here:
 
-					if selected_button.button_name == "command02":
-						print moduleName, pfunc.lineNum(), "you clicked command02"
-						pgui.buttonCommand02["enabled"] = True
-						pgui.buttonCommand02["color"] = pgvar.UI_button_click_color
-						pfunc.defineButtons()
-						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event"
-						for i, button in enumerate(pfunc.my_buttons):
-							button.display()
-						print moduleName, pfunc.lineNum(), "running code for Command02"
-						# command02 function call goes here:
+						# bPushyExample function call goes here:
 
-					if selected_button.button_name == "command03":
-						print moduleName, pfunc.lineNum(), "you clicked command03"
-						pgui.buttonCommand03["enabled"] = True
-						pgui.buttonCommand03["color"] = pgvar.UI_button_click_color
-						pfunc.defineButtons()
-						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event"
-						for i, button in enumerate(pfunc.my_buttons):
-							button.display()
-						print moduleName, pfunc.lineNum(), "running code for Command03"
-						# command03 function call goes here:
+						# you also need to update the MOUSEBUTTONUP section below to change the color back after releasing button
 
 				# # # OTHER BUTTON TYPES # # #
 
@@ -192,33 +173,14 @@ while running:
 					selected_button.color = pgvar.UI_button_color 			#reverts button back to normal color after letting go of mouse
 					print moduleName, pfunc.lineNum(), "selected_button.color now : ", selected_button.color	
 			
-					if selected_button.button_name == "command01":
-						print moduleName, pfunc.lineNum(), "you clicked command01"
-						pgui.buttonCommand01["enabled"] = False
-						pgui.buttonCommand01["color"] = pgvar.UI_button_color
+					if selected_button.button_name == "bPushyExample":
+						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
+						pgui.bPushyExample["enabled"] = False
+						pgui.bPushyExample["color"] = pgvar.UI_button_color
 						pfunc.defineButtons()
-						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event command01"
+						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event bPushyExample"
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
-
-					if selected_button.button_name == "command02":
-						print moduleName, pfunc.lineNum(), "you clicked command02"
-						pgui.buttonCommand02["enabled"] = False
-						pgui.buttonCommand02["color"] = pgvar.UI_button_color
-						pfunc.defineButtons()
-						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event command02"
-						for i, button in enumerate(pfunc.my_buttons):
-							button.display()
-
-					if selected_button.button_name == "command03":
-						print moduleName, pfunc.lineNum(), "you clicked command03"
-						pgui.buttonCommand03["enabled"] = False
-						pgui.buttonCommand03["color"] = pgvar.UI_button_color
-						pfunc.defineButtons()
-						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event command03"
-						for i, button in enumerate(pfunc.my_buttons):
-							button.display()
-
 
 			for i, button in enumerate(pfunc.my_buttons):
 				button.display()	

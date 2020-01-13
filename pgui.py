@@ -126,6 +126,22 @@ bClearSimulation["group"] = "SimulationControl"
 bClearSimulation["visible"] = True
 
 
+# # reference pushy button
+
+bPushyExample = {}
+bPushyExample["name"] = "bPushyExample"
+bPushyExample["origin_x"] = 0
+bPushyExample["origin_y"] = pgvar.pygame_window_height - 700
+bPushyExample["width"] =pgvar.UI_sideBar_width
+bPushyExample["height"] = 20
+bPushyExample["label_txt"] = "Pushy Example"
+bPushyExample["type"] = "pushy"
+bPushyExample["enabled"] = True
+bPushyExample["color"] = pgvar.UI_button_color
+bPushyExample["group"] = "PushyExample"
+bPushyExample["visible"] = True
+
+
 # # Sticky Buttons 
 # # once clicked, they stay enabled, until clicked again which disables them
 
@@ -755,6 +771,9 @@ allButtons[1] = bPlaySimulation
 allButtons[2] = bPauseSimulation		
 allButtons[3] = bSaveSimulation		
 allButtons[51] = bClearSimulation
+
+# reference buttons
+allButtons[52] = bPushyExample
 
 allButtons[4] = buttonSticky01		# sticky 01
 allButtons[5] = buttonSticky02		# sticky 02
