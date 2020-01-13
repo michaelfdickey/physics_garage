@@ -74,6 +74,23 @@ def updateStickyButtons(selected_button):
 				print moduleName, pfunc.lineNum(), "key, ", key, "value", allButtonsValue[key]
 				#print moduleName, pfunc.lineNum(), "buttonToCheck", key, allButtonsValue[key]
 	"""
+
+	if selected_button == "bPlaySimulation":
+		if pgui.bPlaySimulation["enabled"] == False:
+			print moduleName, pfunc.lineNum(), "bPlaySimulation button found"
+			pgui.bPlaySimulation["enabled"] = True
+			pgui.bPlaySimulation["color"] = pgvar.UI_button_selected_color
+			print moduleName, pfunc.lineNum(), "flipped bPlaySimulation from false to true"
+			pfunc.defineButtons()	
+			
+		elif pgui.bPlaySimulation["enabled"] == True:
+			print moduleName, pfunc.lineNum(), "sticky01 button found"
+			pgui.bPlaySimulation["enabled"] = False
+			pgui.bPlaySimulation["color"] = pgvar.UI_button_color
+			print moduleName, pfunc.lineNum(), "flipped bPlaySimulation from true to false"
+			pfunc.defineButtons()
+
+
 	
 	if selected_button == "sticky01":
 		if pgui.buttonSticky01["enabled"] == False:
