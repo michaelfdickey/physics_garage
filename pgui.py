@@ -44,6 +44,29 @@ import pgvar
 # ************************************************************************************************************************
 
 
+# # reference pushy button
+
+bPushyExample = {}
+bPushyExample["name"] = "bPushyExample"
+bPushyExample["origin_x"] = 0
+bPushyExample["origin_y"] = pgvar.pygame_window_height - 720
+bPushyExample["width"] =pgvar.UI_sideBar_width
+bPushyExample["height"] = 20
+bPushyExample["label_txt"] = "Pushy Example"
+bPushyExample["type"] = "pushy"
+bPushyExample["enabled"] = True
+bPushyExample["color"] = pgvar.UI_button_color
+bPushyExample["group"] = "PushyExample"
+bPushyExample["visible"] = True
+
+
+
+
+
+
+
+
+
 
 # # Changing Resolution Button and label
 
@@ -59,6 +82,21 @@ lResolution["enabled"] = True
 lResolution["color"] = pgvar.UI_label_color
 lResolution["group"] = "Resolution"
 lResolution["visible"] = True
+
+tResolution = {}												# tName = text element, lName = label, bName = button, mName = menu
+tResolution["name"] = "tResolution"							# button_name
+tResolution["origin_x"] = 0									# button_origin_x
+tResolution["origin_y"] = pgvar.pygame_window_height - 200		# button_origin_y
+tResolution["width"] = pgvar.UI_sideBar_width - 20				# button_width
+tResolution["height"] = 20									# button_height
+tResolution["label_txt"] = pgvar.pygame_window_width, pgvar.pygame_window_height							# button_label_txt
+tResolution["type"] = "dropdown"								# buttonType
+tResolution["enabled"] = False								# buttonEnabled
+tResolution["color"] = pgvar.UI_button_color					# buttonColor
+tResolution["group"] = "Resolution"							# buttonGroup
+tResolution["visible"] = True									# buttonVisible
+
+
 
 ## Simulation Control
 
@@ -141,20 +179,7 @@ bClearSimulation["group"] = "SimulationControl"
 bClearSimulation["visible"] = True
 
 
-# # reference pushy button
 
-bPushyExample = {}
-bPushyExample["name"] = "bPushyExample"
-bPushyExample["origin_x"] = 0
-bPushyExample["origin_y"] = pgvar.pygame_window_height - 720
-bPushyExample["width"] =pgvar.UI_sideBar_width
-bPushyExample["height"] = 20
-bPushyExample["label_txt"] = "Pushy Example"
-bPushyExample["type"] = "pushy"
-bPushyExample["enabled"] = True
-bPushyExample["color"] = pgvar.UI_button_color
-bPushyExample["group"] = "PushyExample"
-bPushyExample["visible"] = True
 
 
 # # Exit Button:
@@ -809,6 +834,7 @@ allButtons[53] = bLoadSimulation
 allButtons[52] = bPushyExample
 
 allButtons[54] = lResolution
+allButtons[55]= tResolution
 
 allButtons[4] = buttonSticky01		# sticky 01
 allButtons[5] = buttonSticky02		# sticky 02
