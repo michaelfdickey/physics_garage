@@ -43,27 +43,29 @@ import pgvar
 # ************************************************************************************************************************
 # ************************************************************************************************************************
 
-# # Exit Button:
 
-buttonExit = {}
-buttonExit["name"] = "exit"
-buttonExit["origin_x"] = 0
-buttonExit["origin_y"] = pgvar.pygame_window_height - 20
-buttonExit["width"] = pgvar.UI_sideBar_width
-buttonExit["height"] = 20
-buttonExit["label_txt"] = "EXIT"
-buttonExit["type"] = "pushy"
-buttonExit["enabled"] = True
-buttonExit["color"] = pgvar.UI_button_color
-buttonExit["group"] = "buttonExit"
-buttonExit["visible"] = True
+
+# # Changing Resolution Button and label
+
+lResolution = {}
+lResolution["name"] = "lResolution"
+lResolution["origin_x"] = 0
+lResolution["origin_y"] = pgvar.pygame_window_height - 220
+lResolution["width"] =pgvar.UI_sideBar_width
+lResolution["height"] = 20
+lResolution["label_txt"] = "Resolution:"
+lResolution["type"] = "label"
+lResolution["enabled"] = True
+lResolution["color"] = pgvar.UI_label_color
+lResolution["group"] = "Resolution"
+lResolution["visible"] = True
 
 ## Simulation Control
 
 lSimulationControl = {}
 lSimulationControl["name"] = "lSimulationControl"
 lSimulationControl["origin_x"] = 0
-lSimulationControl["origin_y"] = pgvar.pygame_window_height - 140
+lSimulationControl["origin_y"] = pgvar.pygame_window_height - 160
 lSimulationControl["width"] =pgvar.UI_sideBar_width
 lSimulationControl["height"] = 20
 lSimulationControl["label_txt"] = "Simulation Control:"
@@ -76,7 +78,7 @@ lSimulationControl["visible"] = True
 bPlaySimulation = {}
 bPlaySimulation["name"] = "bPlaySimulation"
 bPlaySimulation["origin_x"] = 0
-bPlaySimulation["origin_y"] = pgvar.pygame_window_height - 120
+bPlaySimulation["origin_y"] = pgvar.pygame_window_height - 140
 bPlaySimulation["width"] = pgvar.UI_sideBar_width
 bPlaySimulation["height"] = 20
 bPlaySimulation["label_txt"] = "Play Simulation"
@@ -89,7 +91,7 @@ bPlaySimulation["visible"] = True
 bPauseSimulation = {}
 bPauseSimulation["name"] = "bPauseSimulation"
 bPauseSimulation["origin_x"] = 0
-bPauseSimulation["origin_y"] = pgvar.pygame_window_height - 100
+bPauseSimulation["origin_y"] = pgvar.pygame_window_height - 120
 bPauseSimulation["width"] = pgvar.UI_sideBar_width
 bPauseSimulation["height"] = 20
 bPauseSimulation["label_txt"] = "Pause Simulation"
@@ -102,7 +104,7 @@ bPauseSimulation["visible"] = True
 bSaveSimulation = {}
 bSaveSimulation["name"] = "bSaveSimulation"
 bSaveSimulation["origin_x"] = 0
-bSaveSimulation["origin_y"] = pgvar.pygame_window_height - 80
+bSaveSimulation["origin_y"] = pgvar.pygame_window_height - 100
 bSaveSimulation["width"] = pgvar.UI_sideBar_width
 bSaveSimulation["height"] = 20
 bSaveSimulation["label_txt"] = "Save Simulation"
@@ -111,6 +113,19 @@ bSaveSimulation["enabled"] = True
 bSaveSimulation["color"] = pgvar.UI_button_color
 bSaveSimulation["group"] = "SimulationControl"
 bSaveSimulation["visible"] = True
+
+bLoadSimulation = {}
+bLoadSimulation["name"] = "bLoadSimulation"
+bLoadSimulation["origin_x"] = 0
+bLoadSimulation["origin_y"] = pgvar.pygame_window_height - 80
+bLoadSimulation["width"] = pgvar.UI_sideBar_width
+bLoadSimulation["height"] = 20
+bLoadSimulation["label_txt"] = "Load Simulation"
+bLoadSimulation["type"] = "sticky"
+bLoadSimulation["enabled"] = True
+bLoadSimulation["color"] = pgvar.UI_button_color
+bLoadSimulation["group"] = "SimulationControl"
+bLoadSimulation["visible"] = True
 
 bClearSimulation = {}
 bClearSimulation["name"] = "bClearSimulation"
@@ -131,7 +146,7 @@ bClearSimulation["visible"] = True
 bPushyExample = {}
 bPushyExample["name"] = "bPushyExample"
 bPushyExample["origin_x"] = 0
-bPushyExample["origin_y"] = pgvar.pygame_window_height - 700
+bPushyExample["origin_y"] = pgvar.pygame_window_height - 720
 bPushyExample["width"] =pgvar.UI_sideBar_width
 bPushyExample["height"] = 20
 bPushyExample["label_txt"] = "Pushy Example"
@@ -142,13 +157,30 @@ bPushyExample["group"] = "PushyExample"
 bPushyExample["visible"] = True
 
 
+# # Exit Button:
+
+buttonExit = {}
+buttonExit["name"] = "exit"
+buttonExit["origin_x"] = 0
+buttonExit["origin_y"] = pgvar.pygame_window_height - 20
+buttonExit["width"] = pgvar.UI_sideBar_width
+buttonExit["height"] = 20
+buttonExit["label_txt"] = "EXIT"
+buttonExit["type"] = "pushy"
+buttonExit["enabled"] = True
+buttonExit["color"] = pgvar.UI_button_color
+buttonExit["group"] = "buttonExit"
+buttonExit["visible"] = True
+
+
+
 # # Sticky Buttons 
 # # once clicked, they stay enabled, until clicked again which disables them
 
 labelSticky = {}
 labelSticky["name"] = "sticky_label"
 labelSticky["origin_x"] = 0
-labelSticky["origin_y"] = pgvar.pygame_window_height - 220
+labelSticky["origin_y"] = pgvar.pygame_window_height - 820
 labelSticky["width"] = pgvar.UI_sideBar_width
 labelSticky["height"] = 20
 labelSticky["label_txt"] = "Sticky Buttons"
@@ -161,7 +193,7 @@ labelSticky["visible"] = True
 buttonSticky01 = {}
 buttonSticky01["name"] = "sticky01"
 buttonSticky01["origin_x"] = 0
-buttonSticky01["origin_y"] = pgvar.pygame_window_height - 160
+buttonSticky01["origin_y"] = pgvar.pygame_window_height - 760
 buttonSticky01["width"] = pgvar.UI_sideBar_width
 buttonSticky01["height"] = 20
 buttonSticky01["label_txt"] = "Sticky 01"
@@ -174,7 +206,7 @@ buttonSticky01["visible"] = True
 buttonSticky02 = {}
 buttonSticky02["name"] = "sticky02"
 buttonSticky02["origin_x"] = 0
-buttonSticky02["origin_y"] = pgvar.pygame_window_height - 180
+buttonSticky02["origin_y"] = pgvar.pygame_window_height - 780
 buttonSticky02["width"] = pgvar.UI_sideBar_width
 buttonSticky02["height"] = 20
 buttonSticky02["label_txt"] = "Sticky 02"
@@ -187,7 +219,7 @@ buttonSticky02["visible"] = True
 buttonSticky03 = {}
 buttonSticky03["name"] = "sticky03"								# button_name
 buttonSticky03["origin_x"] = 0									# button_origin_x
-buttonSticky03["origin_y"] = pgvar.pygame_window_height - 200		# button_origin_y
+buttonSticky03["origin_y"] = pgvar.pygame_window_height - 800		# button_origin_y
 buttonSticky03["width"] = pgvar.UI_sideBar_width					# button_width
 buttonSticky03["height"] = 20										# button_height
 buttonSticky03["label_txt"] = "Sticky 03"							# button_label_txt
@@ -771,9 +803,12 @@ allButtons[1] = bPlaySimulation
 allButtons[2] = bPauseSimulation		
 allButtons[3] = bSaveSimulation		
 allButtons[51] = bClearSimulation
+allButtons[53] = bLoadSimulation
 
 # reference buttons
 allButtons[52] = bPushyExample
+
+allButtons[54] = lResolution
 
 allButtons[4] = buttonSticky01		# sticky 01
 allButtons[5] = buttonSticky02		# sticky 02
