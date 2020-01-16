@@ -39,6 +39,15 @@ import pgvar
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
+# 	button Specific Variables
+# ************************************************************************************************************************
+# ************************************************************************************************************************
+
+group02_origin = pgvar.pygame_window_height - 960
+buttonHeight = 20
+
+# ************************************************************************************************************************
+# ************************************************************************************************************************
 # 	button dictionaries	#
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -181,9 +190,9 @@ lScaleLabel["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
 lScaleLabel["width"] = 60										# button_width
 lScaleLabel["height"] = 20									# button_height
 lScaleLabel["label_txt"] = " Scale "							# button_label_txt
-lScaleLabel["type"] = "label"									# buttonType
+lScaleLabel["type"] = "sticky"								# buttonType
 lScaleLabel["enabled"] = False								# buttonEnabled
-lScaleLabel["color"] = pgvar.UI_label_color 					# buttonColor
+lScaleLabel["color"] = pgvar.UI_button_color					# buttonColor
 lScaleLabel["group"] = "Scale"								# buttonGroup
 lScaleLabel["visible"] = True									# buttonVisible
 
@@ -375,7 +384,7 @@ buttonExit["visible"] = True
 labelGroup02 = {}
 labelGroup02["name"] = "group02_label"							# button_name
 labelGroup02["origin_x"] = 0										# button_origin_x
-labelGroup02["origin_y"] = pgvar.pygame_window_height - 360		# button_origin_y
+labelGroup02["origin_y"] = group02_origin							# button_origin_y
 labelGroup02["width"] = pgvar.UI_sideBar_width					# button_width
 labelGroup02["height"] = 20										# button_height
 labelGroup02["label_txt"] = "Group 02"							# button_label_txt
@@ -388,7 +397,7 @@ labelGroup02["visible"] = True									# buttonVisible
 bGroup02Button01 = {}
 bGroup02Button01["name"] = "Group02Button01"						# button_name
 bGroup02Button01["origin_x"] = 0									# button_origin_x
-bGroup02Button01["origin_y"] = pgvar.pygame_window_height - 340	# button_origin_y
+bGroup02Button01["origin_y"] = group02_origin	 + 20					# button_origin_y
 bGroup02Button01["width"] = pgvar.UI_sideBar_width / 2				# button_width
 bGroup02Button01["height"] = 20									# button_height
 bGroup02Button01["label_txt"] = "OptionA"							# button_label_txt
@@ -401,7 +410,7 @@ bGroup02Button01["visible"] = True								# buttonVisible
 bGroup02Button02 = {}
 bGroup02Button02["name"] = "Group02Button02"						# button_name
 bGroup02Button02["origin_x"] = pgvar.UI_sideBar_width / 2			# button_origin_x
-bGroup02Button02["origin_y"] = pgvar.pygame_window_height - 340	# button_origin_y
+bGroup02Button02["origin_y"] = group02_origin	 + 20					# button_origin_y
 bGroup02Button02["width"] = pgvar.UI_sideBar_width / 2				# button_width
 bGroup02Button02["height"] = 20									# button_height
 bGroup02Button02["label_txt"] = "OptionB"							# button_label_txt
