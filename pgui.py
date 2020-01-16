@@ -47,7 +47,7 @@ import pgvar
 
 buttonHeight = 20
 
-display_origin = pgvar.pygame_window_height - 360
+display_origin = pgvar.pygame_window_height - 380
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
 
@@ -186,10 +186,50 @@ labelDisplay["color"] = pgvar.UI_button_color						# buttonColor
 labelDisplay["group"] = "origin"									# buttonGroup
 labelDisplay["visible"] = True									# buttonVisible
 
+b1D = {}
+b1D["name"] = "b1D"									# button_name
+b1D["origin_x"] = 0									# button_origin_x
+b1D["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
+b1D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
+b1D["height"] = 20									# button_height
+b1D["label_txt"] = "  1D"								# button_label_txt
+b1D["type"] = "group"									# buttonType
+b1D["enabled"] = False								# buttonEnabled
+b1D["color"] = pgvar.UI_button_color					# buttonColor
+b1D["group"] = "displayDimensions"					# buttonGroup
+b1D["visible"] = True									# buttonVisible
+
+b2D = {}
+b2D["name"] = "b2D"									# button_name
+b2D["origin_x"] = (pgvar.UI_sideBar_width / 3) 		# button_origin_x
+b2D["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
+b2D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
+b2D["height"] = 20									# button_height
+b2D["label_txt"] = "  2D"								# button_label_txt
+b2D["type"] = "group"									# buttonType
+b2D["enabled"] = False								# buttonEnabled
+b2D["color"] = pgvar.UI_button_color					# buttonColor
+b2D["group"] = "displayDimensions"					# buttonGroup
+b2D["visible"] = True									# buttonVisible
+
+b3D = {}
+b3D["name"] = "b3D"									# button_name
+b3D["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2 		# button_origin_x
+b3D["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
+b3D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
+b3D["height"] = 20									# button_height
+b3D["label_txt"] = "  3D"								# button_label_txt
+b3D["type"] = "group"									# buttonType
+b3D["enabled"] = False								# buttonEnabled
+b3D["color"] = pgvar.UI_button_color					# buttonColor
+b3D["group"] = "displayDimensions"					# buttonGroup
+b3D["visible"] = True									# buttonVisible
+
+
 buttonOrigin = {}
 buttonOrigin["name"] = "origin"								# button_name
 buttonOrigin["origin_x"] = 0									# button_origin_x
-buttonOrigin["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
+buttonOrigin["origin_y"] = display_origin + (buttonHeight *2)		# button_origin_y
 buttonOrigin["width"] = pgvar.UI_sideBar_width				# button_width
 buttonOrigin["height"] = 20									# button_height
 buttonOrigin["label_txt"] = "Origin                      +"				# button_label_txt
@@ -202,7 +242,7 @@ buttonOrigin["visible"] = True								# buttonVisible
 buttonGrid = {}
 buttonGrid["name"] = "grid"									# button_name
 buttonGrid["origin_x"] = 0									# button_origin_x
-buttonGrid["origin_y"] = display_origin + (buttonHeight * 2)	# button_origin_y
+buttonGrid["origin_y"] = display_origin + (buttonHeight * 3)	# button_origin_y
 buttonGrid["width"] = pgvar.UI_sideBar_width					# button_width
 buttonGrid["height"] = 20										# button_height
 buttonGrid["label_txt"] = "Grid                          #"					# button_label_txt
@@ -215,7 +255,7 @@ buttonGrid["visible"] = True									# buttonVisible
 buttonFPS = {}
 buttonFPS["name"] = "fps"										# button_name
 buttonFPS["origin_x"] = 0										# button_origin_x
-buttonFPS["origin_y"] = display_origin + (buttonHeight * 3)		# button_origin_y
+buttonFPS["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
 buttonFPS["width"] = pgvar.UI_sideBar_width					# button_width
 buttonFPS["height"] = 20										# button_height
 buttonFPS["label_txt"] = " FPS "								# button_label_txt
@@ -915,7 +955,9 @@ menu02popup01element08["visible"] = False																	# buttonVisible
 # ************************************************************************************************#
 
 allButtons = {}
-allButtons[0] = buttonExit			# exit button
+
+#exit button 
+allButtons[0] = buttonExit			
 
 # Simulation Control Buttons
 allButtons[1] = bPlaySimulation		
@@ -930,6 +972,11 @@ allButtons[58] = lScaleLabel
 allButtons[59] = bScalePlus
 allButtons[60] = tScaleSelection
 allButtons[61] = bScaleOpener
+
+# Display Buttons
+allButtons[62] = b1D
+allButtons[63] = b2D
+allButtons[64] = b3D
 
 # reference buttons
 allButtons[52] = bPushyExample
