@@ -50,6 +50,8 @@ buttonHeight = 20
 display_origin = pgvar.pygame_window_height - 380
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
+dropdown01_origin = pgvar.pygame_window_height - 600
+dev_column_origin = pgvar.pygame_window_width - 300
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -610,8 +612,8 @@ bGroup03Button03["visible"] = True								# buttonVisible
 
 labelDropdown = {}
 labelDropdown["name"] = "dropdownLabel"						# button_name
-labelDropdown["origin_x"] = 0									# button_origin_x
-labelDropdown["origin_y"] = pgvar.pygame_window_height - 600	# button_origin_y
+labelDropdown["origin_x"] = dev_column_origin					# button_origin_x
+labelDropdown["origin_y"] = dropdown01_origin					# button_origin_y
 labelDropdown["width"] = pgvar.UI_sideBar_width				# button_width
 labelDropdown["height"] = 20									# button_height
 labelDropdown["label_txt"] = "Dropdown 01"					# button_label_txt
@@ -623,8 +625,8 @@ labelDropdown["visible"] = True								# buttonVisible
 
 lDropdown01TEXT = {}
 lDropdown01TEXT["name"] = "dropdown01TEXT"						# button_name
-lDropdown01TEXT["origin_x"] = 0									# button_origin_x
-lDropdown01TEXT["origin_y"] = pgvar.pygame_window_height - 580		# button_origin_y
+lDropdown01TEXT["origin_x"] = dev_column_origin					# button_origin_x
+lDropdown01TEXT["origin_y"] = dropdown01_origin + 20				# button_origin_y
 lDropdown01TEXT["width"] = pgvar.UI_sideBar_width - 20				# button_width
 lDropdown01TEXT["height"] = 20									# button_height
 lDropdown01TEXT["label_txt"] = "- select -"						# button_label_txt
@@ -635,22 +637,22 @@ lDropdown01TEXT["group"] = "dropdown01"							# buttonGroup
 lDropdown01TEXT["visible"] = True									# buttonVisible
 
 bDropdown01opener = {}
-bDropdown01opener["name"] = "dropdown01opener"					# button_name
-bDropdown01opener["origin_x"] = pgvar.UI_sideBar_width - 20		# button_origin_x
-bDropdown01opener["origin_y"] = pgvar.pygame_window_height - 580	# button_origin_y
-bDropdown01opener["width"] = 20									# button_width
-bDropdown01opener["height"] = 20									# button_height
-bDropdown01opener["label_txt"] = ">>"								# button_label_txt
-bDropdown01opener["type"] = "dropdown"							# buttonType
-bDropdown01opener["enabled"] = False								# buttonEnabled
-bDropdown01opener["color"] = pgvar.UI_button_color				# buttonColor
-bDropdown01opener["group"] = "dropdown01"							# buttonGroup
-bDropdown01opener["visible"] = True								# buttonVisible
+bDropdown01opener["name"] = "dropdown01opener"									# button_name
+bDropdown01opener["origin_x"] = dev_column_origin + pgvar.UI_sideBar_width	 - 20		# button_origin_x
+bDropdown01opener["origin_y"] = dropdown01_origin + 20								# button_origin_y
+bDropdown01opener["width"] = 20													# button_width
+bDropdown01opener["height"] = 20													# button_height
+bDropdown01opener["label_txt"] = ">>"												# button_label_txt
+bDropdown01opener["type"] = "dropdown"											# buttonType
+bDropdown01opener["enabled"] = False												# buttonEnabled
+bDropdown01opener["color"] = pgvar.UI_button_color								# buttonColor
+bDropdown01opener["group"] = "dropdown01"											# buttonGroup
+bDropdown01opener["visible"] = True												# buttonVisible
 
 bDropdown01option01 = {}
 bDropdown01option01["name"] = "dropdown01option01"					# button_name
-bDropdown01option01["origin_x"] = pgvar.UI_sideBar_width				# button_origin_x
-bDropdown01option01["origin_y"] = pgvar.pygame_window_height - 580		# button_origin_y
+bDropdown01option01["origin_x"] = dev_column_origin + pgvar.UI_sideBar_width				# button_origin_x
+bDropdown01option01["origin_y"] = dropdown01_origin + 20				# button_origin_y
 bDropdown01option01["width"] = 140									# button_width
 bDropdown01option01["height"] = 20									# button_height
 bDropdown01option01["label_txt"] = " Option 1"							# button_label_txt
@@ -662,8 +664,8 @@ bDropdown01option01["visible"] = False								# buttonVisible
 
 bDropdown01option02 = {}
 bDropdown01option02["name"] = "dropdown01option02"					# button_name
-bDropdown01option02["origin_x"] = pgvar.UI_sideBar_width				# button_origin_x
-bDropdown01option02["origin_y"] = pgvar.pygame_window_height - 560		# button_origin_y
+bDropdown01option02["origin_x"] = dev_column_origin + pgvar.UI_sideBar_width				# button_origin_x
+bDropdown01option02["origin_y"] = dropdown01_origin + 40				# button_origin_y
 bDropdown01option02["width"] = 140									# button_width
 bDropdown01option02["height"] = 20									# button_height
 bDropdown01option02["label_txt"] = " Option 2"							# button_label_txt
@@ -675,8 +677,8 @@ bDropdown01option02["visible"] = False								# buttonVisible
 
 bDropdown01option03 = {}
 bDropdown01option03["name"] = "dropdown01option03"					# button_name
-bDropdown01option03["origin_x"] = pgvar.UI_sideBar_width				# button_origin_x
-bDropdown01option03["origin_y"] = pgvar.pygame_window_height - 540		# button_origin_y
+bDropdown01option03["origin_x"] = dev_column_origin + pgvar.UI_sideBar_width				# button_origin_x
+bDropdown01option03["origin_y"] = dropdown01_origin + 60		# button_origin_y
 bDropdown01option03["width"] = 140									# button_width
 bDropdown01option03["height"] = 20									# button_height
 bDropdown01option03["label_txt"] = " Option 3"							# button_label_txt
