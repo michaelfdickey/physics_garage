@@ -12,6 +12,16 @@ completed transfer of program to a modular design
 # # TO DO
 # when you click on background, all open menus should close
 # If you aren’t sure which license you should use for your project, check out choosealicense.com.
+# integrate functionality of 2D_vector_003-mouse_click.py
+# toggle vectors by force type? (maybe in force >> while display -> vectors toggles all)
+# insert - particle - proton / antiproton
+# insert - container - bottle
+# insert - environment - magnetic field / STP earth atmosphere, etc. 
+# selecting scale should by default enable / disable forces, e.g. a pm scale gravity is disabled, at Mm strong nuclear is disabled
+# when you enable container magnetic field it will curve charge particle trajectories, you can view magnetic force vectors and component vectors as well as force magnitudes
+# start at the particle level and build up and out
+# process all pushy buttons / all sticky buttons / all group buttons etc with a function for each, i.e. not specifying behavior for each individual button. if you enable a group button, the others in the same group are disabled
+ 
 
 
 # ************************************************************************************************#

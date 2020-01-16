@@ -180,6 +180,32 @@ bForceWeakNuclearOpener["color"] = pgvar.UI_button_color
 bForceWeakNuclearOpener["group"] = "forces"								
 bForceWeakNuclearOpener["visible"] = True	
 
+bForceDarkEnergy = {}
+bForceDarkEnergy["name"] = "bForceDarkEnergy"								
+bForceDarkEnergy["origin_x"] = 0									
+bForceDarkEnergy["origin_y"] = forces_origin + 100						
+bForceDarkEnergy["width"] = pgvar.UI_sideBar_width - 20					
+bForceDarkEnergy["height"] = buttonHeight							
+bForceDarkEnergy["label_txt"] = "Dark Energy"							
+bForceDarkEnergy["type"] = "sticky"									
+bForceDarkEnergy["enabled"] = False								
+bForceDarkEnergy["color"] = pgvar.UI_button_color 					
+bForceDarkEnergy["group"] = "forces"								
+bForceDarkEnergy["visible"] = True									
+
+bForceDarkEnergyOpener = {}
+bForceDarkEnergyOpener["name"] = "bForceDarkEnergyOpener"								
+bForceDarkEnergyOpener["origin_x"] = pgvar.UI_sideBar_width - 20									
+bForceDarkEnergyOpener["origin_y"] = forces_origin + 100						
+bForceDarkEnergyOpener["width"] = 20				
+bForceDarkEnergyOpener["height"] = buttonHeight							
+bForceDarkEnergyOpener["label_txt"] = ">>"							
+bForceDarkEnergyOpener["type"] = "dropdown"									
+bForceDarkEnergyOpener["enabled"] = False								
+bForceDarkEnergyOpener["color"] = pgvar.UI_button_color 					
+bForceDarkEnergyOpener["group"] = "forces"								
+bForceDarkEnergyOpener["visible"] = True	
+
 # # Display options buttons:
 
 labelDisplay = {}
@@ -1107,6 +1133,8 @@ allButtons[71] = bForceStrongNuclear
 allButtons[72] = bForceStrongNuclearOpener
 allButtons[73] = bForceWeakNuclear
 allButtons[74] = bForceWeakNuclearOpener
+allButtons[75] = bForceDarkEnergy
+allButtons[76] = bForceDarkEnergyOpener
 
 
 # Display Buttons
