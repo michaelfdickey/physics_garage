@@ -47,6 +47,7 @@ import pgvar
 
 buttonHeight = 20
 
+display_origin = pgvar.pygame_window_height - 360
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
 
@@ -169,6 +170,77 @@ bGroup01Button02["enabled"] = False								# buttonEnabled
 bGroup01Button02["color"] = pgvar.UI_button_color					# buttonColor
 bGroup01Button02["group"] = "group01"								# buttonGroup
 bGroup01Button02["visible"] = True								# buttonVisible
+
+# # Display options buttons:
+
+labelDisplay = {}
+labelDisplay["name"] = "displayLabel"								# button_name
+labelDisplay["origin_x"] = 0										# button_origin_x
+labelDisplay["origin_y"] = display_origin							# button_origin_y
+labelDisplay["width"] = pgvar.UI_sideBar_width					# button_width
+labelDisplay["height"] = 20										# button_height
+labelDisplay["label_txt"] = "Display"								# button_label_txt
+labelDisplay["type"] = "label"									# buttonType
+labelDisplay["enabled"] = False									# buttonEnabled
+labelDisplay["color"] = pgvar.UI_button_color						# buttonColor
+labelDisplay["group"] = "origin"									# buttonGroup
+labelDisplay["visible"] = True									# buttonVisible
+
+buttonOrigin = {}
+buttonOrigin["name"] = "origin"								# button_name
+buttonOrigin["origin_x"] = 0									# button_origin_x
+buttonOrigin["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
+buttonOrigin["width"] = pgvar.UI_sideBar_width				# button_width
+buttonOrigin["height"] = 20									# button_height
+buttonOrigin["label_txt"] = "Origin                      +"				# button_label_txt
+buttonOrigin["type"] = "sticky"								# buttonType
+buttonOrigin["enabled"] = False								# buttonEnabled
+buttonOrigin["color"] = pgvar.UI_button_color					# buttonColor
+buttonOrigin["group"] = "origin"								# buttonGroup
+buttonOrigin["visible"] = True								# buttonVisible
+
+buttonGrid = {}
+buttonGrid["name"] = "grid"									# button_name
+buttonGrid["origin_x"] = 0									# button_origin_x
+buttonGrid["origin_y"] = display_origin + (buttonHeight * 2)	# button_origin_y
+buttonGrid["width"] = pgvar.UI_sideBar_width					# button_width
+buttonGrid["height"] = 20										# button_height
+buttonGrid["label_txt"] = "Grid                          #"					# button_label_txt
+buttonGrid["type"] = "sticky"									# buttonType
+buttonGrid["enabled"] = False									# buttonEnabled
+buttonGrid["color"] = pgvar.UI_button_color					# buttonColor
+buttonGrid["group"] = "grid"									# buttonGroup
+buttonGrid["visible"] = True									# buttonVisible
+
+buttonFPS = {}
+buttonFPS["name"] = "fps"										# button_name
+buttonFPS["origin_x"] = 0										# button_origin_x
+buttonFPS["origin_y"] = display_origin + (buttonHeight * 3)		# button_origin_y
+buttonFPS["width"] = pgvar.UI_sideBar_width					# button_width
+buttonFPS["height"] = 20										# button_height
+buttonFPS["label_txt"] = " FPS "								# button_label_txt
+buttonFPS["type"] = "sticky"									# buttonType
+buttonFPS["enabled"] = False									# buttonEnabled
+buttonFPS["color"] = pgvar.UI_button_color					# buttonColor
+buttonFPS["group"] = "fps"									# buttonGroup
+buttonFPS["visible"] = True									# buttonVisible
+
+"""
+# old scale button, removing
+buttonScale = {}
+buttonScale["name"] = "scale"										# button_name
+buttonScale["origin_x"] = 0										# button_origin_x
+buttonScale["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
+buttonScale["width"] = pgvar.UI_sideBar_width						# button_width
+buttonScale["height"] = 20										# button_height
+buttonScale["label_txt"] = "Scale          |<-  --  ->|"					# button_label_txt
+buttonScale["type"] = "sticky"									# buttonType
+buttonScale["enabled"] = False									# buttonEnabled
+buttonScale["color"] = pgvar.UI_button_color						# buttonColor
+buttonScale["group"] = "scale"									# buttonGroup
+buttonScale["visible"] = True										# buttonVisible
+"""
+
 
 
 
@@ -478,72 +550,8 @@ bGroup03Button03["color"] = pgvar.UI_button_color					# buttonColor
 bGroup03Button03["group"] = "group03"								# buttonGroup
 bGroup03Button03["visible"] = True								# buttonVisible
 
-# # Display options buttons:
 
-labelDisplay = {}
-labelDisplay["name"] = "displayLabel"								# button_name
-labelDisplay["origin_x"] = 0										# button_origin_x
-labelDisplay["origin_y"] = pgvar.pygame_window_height - 540		# button_origin_y
-labelDisplay["width"] = pgvar.UI_sideBar_width					# button_width
-labelDisplay["height"] = 20										# button_height
-labelDisplay["label_txt"] = "Display"								# button_label_txt
-labelDisplay["type"] = "label"									# buttonType
-labelDisplay["enabled"] = False									# buttonEnabled
-labelDisplay["color"] = pgvar.UI_button_color						# buttonColor
-labelDisplay["group"] = "origin"									# buttonGroup
-labelDisplay["visible"] = True									# buttonVisible
-
-buttonFPS = {}
-buttonFPS["name"] = "fps"										# button_name
-buttonFPS["origin_x"] = 0										# button_origin_x
-buttonFPS["origin_y"] = pgvar.pygame_window_height - 460		# button_origin_y
-buttonFPS["width"] = pgvar.UI_sideBar_width					# button_width
-buttonFPS["height"] = 20										# button_height
-buttonFPS["label_txt"] = " FPS "								# button_label_txt
-buttonFPS["type"] = "sticky"									# buttonType
-buttonFPS["enabled"] = False									# buttonEnabled
-buttonFPS["color"] = pgvar.UI_button_color					# buttonColor
-buttonFPS["group"] = "fps"									# buttonGroup
-buttonFPS["visible"] = True									# buttonVisible
-
-buttonScale = {}
-buttonScale["name"] = "scale"										# button_name
-buttonScale["origin_x"] = 0										# button_origin_x
-buttonScale["origin_y"] = pgvar.pygame_window_height - 480			# button_origin_y
-buttonScale["width"] = pgvar.UI_sideBar_width						# button_width
-buttonScale["height"] = 20										# button_height
-buttonScale["label_txt"] = "Scale          |<-  --  ->|"					# button_label_txt
-buttonScale["type"] = "sticky"									# buttonType
-buttonScale["enabled"] = False									# buttonEnabled
-buttonScale["color"] = pgvar.UI_button_color						# buttonColor
-buttonScale["group"] = "scale"									# buttonGroup
-buttonScale["visible"] = True										# buttonVisible
-
-buttonGrid = {}
-buttonGrid["name"] = "grid"									# button_name
-buttonGrid["origin_x"] = 0									# button_origin_x
-buttonGrid["origin_y"] = pgvar.pygame_window_height - 500		# button_origin_y
-buttonGrid["width"] = pgvar.UI_sideBar_width					# button_width
-buttonGrid["height"] = 20										# button_height
-buttonGrid["label_txt"] = "Grid                          #"					# button_label_txt
-buttonGrid["type"] = "sticky"									# buttonType
-buttonGrid["enabled"] = False									# buttonEnabled
-buttonGrid["color"] = pgvar.UI_button_color					# buttonColor
-buttonGrid["group"] = "grid"									# buttonGroup
-buttonGrid["visible"] = True									# buttonVisible
-
-buttonOrigin = {}
-buttonOrigin["name"] = "origin"								# button_name
-buttonOrigin["origin_x"] = 0									# button_origin_x
-buttonOrigin["origin_y"] = pgvar.pygame_window_height - 520	# button_origin_y
-buttonOrigin["width"] = pgvar.UI_sideBar_width				# button_width
-buttonOrigin["height"] = 20									# button_height
-buttonOrigin["label_txt"] = "Origin                      +"				# button_label_txt
-buttonOrigin["type"] = "sticky"								# buttonType
-buttonOrigin["enabled"] = False								# buttonEnabled
-buttonOrigin["color"] = pgvar.UI_button_color					# buttonColor
-buttonOrigin["group"] = "origin"								# buttonGroup
-buttonOrigin["visible"] = True								# buttonVisible
+# Dropdown 01
 
 labelDropdown = {}
 labelDropdown["name"] = "dropdownLabel"						# button_name
@@ -947,7 +955,7 @@ allButtons[17] = bGroup03Button02 	# group 03 button 02
 allButtons[18] = bGroup03Button03		# group 03 button 03
 allButtons[19] = labelDisplay 		# label for the display buttons
 allButtons[20] = buttonFPS			# FPS button
-allButtons[21] = buttonScale			# Scale button
+# allButtons[21] = buttonScale			# Scale button
 allButtons[22] = buttonGrid			# Grid button
 allButtons[23] = buttonOrigin 		# Origin Button
 allButtons[24] = labelDropdown 		# label for the dropdown group
