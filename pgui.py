@@ -102,6 +102,32 @@ bForceGravityOpener["color"] = pgvar.UI_button_color
 bForceGravityOpener["group"] = "forces"								
 bForceGravityOpener["visible"] = True	
 
+bForceElectromagnetic = {}
+bForceElectromagnetic["name"] = "bForceElectromagnetic"								
+bForceElectromagnetic["origin_x"] = 0									
+bForceElectromagnetic["origin_y"] = forces_origin + 40						
+bForceElectromagnetic["width"] = pgvar.UI_sideBar_width - 20					
+bForceElectromagnetic["height"] = buttonHeight							
+bForceElectromagnetic["label_txt"] = "Electromagnetic"							
+bForceElectromagnetic["type"] = "sticky"									
+bForceElectromagnetic["enabled"] = False								
+bForceElectromagnetic["color"] = pgvar.UI_button_color 					
+bForceElectromagnetic["group"] = "forces"								
+bForceElectromagnetic["visible"] = True									
+
+bForceElectromagneticOpener = {}
+bForceElectromagneticOpener["name"] = "bForceElectromagneticOpener"								
+bForceElectromagneticOpener["origin_x"] = pgvar.UI_sideBar_width - 20									
+bForceElectromagneticOpener["origin_y"] = forces_origin + 40						
+bForceElectromagneticOpener["width"] = 20				
+bForceElectromagneticOpener["height"] = buttonHeight							
+bForceElectromagneticOpener["label_txt"] = ">>"							
+bForceElectromagneticOpener["type"] = "dropdown"									
+bForceElectromagneticOpener["enabled"] = False								
+bForceElectromagneticOpener["color"] = pgvar.UI_button_color 					
+bForceElectromagneticOpener["group"] = "forces"								
+bForceElectromagneticOpener["visible"] = True	
+
 # # Display options buttons:
 
 labelDisplay = {}
@@ -1023,6 +1049,8 @@ allButtons = {}
 allButtons[66] = lForces
 allButtons[67] = bForceGravity
 allButtons[68] = bForceGravityOpener
+allButtons[69] = bForceElectromagnetic
+allButtons[70] = bForceElectromagneticOpener
 
 # Display Buttons
 allButtons[62] = b1D
