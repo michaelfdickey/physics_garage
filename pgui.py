@@ -165,7 +165,7 @@ bScaleMinus = {}
 bScaleMinus["name"] = "bScaleMinus"							# button_name
 bScaleMinus["origin_x"] = 0									# button_origin_x
 bScaleMinus["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
-bScaleMinus["width"] = 30									# button_width
+bScaleMinus["width"] = 30										# button_width
 bScaleMinus["height"] = 20									# button_height
 bScaleMinus["label_txt"] = "   -  "								# button_label_txt
 bScaleMinus["type"] = "pushy"									# buttonType
@@ -188,18 +188,43 @@ lScaleLabel["group"] = "Scale"								# buttonGroup
 lScaleLabel["visible"] = True									# buttonVisible
 
 bScalePlus = {}
-bScalePlus["name"] = "bScalePlus"							# button_name
+bScalePlus["name"] = "bScalePlus"								# button_name
 bScalePlus["origin_x"] = 90									# button_origin_x
 bScalePlus["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
-bScalePlus["width"] = 30									# button_width
-bScalePlus["height"] = 20									# button_height
+bScalePlus["width"] = 30										# button_width
+bScalePlus["height"] = 20										# button_height
 bScalePlus["label_txt"] = "  +  "								# button_label_txt
 bScalePlus["type"] = "pushy"									# buttonType
-bScalePlus["enabled"] = False								# buttonEnabled
+bScalePlus["enabled"] = False									# buttonEnabled
 bScalePlus["color"] = pgvar.UI_button_color					# buttonColor
-bScalePlus["group"] = "Scale"								# buttonGroup
+bScalePlus["group"] = "Scale"									# buttonGroup
 bScalePlus["visible"] = True									# buttonVisible		
 
+tScaleSelection = {}
+tScaleSelection["name"] = "tScaleSelection"							# button_name
+tScaleSelection["origin_x"] = 0										# button_origin_x
+tScaleSelection["origin_y"] = pgvar.pygame_window_height - 260			# button_origin_y
+tScaleSelection["width"] = pgvar.UI_sideBar_width - 20					# button_width
+tScaleSelection["height"] = 20										# button_height
+tScaleSelection["label_txt"] = "pm (10^-12m)"							# button_label_txt
+tScaleSelection["type"] = "textEntry"									# buttonType
+tScaleSelection["enabled"] = False									# buttonEnabled
+tScaleSelection["color"] = pgvar.UI_button_color						# buttonColor
+tScaleSelection["group"] = "Scale"									# buttonGroup
+tScaleSelection["visible"] = True										# buttonVisible		
+
+bScaleOpener = {}
+bScaleOpener["name"] = "bScaleOpener"								# button_name
+bScaleOpener["origin_x"] = pgvar.UI_sideBar_width - 20				# button_origin_x
+bScaleOpener["origin_y"] = pgvar.pygame_window_height - 260		# button_origin_y
+bScaleOpener["width"] = 20										# button_width
+bScaleOpener["height"] = 20										# button_height
+bScaleOpener["label_txt"] = ">>"									# button_label_txt
+bScaleOpener["type"] = "textEntry"								# buttonType
+bScaleOpener["enabled"] = False									# buttonEnabled
+bScaleOpener["color"] = pgvar.UI_button_color						# buttonColor
+bScaleOpener["group"] = "Scale"									# buttonGroup
+bScaleOpener["visible"] = True									# buttonVisible	
 
 # # Changing Resolution Button and label
 
@@ -882,6 +907,8 @@ allButtons[53] = bLoadSimulation
 allButtons[57] = bScaleMinus
 allButtons[58] = lScaleLabel
 allButtons[59] = bScalePlus
+allButtons[60] = tScaleSelection
+allButtons[61] = bScaleOpener
 
 # reference buttons
 allButtons[52] = bPushyExample
