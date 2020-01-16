@@ -256,7 +256,7 @@ buttonFPS = {}
 buttonFPS["name"] = "fps"										# button_name
 buttonFPS["origin_x"] = 0										# button_origin_x
 buttonFPS["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
-buttonFPS["width"] = pgvar.UI_sideBar_width					# button_width
+buttonFPS["width"] = pgvar.UI_sideBar_width / 2				# button_width
 buttonFPS["height"] = 20										# button_height
 buttonFPS["label_txt"] = " FPS "								# button_label_txt
 buttonFPS["type"] = "sticky"									# buttonType
@@ -264,6 +264,21 @@ buttonFPS["enabled"] = False									# buttonEnabled
 buttonFPS["color"] = pgvar.UI_button_color					# buttonColor
 buttonFPS["group"] = "fps"									# buttonGroup
 buttonFPS["visible"] = True									# buttonVisible
+
+bVectors = {}
+bVectors["name"] = "bVectors"									# button_name
+bVectors["origin_x"] = pgvar.UI_sideBar_width / 2				# button_origin_x
+bVectors["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
+bVectors["width"] = pgvar.UI_sideBar_width / 2					# button_width
+bVectors["height"] = 20										# button_height
+bVectors["label_txt"] = " Vectors "							# button_label_txt
+bVectors["type"] = "sticky"									# buttonType
+bVectors["enabled"] = False									# buttonEnabled
+bVectors["color"] = pgvar.UI_button_color						# buttonColor
+bVectors["group"] = "vectors"									# buttonGroup
+bVectors["visible"] = True									# buttonVisible
+
+
 
 """
 # old scale button, removing
@@ -977,6 +992,8 @@ allButtons[61] = bScaleOpener
 allButtons[62] = b1D
 allButtons[63] = b2D
 allButtons[64] = b3D
+allButtons[65] = bVectors
+
 
 # reference buttons
 allButtons[52] = bPushyExample
