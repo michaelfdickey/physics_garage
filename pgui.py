@@ -128,6 +128,58 @@ bForceElectromagneticOpener["color"] = pgvar.UI_button_color
 bForceElectromagneticOpener["group"] = "forces"								
 bForceElectromagneticOpener["visible"] = True	
 
+bForceStrongNuclear = {}
+bForceStrongNuclear["name"] = "bForceStrongNuclear"								
+bForceStrongNuclear["origin_x"] = 0									
+bForceStrongNuclear["origin_y"] = forces_origin + 60						
+bForceStrongNuclear["width"] = pgvar.UI_sideBar_width - 20					
+bForceStrongNuclear["height"] = buttonHeight							
+bForceStrongNuclear["label_txt"] = "Strong Nuclear"							
+bForceStrongNuclear["type"] = "sticky"									
+bForceStrongNuclear["enabled"] = False								
+bForceStrongNuclear["color"] = pgvar.UI_button_color 					
+bForceStrongNuclear["group"] = "forces"								
+bForceStrongNuclear["visible"] = True									
+
+bForceStrongNuclearOpener = {}
+bForceStrongNuclearOpener["name"] = "bForceStrongNuclearOpener"								
+bForceStrongNuclearOpener["origin_x"] = pgvar.UI_sideBar_width - 20									
+bForceStrongNuclearOpener["origin_y"] = forces_origin + 60						
+bForceStrongNuclearOpener["width"] = 20				
+bForceStrongNuclearOpener["height"] = buttonHeight							
+bForceStrongNuclearOpener["label_txt"] = ">>"							
+bForceStrongNuclearOpener["type"] = "dropdown"									
+bForceStrongNuclearOpener["enabled"] = False								
+bForceStrongNuclearOpener["color"] = pgvar.UI_button_color 					
+bForceStrongNuclearOpener["group"] = "forces"								
+bForceStrongNuclearOpener["visible"] = True	
+
+bForceWeakNuclear = {}
+bForceWeakNuclear["name"] = "bForceWeakNuclear"								
+bForceWeakNuclear["origin_x"] = 0									
+bForceWeakNuclear["origin_y"] = forces_origin + 80						
+bForceWeakNuclear["width"] = pgvar.UI_sideBar_width - 20					
+bForceWeakNuclear["height"] = buttonHeight							
+bForceWeakNuclear["label_txt"] = "Weak Nuclear"							
+bForceWeakNuclear["type"] = "sticky"									
+bForceWeakNuclear["enabled"] = False								
+bForceWeakNuclear["color"] = pgvar.UI_button_color 					
+bForceWeakNuclear["group"] = "forces"								
+bForceWeakNuclear["visible"] = True									
+
+bForceWeakNuclearOpener = {}
+bForceWeakNuclearOpener["name"] = "bForceWeakNuclearOpener"								
+bForceWeakNuclearOpener["origin_x"] = pgvar.UI_sideBar_width - 20									
+bForceWeakNuclearOpener["origin_y"] = forces_origin + 80						
+bForceWeakNuclearOpener["width"] = 20				
+bForceWeakNuclearOpener["height"] = buttonHeight							
+bForceWeakNuclearOpener["label_txt"] = ">>"							
+bForceWeakNuclearOpener["type"] = "dropdown"									
+bForceWeakNuclearOpener["enabled"] = False								
+bForceWeakNuclearOpener["color"] = pgvar.UI_button_color 					
+bForceWeakNuclearOpener["group"] = "forces"								
+bForceWeakNuclearOpener["visible"] = True	
+
 # # Display options buttons:
 
 labelDisplay = {}
@@ -1051,6 +1103,11 @@ allButtons[67] = bForceGravity
 allButtons[68] = bForceGravityOpener
 allButtons[69] = bForceElectromagnetic
 allButtons[70] = bForceElectromagneticOpener
+allButtons[71] = bForceStrongNuclear
+allButtons[72] = bForceStrongNuclearOpener
+allButtons[73] = bForceWeakNuclear
+allButtons[74] = bForceWeakNuclearOpener
+
 
 # Display Buttons
 allButtons[62] = b1D
