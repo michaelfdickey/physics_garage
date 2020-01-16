@@ -64,7 +64,7 @@ dev_column_origin = pgvar.pygame_window_width - 300
 
 bPushyExample = {}
 bPushyExample["name"] = "bPushyExample"
-bPushyExample["origin_x"] = 0
+bPushyExample["origin_x"] = dev_column_origin	
 bPushyExample["origin_y"] = pgvar.pygame_window_height - 720
 bPushyExample["width"] =pgvar.UI_sideBar_width
 bPushyExample["height"] = 20
@@ -80,7 +80,7 @@ bPushyExample["visible"] = True
 
 labelSticky = {}
 labelSticky["name"] = "sticky_label"
-labelSticky["origin_x"] = 0
+labelSticky["origin_x"] = dev_column_origin	
 labelSticky["origin_y"] = pgvar.pygame_window_height - 820
 labelSticky["width"] = pgvar.UI_sideBar_width
 labelSticky["height"] = 20
@@ -93,7 +93,7 @@ labelSticky["visible"] = True
 
 buttonSticky01 = {}
 buttonSticky01["name"] = "sticky01"
-buttonSticky01["origin_x"] = 0
+buttonSticky01["origin_x"] = dev_column_origin	
 buttonSticky01["origin_y"] = pgvar.pygame_window_height - 760
 buttonSticky01["width"] = pgvar.UI_sideBar_width
 buttonSticky01["height"] = 20
@@ -106,7 +106,7 @@ buttonSticky01["visible"] = True
 
 buttonSticky02 = {}
 buttonSticky02["name"] = "sticky02"
-buttonSticky02["origin_x"] = 0
+buttonSticky02["origin_x"] = dev_column_origin	
 buttonSticky02["origin_y"] = pgvar.pygame_window_height - 780
 buttonSticky02["width"] = pgvar.UI_sideBar_width
 buttonSticky02["height"] = 20
@@ -119,7 +119,7 @@ buttonSticky02["visible"] = True
 
 buttonSticky03 = {}
 buttonSticky03["name"] = "sticky03"								# button_name
-buttonSticky03["origin_x"] = 0									# button_origin_x
+buttonSticky03["origin_x"] = dev_column_origin										# button_origin_x
 buttonSticky03["origin_y"] = pgvar.pygame_window_height - 800		# button_origin_y
 buttonSticky03["width"] = pgvar.UI_sideBar_width					# button_width
 buttonSticky03["height"] = 20										# button_height
@@ -136,7 +136,7 @@ buttonSticky03["visible"] = True									# buttonVisible
 
 labelGroup01 = {}
 labelGroup01["name"] = "group01_label"							# button_name
-labelGroup01["origin_x"] = 0										# button_origin_x
+labelGroup01["origin_x"] = dev_column_origin											# button_origin_x
 labelGroup01["origin_y"] = pgvar.pygame_window_height - 900		# button_origin_y
 labelGroup01["width"] = pgvar.UI_sideBar_width					# button_width
 labelGroup01["height"] = 20										# button_height
@@ -149,7 +149,7 @@ labelGroup01["visible"] = True									# buttonVisible
 
 bGroup01Button01 = {}
 bGroup01Button01["name"] = "Group01Button01"						# button_name
-bGroup01Button01["origin_x"] = 0									# button_origin_x
+bGroup01Button01["origin_x"] = dev_column_origin										# button_origin_x
 bGroup01Button01["origin_y"] = pgvar.pygame_window_height - 880	# button_origin_y
 bGroup01Button01["width"] = pgvar.UI_sideBar_width				# button_width
 bGroup01Button01["height"] = 20									# button_height
@@ -162,7 +162,7 @@ bGroup01Button01["visible"] = True								# buttonVisible
 
 bGroup01Button02 = {}
 bGroup01Button02["name"] = "Group01Button02"						# button_name
-bGroup01Button02["origin_x"] = 0									# button_origin_x
+bGroup01Button02["origin_x"] = dev_column_origin										# button_origin_x
 bGroup01Button02["origin_y"] = pgvar.pygame_window_height - 860	# button_origin_y
 bGroup01Button02["width"] = pgvar.UI_sideBar_width				# button_width
 bGroup01Button02["height"] = 20									# button_height
@@ -516,7 +516,7 @@ buttonExit["visible"] = True
 
 labelGroup02 = {}
 labelGroup02["name"] = "group02_label"							# button_name
-labelGroup02["origin_x"] = 0										# button_origin_x
+labelGroup02["origin_x"] = dev_column_origin											# button_origin_x
 labelGroup02["origin_y"] = group02_origin							# button_origin_y
 labelGroup02["width"] = pgvar.UI_sideBar_width					# button_width
 labelGroup02["height"] = 20										# button_height
@@ -529,7 +529,7 @@ labelGroup02["visible"] = True									# buttonVisible
 
 bGroup02Button01 = {}
 bGroup02Button01["name"] = "Group02Button01"						# button_name
-bGroup02Button01["origin_x"] = 0									# button_origin_x
+bGroup02Button01["origin_x"] = dev_column_origin										# button_origin_x
 bGroup02Button01["origin_y"] = group02_origin	 + 20					# button_origin_y
 bGroup02Button01["width"] = pgvar.UI_sideBar_width / 2				# button_width
 bGroup02Button01["height"] = 20									# button_height
@@ -542,7 +542,7 @@ bGroup02Button01["visible"] = True								# buttonVisible
 
 bGroup02Button02 = {}
 bGroup02Button02["name"] = "Group02Button02"						# button_name
-bGroup02Button02["origin_x"] = pgvar.UI_sideBar_width / 2			# button_origin_x
+bGroup02Button02["origin_x"] = dev_column_origin + (pgvar.UI_sideBar_width / 2)			# button_origin_x
 bGroup02Button02["origin_y"] = group02_origin	 + 20					# button_origin_y
 bGroup02Button02["width"] = pgvar.UI_sideBar_width / 2				# button_width
 bGroup02Button02["height"] = 20									# button_height
@@ -557,7 +557,7 @@ bGroup02Button02["visible"] = True								# buttonVisible
 
 labelGroup03 = {}
 labelGroup03["name"] = "group03_label"							# button_name
-labelGroup03["origin_x"] = 0										# button_origin_x
+labelGroup03["origin_x"] = dev_column_origin										# button_origin_x
 labelGroup03["origin_y"] = group03_origin							# button_origin_y
 labelGroup03["width"] = pgvar.UI_sideBar_width					# button_width
 labelGroup03["height"] = 20										# button_height
@@ -570,7 +570,7 @@ labelGroup03["visible"] = True									# buttonVisible
 
 bGroup03Button01 = {}
 bGroup03Button01["name"] = "Group03Button01"						# button_name
-bGroup03Button01["origin_x"] = 0									# button_origin_x
+bGroup03Button01["origin_x"] = dev_column_origin									# button_origin_x
 bGroup03Button01["origin_y"] = group03_origin + 20					# button_origin_y
 bGroup03Button01["width"] = pgvar.UI_sideBar_width / 3				# button_width
 bGroup03Button01["height"] = 20									# button_height
@@ -583,7 +583,7 @@ bGroup03Button01["visible"] = True								# buttonVisible
 
 bGroup03Button02 = {}
 bGroup03Button02["name"] = "Group03Button02"						# button_name
-bGroup03Button02["origin_x"] = pgvar.UI_sideBar_width / 3			# button_origin_x
+bGroup03Button02["origin_x"] = dev_column_origin + (pgvar.UI_sideBar_width / 3)			# button_origin_x
 bGroup03Button02["origin_y"] = group03_origin + 20					# button_origin_y
 bGroup03Button02["width"] = pgvar.UI_sideBar_width / 3				# button_width
 bGroup03Button02["height"] = 20									# button_height
@@ -596,7 +596,7 @@ bGroup03Button02["visible"] = True								# buttonVisible
 
 bGroup03Button03 = {}
 bGroup03Button03["name"] = "Group03Button03"						# button_name
-bGroup03Button03["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2		# button_origin_x
+bGroup03Button03["origin_x"] = dev_column_origin + ((pgvar.UI_sideBar_width / 3) * 2)		# button_origin_x
 bGroup03Button03["origin_y"] = group03_origin + 20					# button_origin_y
 bGroup03Button03["width"] = pgvar.UI_sideBar_width / 3				# button_width
 bGroup03Button03["height"] = 20									# button_height
@@ -691,7 +691,7 @@ bDropdown01option03["visible"] = False								# buttonVisible
 
 lTextField01 = {}
 lTextField01["name"] = "textField01Label"							# button_name
-lTextField01["origin_x"] = 0										# button_origin_x
+lTextField01["origin_x"] = dev_column_origin						# button_origin_x
 lTextField01["origin_y"] = pgvar.pygame_window_height - 660		# button_origin_y
 lTextField01["width"] = pgvar.UI_sideBar_width					# button_width
 lTextField01["height"] = 20										# button_height
@@ -704,7 +704,7 @@ lTextField01["visible"] = True									# buttonVisible
 
 textField01 = {}
 textField01["name"] = "textField01"							# button_name
-textField01["origin_x"] = 0									# button_origin_x
+textField01["origin_x"] = dev_column_origin									# button_origin_x
 textField01["origin_y"] = pgvar.pygame_window_height - 640		# button_origin_y
 textField01["width"] = pgvar.UI_sideBar_width					# button_width
 textField01["height"] = 20									# button_height
