@@ -48,6 +48,7 @@ import pgvar
 buttonHeight = 20
 display_origin = pgvar.pygame_window_height - 380
 forces_origin = pgvar.pygame_window_height - 680
+scale_origin = pgvar.pygame_window_height - 480
 
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
@@ -231,6 +232,47 @@ bForceNewOtherOpener["enabled"] = False
 bForceNewOtherOpener["color"] = pgvar.UI_button_color 					
 bForceNewOtherOpener["group"] = "forces"								
 bForceNewOtherOpener["visible"] = True	
+
+# # Scale Time
+
+lScaleTime = {}
+lScaleTime["name"] = "lScaleTime"								# button_name
+lScaleTime["origin_x"] = 0									# button_origin_x
+lScaleTime["origin_y"] = scale_origin						# button_origin_y
+lScaleTime["width"] = pgvar.UI_sideBar_width					# button_width
+lScaleTime["height"] = buttonHeight							# button_height
+lScaleTime["label_txt"] = "Time Step"							# button_label_txt
+lScaleTime["type"] = "label"									# buttonType
+lScaleTime["enabled"] = False								# buttonEnabled
+lScaleTime["color"] = pgvar.UI_label_color 					# buttonColor
+lScaleTime["group"] = "forces"								# buttonGroup
+lScaleTime["visible"] = True									# buttonVisible
+
+bScaleTime = {}
+bScaleTime["name"] = "bScaleTime"								
+bScaleTime["origin_x"] = 0									
+bScaleTime["origin_y"] = scale_origin	 + 20					
+bScaleTime["width"] = pgvar.UI_sideBar_width - 20					
+bScaleTime["height"] = buttonHeight							
+bScaleTime["label_txt"] = "1 s / frame"							
+bScaleTime["type"] = "sticky"									
+bScaleTime["enabled"] = False								
+bScaleTime["color"] = pgvar.UI_button_color					
+bScaleTime["group"] = "forces"								
+bScaleTime["visible"] = True									
+
+bScaleTimeOpener = {}
+bScaleTimeOpener["name"] = "bScaleTimeOpener"								
+bScaleTimeOpener["origin_x"] = pgvar.UI_sideBar_width - 20									
+bScaleTimeOpener["origin_y"] = scale_origin + 20					
+bScaleTimeOpener["width"] = 20					
+bScaleTimeOpener["height"] = buttonHeight							
+bScaleTimeOpener["label_txt"] = ">>"							
+bScaleTimeOpener["type"] = "dropdown"									
+bScaleTimeOpener["enabled"] = False								
+bScaleTimeOpener["color"] = pgvar.UI_button_color					
+bScaleTimeOpener["group"] = "forces"								
+bScaleTimeOpener["visible"] = True			
 
 # # Display options buttons:
 
@@ -1164,6 +1206,10 @@ allButtons[76] = bForceDarkEnergyOpener
 allButtons[77] = bForceNewOther
 allButtons[78] = bForceNewOtherOpener
 
+# Scale Time
+allButtons[79] = lScaleTime
+allButtons[80] = bScaleTime
+allButtons[81] = bScaleTimeOpener
 
 # Display Buttons
 allButtons[62] = b1D
