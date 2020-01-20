@@ -107,6 +107,45 @@ bStdImperial["color"] = pgvar.UI_button_color
 bStdImperial["group"] = "Standard"							
 bStdImperial["visible"] = True		
 
+lUnitSystem = {}
+lUnitSystem["name"] = "lUnitSystem"						
+lUnitSystem["origin_x"] = 0									
+lUnitSystem["origin_y"] = standard_origin	 + (2 * buttonHeight)		
+lUnitSystem["width"] = pgvar.UI_sideBar_width					
+lUnitSystem["height"] = buttonHeight							
+lUnitSystem["label_txt"] = "Unit System: "				
+lUnitSystem["type"] = "label"									
+lUnitSystem["enabled"] = False									
+lUnitSystem["color"] = pgvar.UI_label_color 					
+lUnitSystem["group"] = "Standard"						
+lUnitSystem["visible"] = True									
+
+tUnitSys = {}
+tUnitSys["name"] = "tUnitSys"											
+tUnitSys["origin_x"] = 0											
+tUnitSys["origin_y"] = standard_origin + (3 * buttonHeight)		
+tUnitSys["width"] = pgvar.UI_sideBar_width - 20						
+tUnitSys["height"] = 20											
+tUnitSys["label_txt"] = " MKS "										
+tUnitSys["type"] = "group"											
+tUnitSys["enabled"] = False										
+tUnitSys["color"] = pgvar.UI_button_color							
+tUnitSys["group"] = "Standard"							
+tUnitSys["visible"] = True			
+
+bUnitSysOpener = {}
+bUnitSysOpener["name"] = "bUnitSysOpener"											
+bUnitSysOpener["origin_x"] = pgvar.UI_sideBar_width - 20											
+bUnitSysOpener["origin_y"] = standard_origin + (3 * buttonHeight)		
+bUnitSysOpener["width"] = 20					
+bUnitSysOpener["height"] = 20											
+bUnitSysOpener["label_txt"] = ">>"										
+bUnitSysOpener["type"] = "group"											
+bUnitSysOpener["enabled"] = False										
+bUnitSysOpener["color"] = pgvar.UI_button_color							
+bUnitSysOpener["group"] = "Standard"							
+bUnitSysOpener["visible"] = True		
+
 # # Display Dimensions
 
 lDisplayDimensions = {}
@@ -1325,6 +1364,10 @@ allButtons[86] = bCalc3D
 allButtons[87] = lStandard 
 allButtons[88] = bStdMetric
 allButtons[89] = bStdImperial
+
+allButtons[90] = lUnitSystem
+allButtons[91] = tUnitSys
+allButtons[92] = bUnitSysOpener
 
 # Forces
 allButtons[66] = lForces
