@@ -62,6 +62,60 @@ dev_column_origin = pgvar.pygame_window_width - 300
 # ************************************************************************************************************************
 # ************************************************************************************************************************
 
+# # Display Dimensions
+
+lDisplayDimensions = {}
+lDisplayDimensions["name"] = "lDisplayDimensions"								# button_name
+lDisplayDimensions["origin_x"] = 0									# button_origin_x
+lDisplayDimensions["origin_y"] = 80									# button_origin_y
+lDisplayDimensions["width"] = pgvar.UI_sideBar_width					# button_width
+lDisplayDimensions["height"] = buttonHeight							# button_height
+lDisplayDimensions["label_txt"] = "Display Dimensions"							# button_label_txt
+lDisplayDimensions["type"] = "label"									# buttonType
+lDisplayDimensions["enabled"] = False								# buttonEnabled
+lDisplayDimensions["color"] = pgvar.UI_label_color 					# buttonColor
+lDisplayDimensions["group"] = "DisplayDimensions"								# buttonGroup
+lDisplayDimensions["visible"] = True									# buttonVisible
+
+b1D = {}
+b1D["name"] = "b1D"									# button_name
+b1D["origin_x"] = 0									# button_origin_x
+b1D["origin_y"] = 100									# button_origin_y
+b1D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
+b1D["height"] = 20									# button_height
+b1D["label_txt"] = "  1D"								# button_label_txt
+b1D["type"] = "group"									# buttonType
+b1D["enabled"] = False								# buttonEnabled
+b1D["color"] = pgvar.UI_button_color					# buttonColor
+b1D["group"] = "displayDimensions"					# buttonGroup
+b1D["visible"] = True									# buttonVisible
+
+b2D = {}
+b2D["name"] = "b2D"									# button_name
+b2D["origin_x"] = (pgvar.UI_sideBar_width / 3) 		# button_origin_x
+b2D["origin_y"] = 100		# button_origin_y
+b2D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
+b2D["height"] = 20									# button_height
+b2D["label_txt"] = "  2D"								# button_label_txt
+b2D["type"] = "group"									# buttonType
+b2D["enabled"] = False								# buttonEnabled
+b2D["color"] = pgvar.UI_button_color					# buttonColor
+b2D["group"] = "displayDimensions"					# buttonGroup
+b2D["visible"] = True									# buttonVisible
+
+b3D = {}
+b3D["name"] = "b3D"									# button_name
+b3D["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2 		# button_origin_x
+b3D["origin_y"] = 100		# button_origin_y
+b3D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
+b3D["height"] = 20									# button_height
+b3D["label_txt"] = "  3D"								# button_label_txt
+b3D["type"] = "group"									# buttonType
+b3D["enabled"] = False								# buttonEnabled
+b3D["color"] = pgvar.UI_button_color					# buttonColor
+b3D["group"] = "displayDimensions"					# buttonGroup
+b3D["visible"] = True									# buttonVisible
+
 
 # # Forces Buttons
 
@@ -283,51 +337,14 @@ labelDisplay["origin_x"] = 0										# button_origin_x
 labelDisplay["origin_y"] = display_origin							# button_origin_y
 labelDisplay["width"] = pgvar.UI_sideBar_width					# button_width
 labelDisplay["height"] = 20										# button_height
-labelDisplay["label_txt"] = "Display"								# button_label_txt
+labelDisplay["label_txt"] = "Display Options:"					# button_label_txt
 labelDisplay["type"] = "label"									# buttonType
 labelDisplay["enabled"] = False									# buttonEnabled
 labelDisplay["color"] = pgvar.UI_button_color						# buttonColor
 labelDisplay["group"] = "origin"									# buttonGroup
 labelDisplay["visible"] = True									# buttonVisible
 
-b1D = {}
-b1D["name"] = "b1D"									# button_name
-b1D["origin_x"] = 0									# button_origin_x
-b1D["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
-b1D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
-b1D["height"] = 20									# button_height
-b1D["label_txt"] = "  1D"								# button_label_txt
-b1D["type"] = "group"									# buttonType
-b1D["enabled"] = False								# buttonEnabled
-b1D["color"] = pgvar.UI_button_color					# buttonColor
-b1D["group"] = "displayDimensions"					# buttonGroup
-b1D["visible"] = True									# buttonVisible
 
-b2D = {}
-b2D["name"] = "b2D"									# button_name
-b2D["origin_x"] = (pgvar.UI_sideBar_width / 3) 		# button_origin_x
-b2D["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
-b2D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
-b2D["height"] = 20									# button_height
-b2D["label_txt"] = "  2D"								# button_label_txt
-b2D["type"] = "group"									# buttonType
-b2D["enabled"] = False								# buttonEnabled
-b2D["color"] = pgvar.UI_button_color					# buttonColor
-b2D["group"] = "displayDimensions"					# buttonGroup
-b2D["visible"] = True									# buttonVisible
-
-b3D = {}
-b3D["name"] = "b3D"									# button_name
-b3D["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2 		# button_origin_x
-b3D["origin_y"] = display_origin + (buttonHeight)		# button_origin_y
-b3D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
-b3D["height"] = 20									# button_height
-b3D["label_txt"] = "  3D"								# button_label_txt
-b3D["type"] = "group"									# buttonType
-b3D["enabled"] = False								# buttonEnabled
-b3D["color"] = pgvar.UI_button_color					# buttonColor
-b3D["group"] = "displayDimensions"					# buttonGroup
-b3D["visible"] = True									# buttonVisible
 
 
 buttonOrigin = {}
@@ -1191,6 +1208,9 @@ menu02popup01element08["visible"] = False																	# buttonVisible
 # ************************************************************************************************#
 
 allButtons = {}
+
+# Display Dimensions
+allButtons[82] = lDisplayDimensions
 
 # Forces
 allButtons[66] = lForces
