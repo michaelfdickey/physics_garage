@@ -46,10 +46,11 @@ import pgvar
 # maybe have small / medium and large button heights and widths? also move these to pgvar?
 
 buttonHeight = 20
-display_origin = pgvar.pygame_window_height - 380
+display_origin = pgvar.pygame_window_height - 380   #display options origin
 forces_origin = pgvar.pygame_window_height - 680
 scale_time_origin = pgvar.pygame_window_height - 480
 scale_display_origin = pgvar.pygame_window_height - 880
+display_dimensions_origin = pgvar.pygame_window_width - 1080
 
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
@@ -67,7 +68,7 @@ dev_column_origin = pgvar.pygame_window_width - 300
 lDisplayDimensions = {}
 lDisplayDimensions["name"] = "lDisplayDimensions"								# button_name
 lDisplayDimensions["origin_x"] = 0									# button_origin_x
-lDisplayDimensions["origin_y"] = 80									# button_origin_y
+lDisplayDimensions["origin_y"] = display_dimensions_origin									# button_origin_y
 lDisplayDimensions["width"] = pgvar.UI_sideBar_width					# button_width
 lDisplayDimensions["height"] = buttonHeight							# button_height
 lDisplayDimensions["label_txt"] = "Display Dimensions"							# button_label_txt
@@ -78,22 +79,22 @@ lDisplayDimensions["group"] = "DisplayDimensions"								# buttonGroup
 lDisplayDimensions["visible"] = True									# buttonVisible
 
 b1D = {}
-b1D["name"] = "b1D"									# button_name
-b1D["origin_x"] = 0									# button_origin_x
-b1D["origin_y"] = 100									# button_origin_y
-b1D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
-b1D["height"] = 20									# button_height
-b1D["label_txt"] = "  1D"								# button_label_txt
-b1D["type"] = "group"									# buttonType
-b1D["enabled"] = False								# buttonEnabled
-b1D["color"] = pgvar.UI_button_color					# buttonColor
-b1D["group"] = "displayDimensions"					# buttonGroup
-b1D["visible"] = True									# buttonVisible
+b1D["name"] = "b1D"											# button_name
+b1D["origin_x"] = 0											# button_origin_x
+b1D["origin_y"] = display_dimensions_origin + buttonHeight		# button_origin_y
+b1D["width"] = pgvar.UI_sideBar_width	 / 3						# button_width
+b1D["height"] = 20											# button_height
+b1D["label_txt"] = "  1D"										# button_label_txt
+b1D["type"] = "group"											# buttonType
+b1D["enabled"] = False										# buttonEnabled
+b1D["color"] = pgvar.UI_button_color							# buttonColor
+b1D["group"] = "displayDimensions"							# buttonGroup
+b1D["visible"] = True											# buttonVisible
 
 b2D = {}
 b2D["name"] = "b2D"									# button_name
 b2D["origin_x"] = (pgvar.UI_sideBar_width / 3) 		# button_origin_x
-b2D["origin_y"] = 100		# button_origin_y
+b2D["origin_y"] = display_dimensions_origin + buttonHeight			# button_origin_y
 b2D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
 b2D["height"] = 20									# button_height
 b2D["label_txt"] = "  2D"								# button_label_txt
@@ -106,7 +107,7 @@ b2D["visible"] = True									# buttonVisible
 b3D = {}
 b3D["name"] = "b3D"									# button_name
 b3D["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2 		# button_origin_x
-b3D["origin_y"] = 100		# button_origin_y
+b3D["origin_y"] = display_dimensions_origin + buttonHeight			# button_origin_y
 b3D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
 b3D["height"] = 20									# button_height
 b3D["label_txt"] = "  3D"								# button_label_txt
