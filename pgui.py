@@ -48,7 +48,8 @@ import pgvar
 buttonHeight = 20
 display_origin = pgvar.pygame_window_height - 380
 forces_origin = pgvar.pygame_window_height - 680
-scale_origin = pgvar.pygame_window_height - 480
+scale_time_origin = pgvar.pygame_window_height - 480
+scale_display_origin = pgvar.pygame_window_height - 880
 
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
@@ -238,7 +239,7 @@ bForceNewOtherOpener["visible"] = True
 lScaleTime = {}
 lScaleTime["name"] = "lScaleTime"								# button_name
 lScaleTime["origin_x"] = 0									# button_origin_x
-lScaleTime["origin_y"] = scale_origin						# button_origin_y
+lScaleTime["origin_y"] = scale_time_origin						# button_origin_y
 lScaleTime["width"] = pgvar.UI_sideBar_width					# button_width
 lScaleTime["height"] = buttonHeight							# button_height
 lScaleTime["label_txt"] = "Time Step"							# button_label_txt
@@ -251,7 +252,7 @@ lScaleTime["visible"] = True									# buttonVisible
 bScaleTime = {}
 bScaleTime["name"] = "bScaleTime"								
 bScaleTime["origin_x"] = 0									
-bScaleTime["origin_y"] = scale_origin	 + 20					
+bScaleTime["origin_y"] = scale_time_origin	 + 20					
 bScaleTime["width"] = pgvar.UI_sideBar_width - 20					
 bScaleTime["height"] = buttonHeight							
 bScaleTime["label_txt"] = "1 s / frame"							
@@ -264,7 +265,7 @@ bScaleTime["visible"] = True
 bScaleTimeOpener = {}
 bScaleTimeOpener["name"] = "bScaleTimeOpener"								
 bScaleTimeOpener["origin_x"] = pgvar.UI_sideBar_width - 20									
-bScaleTimeOpener["origin_y"] = scale_origin + 20					
+bScaleTimeOpener["origin_y"] = scale_time_origin + 20					
 bScaleTimeOpener["width"] = 20					
 bScaleTimeOpener["height"] = buttonHeight							
 bScaleTimeOpener["label_txt"] = ">>"							
@@ -400,41 +401,41 @@ buttonScale["visible"] = True										# buttonVisible
 """
 
 
-# # Scale
+# # Scale Time
+
+lScaleLabel = {}
+lScaleLabel["name"] = "lScaleLabel"							# button_name
+lScaleLabel["origin_x"] = 0									# button_origin_x
+lScaleLabel["origin_y"] = scale_display_origin				# button_origin_y
+lScaleLabel["width"] = pgvar.UI_sideBar_width									# button_width
+lScaleLabel["height"] = 20									# button_height
+lScaleLabel["label_txt"] = "Display Scale :"							# button_label_txt
+lScaleLabel["type"] = "label"								# buttonType
+lScaleLabel["enabled"] = False								# buttonEnabled
+lScaleLabel["color"] = pgvar.UI_label_color				# buttonColor
+lScaleLabel["group"] = "Scale"								# buttonGroup
+lScaleLabel["visible"] = True									# buttonVisible
 
 bScaleMinus = {}
 bScaleMinus["name"] = "bScaleMinus"							# button_name
 bScaleMinus["origin_x"] = 0									# button_origin_x
-bScaleMinus["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
-bScaleMinus["width"] = 20										# button_width
+bScaleMinus["origin_y"] = scale_display_origin + 20			# button_origin_y
+bScaleMinus["width"] = pgvar.UI_sideBar_width / 3				# button_width
 bScaleMinus["height"] = 20									# button_height
-bScaleMinus["label_txt"] = " - "								# button_label_txt
+bScaleMinus["label_txt"] = "   - "								# button_label_txt
 bScaleMinus["type"] = "pushy"									# buttonType
 bScaleMinus["enabled"] = False								# buttonEnabled
 bScaleMinus["color"] = pgvar.UI_button_color					# buttonColor
 bScaleMinus["group"] = "Scale"								# buttonGroup
 bScaleMinus["visible"] = True									# buttonVisible
 
-lScaleLabel = {}
-lScaleLabel["name"] = "lScaleLabel"							# button_name
-lScaleLabel["origin_x"] = 20									# button_origin_x
-lScaleLabel["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
-lScaleLabel["width"] = 60										# button_width
-lScaleLabel["height"] = 20									# button_height
-lScaleLabel["label_txt"] = " Scale "							# button_label_txt
-lScaleLabel["type"] = "sticky"								# buttonType
-lScaleLabel["enabled"] = False								# buttonEnabled
-lScaleLabel["color"] = pgvar.UI_button_color					# buttonColor
-lScaleLabel["group"] = "Scale"								# buttonGroup
-lScaleLabel["visible"] = True									# buttonVisible
-
 bScalePlus = {}
 bScalePlus["name"] = "bScalePlus"								# button_name
-bScalePlus["origin_x"] = 80									# button_origin_x
-bScalePlus["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
-bScalePlus["width"] = 20 										# button_width
+bScalePlus["origin_x"] = pgvar.UI_sideBar_width / 3			# button_origin_x
+bScalePlus["origin_y"] = scale_display_origin	 + 20				# button_origin_y
+bScalePlus["width"] = pgvar.UI_sideBar_width / 3 										# button_width
 bScalePlus["height"] = 20										# button_height
-bScalePlus["label_txt"] = " + "								# button_label_txt
+bScalePlus["label_txt"] = "   + "								# button_label_txt
 bScalePlus["type"] = "pushy"									# buttonType
 bScalePlus["enabled"] = False									# buttonEnabled
 bScalePlus["color"] = pgvar.UI_button_color					# buttonColor
@@ -443,11 +444,11 @@ bScalePlus["visible"] = True									# buttonVisible
 
 bScaleOpener = {}
 bScaleOpener["name"] = "bScaleOpener"								# button_name
-bScaleOpener["origin_x"] = pgvar.UI_sideBar_width - 20				# button_origin_x
-bScaleOpener["origin_y"] = pgvar.pygame_window_height - 280		# button_origin_y
-bScaleOpener["width"] = 20										# button_width
+bScaleOpener["origin_x"] =  (pgvar.UI_sideBar_width / 3)*2			# button_origin_x
+bScaleOpener["origin_y"] = scale_display_origin + 20					# button_origin_y
+bScaleOpener["width"] =  pgvar.UI_sideBar_width / 3										# button_width
 bScaleOpener["height"] = 20										# button_height
-bScaleOpener["label_txt"] = ">>"									# button_label_txt
+bScaleOpener["label_txt"] = "  >>"									# button_label_txt
 bScaleOpener["type"] = "textEntry"								# buttonType
 bScaleOpener["enabled"] = False									# buttonEnabled
 bScaleOpener["color"] = pgvar.UI_button_color						# buttonColor
@@ -457,7 +458,7 @@ bScaleOpener["visible"] = True									# buttonVisible
 tScaleSelection = {}
 tScaleSelection["name"] = "tScaleSelection"							# button_name
 tScaleSelection["origin_x"] = 0										# button_origin_x
-tScaleSelection["origin_y"] = pgvar.pygame_window_height - 260			# button_origin_y
+tScaleSelection["origin_y"] = scale_display_origin + 40				# button_origin_y
 tScaleSelection["width"] = pgvar.UI_sideBar_width						# button_width
 tScaleSelection["height"] = 20										# button_height
 tScaleSelection["label_txt"] = "pm (1.0 x 10^-12m)"					# button_label_txt
