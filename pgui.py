@@ -50,7 +50,8 @@ display_origin = pgvar.pygame_window_height - 380   #display options origin
 forces_origin = pgvar.pygame_window_height - 680
 scale_time_origin = pgvar.pygame_window_height - 480
 scale_display_origin = pgvar.pygame_window_height - 880
-display_dimensions_origin = pgvar.pygame_window_width - 1080
+display_dimensions_origin = pgvar.pygame_window_height - 1160
+calculation_dimensions_origin = pgvar.pygame_window_height - 1100
 
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
@@ -116,6 +117,61 @@ b3D["enabled"] = False								# buttonEnabled
 b3D["color"] = pgvar.UI_button_color					# buttonColor
 b3D["group"] = "displayDimensions"					# buttonGroup
 b3D["visible"] = True									# buttonVisible
+
+
+# # Calculation Dimensions
+
+lCalculationDimensions = {}
+lCalculationDimensions["name"] = "lCalculationDimensions"					# button_name
+lCalculationDimensions["origin_x"] = 0									# button_origin_x
+lCalculationDimensions["origin_y"] = calculation_dimensions_origin			# button_origin_y
+lCalculationDimensions["width"] = pgvar.UI_sideBar_width					# button_width
+lCalculationDimensions["height"] = buttonHeight							# button_height
+lCalculationDimensions["label_txt"] = "Calculation Dimens"			# button_label_txt
+lCalculationDimensions["type"] = "label"									# buttonType
+lCalculationDimensions["enabled"] = False									# buttonEnabled
+lCalculationDimensions["color"] = pgvar.UI_label_color 					# buttonColor
+lCalculationDimensions["group"] = "CalculationDimensions"					# buttonGroup
+lCalculationDimensions["visible"] = True									# buttonVisible
+
+bCalc1D = {}
+bCalc1D["name"] = "bCalc1D"											# button_name
+bCalc1D["origin_x"] = 0											# button_origin_x
+bCalc1D["origin_y"] = calculation_dimensions_origin + buttonHeight		# button_origin_y
+bCalc1D["width"] = pgvar.UI_sideBar_width	 / 3						# button_width
+bCalc1D["height"] = 20											# button_height
+bCalc1D["label_txt"] = "  1D"										# button_label_txt
+bCalc1D["type"] = "group"											# buttonType
+bCalc1D["enabled"] = False										# buttonEnabled
+bCalc1D["color"] = pgvar.UI_button_color							# buttonColor
+bCalc1D["group"] = "calculationDimesions"							# buttonGroup
+bCalc1D["visible"] = True											# buttonVisible
+
+bCalc2D = {}
+bCalc2D["name"] = "bCalc2D"											# button_name
+bCalc2D["origin_x"] = (pgvar.UI_sideBar_width / 3) 				# button_origin_x
+bCalc2D["origin_y"] = calculation_dimensions_origin + buttonHeight		# button_origin_y
+bCalc2D["width"] = pgvar.UI_sideBar_width	 / 3						# button_width
+bCalc2D["height"] = 20											# button_height
+bCalc2D["label_txt"] = "  2D"										# button_label_txt
+bCalc2D["type"] = "group"											# buttonType
+bCalc2D["enabled"] = False										# buttonEnabled
+bCalc2D["color"] = pgvar.UI_button_color							# buttonColor
+bCalc2D["group"] = "calculationDimesions"							# buttonGroup
+bCalc2D["visible"] = True											# buttonVisible
+	
+bCalc3D = {}		
+bCalc3D["name"] = "bCalc3D"												# button_name
+bCalc3D["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2					# button_origin_x
+bCalc3D["origin_y"] = calculation_dimensions_origin + buttonHeight			# button_origin_y
+bCalc3D["width"] = pgvar.UI_sideBar_width	 / 3							# button_width
+bCalc3D["height"] = 20												# button_height
+bCalc3D["label_txt"] = "  3D"											# button_label_txt
+bCalc3D["type"] = "group"												# buttonType
+bCalc3D["enabled"] = False											# buttonEnabled
+bCalc3D["color"] = pgvar.UI_button_color								# buttonColor
+bCalc3D["group"] = "calculationDimesions"								# buttonGroup
+bCalc3D["visible"] = True												# buttonVisible
 
 
 # # Forces Buttons
@@ -1212,6 +1268,16 @@ allButtons = {}
 
 # Display Dimensions
 allButtons[82] = lDisplayDimensions
+allButtons[62] = b1D
+allButtons[63] = b2D
+allButtons[64] = b3D
+
+# Calc Dimensions
+allButtons[83] = lCalculationDimensions
+allButtons[84] = bCalc1D
+allButtons[85] = bCalc2D
+allButtons[86] = bCalc3D
+
 
 # Forces
 allButtons[66] = lForces
@@ -1234,9 +1300,7 @@ allButtons[80] = bScaleTime
 allButtons[81] = bScaleTimeOpener
 
 # Display Buttons
-allButtons[62] = b1D
-allButtons[63] = b2D
-allButtons[64] = b3D
+
 allButtons[65] = bVectors
 
 # Scale
