@@ -52,6 +52,8 @@ scale_time_origin = pgvar.pygame_window_height - 480
 scale_display_origin = pgvar.pygame_window_height - 880
 display_dimensions_origin = pgvar.pygame_window_height - 1160
 calculation_dimensions_origin = pgvar.pygame_window_height - 1100
+standard_origin = pgvar.pygame_window_height - 1040
+
 
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
@@ -64,19 +66,60 @@ dev_column_origin = pgvar.pygame_window_width - 300
 # ************************************************************************************************************************
 # ************************************************************************************************************************
 
+# Standard
+
+lStandard = {}
+lStandard["name"] = "lStandard"						
+lStandard["origin_x"] = 0									
+lStandard["origin_y"] = standard_origin			
+lStandard["width"] = pgvar.UI_sideBar_width					
+lStandard["height"] = buttonHeight							
+lStandard["label_txt"] = "Standard: "				
+lStandard["type"] = "label"									
+lStandard["enabled"] = False									
+lStandard["color"] = pgvar.UI_label_color 					
+lStandard["group"] = "Standard"						
+lStandard["visible"] = True									
+
+bStdMetric = {}
+bStdMetric["name"] = "bStdMetric"											
+bStdMetric["origin_x"] = 0											
+bStdMetric["origin_y"] = standard_origin + buttonHeight		
+bStdMetric["width"] = pgvar.UI_sideBar_width / 2						
+bStdMetric["height"] = 20											
+bStdMetric["label_txt"] = " Metric "										
+bStdMetric["type"] = "group"											
+bStdMetric["enabled"] = False										
+bStdMetric["color"] = pgvar.UI_button_color							
+bStdMetric["group"] = "Standard"							
+bStdMetric["visible"] = True			
+
+bStdImperial = {}
+bStdImperial["name"] = "bStdImperial"											
+bStdImperial["origin_x"] = pgvar.UI_sideBar_width / 2												
+bStdImperial["origin_y"] = standard_origin + buttonHeight		
+bStdImperial["width"] = pgvar.UI_sideBar_width / 2						
+bStdImperial["height"] = 20											
+bStdImperial["label_txt"] = " Imperial "										
+bStdImperial["type"] = "group"											
+bStdImperial["enabled"] = False										
+bStdImperial["color"] = pgvar.UI_button_color							
+bStdImperial["group"] = "Standard"							
+bStdImperial["visible"] = True		
+
 # # Display Dimensions
 
 lDisplayDimensions = {}
-lDisplayDimensions["name"] = "lDisplayDimensions"								# button_name
+lDisplayDimensions["name"] = "lDisplayDimensions"						# button_name
 lDisplayDimensions["origin_x"] = 0									# button_origin_x
-lDisplayDimensions["origin_y"] = display_dimensions_origin									# button_origin_y
+lDisplayDimensions["origin_y"] = display_dimensions_origin			# button_origin_y
 lDisplayDimensions["width"] = pgvar.UI_sideBar_width					# button_width
 lDisplayDimensions["height"] = buttonHeight							# button_height
-lDisplayDimensions["label_txt"] = "Display Dimensions"							# button_label_txt
+lDisplayDimensions["label_txt"] = "Display Dimensions"				# button_label_txt
 lDisplayDimensions["type"] = "label"									# buttonType
-lDisplayDimensions["enabled"] = False								# buttonEnabled
+lDisplayDimensions["enabled"] = False									# buttonEnabled
 lDisplayDimensions["color"] = pgvar.UI_label_color 					# buttonColor
-lDisplayDimensions["group"] = "DisplayDimensions"								# buttonGroup
+lDisplayDimensions["group"] = "DisplayDimensions"						# buttonGroup
 lDisplayDimensions["visible"] = True									# buttonVisible
 
 b1D = {}
@@ -1278,6 +1321,10 @@ allButtons[84] = bCalc1D
 allButtons[85] = bCalc2D
 allButtons[86] = bCalc3D
 
+# Standards
+allButtons[87] = lStandard 
+allButtons[88] = bStdMetric
+allButtons[89] = bStdImperial
 
 # Forces
 allButtons[66] = lForces
