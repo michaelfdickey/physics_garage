@@ -47,9 +47,9 @@ import pgvar
 
 buttonHeight = 20
 display_origin = pgvar.pygame_window_height - 380   #display options origin
-forces_origin = pgvar.pygame_window_height - 680
-scale_time_origin = pgvar.pygame_window_height - 480
-scale_display_origin = pgvar.pygame_window_height - 880
+forces_origin = pgvar.pygame_window_height - 800
+scale_time_origin = pgvar.pygame_window_height - 860
+scale_display_origin = pgvar.pygame_window_height -940
 display_dimensions_origin = pgvar.pygame_window_height - 1160
 calculation_dimensions_origin = pgvar.pygame_window_height - 1100
 standard_origin = pgvar.pygame_window_height - 1040
