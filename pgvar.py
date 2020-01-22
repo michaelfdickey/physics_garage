@@ -46,6 +46,10 @@ import pbproc
 # ************************************************************************************************#
 
 
+# # screen size
+pygame_window_width = 1200
+pygame_window_height = 1200
+
 # # pygame font
 pygame.font.init()																# needs to be called at the start of the program
 myfont = pygame.font.SysFont('Arial',15)										# GUI font type and size
@@ -64,10 +68,6 @@ color_pink = (255,200,200)
 color_gray = (128,128,128)
 color_yellow = (255,255,0)
 color_yellow_grid = (128,128,0)
-
-# # screen size
-pygame_window_width = 1200
-pygame_window_height = 1200
 
 # # interface formatting
 UI_topBar_height = 20

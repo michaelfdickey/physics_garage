@@ -46,7 +46,7 @@ import pgvar
 # maybe have small / medium and large button heights and widths? also move these to pgvar?
 
 buttonHeight = 20
-display_origin = pgvar.pygame_window_height - 380   #display options origin
+display_origin = pgvar.pygame_window_height - 340   #display options origin
 forces_origin = pgvar.pygame_window_height - 800
 scale_time_origin = pgvar.pygame_window_height - 860
 scale_display_origin = pgvar.pygame_window_height -940
@@ -483,13 +483,10 @@ labelDisplay["color"] = pgvar.UI_button_color						# buttonColor
 labelDisplay["group"] = "origin"									# buttonGroup
 labelDisplay["visible"] = True									# buttonVisible
 
-
-
-
 buttonOrigin = {}
 buttonOrigin["name"] = "origin"								# button_name
 buttonOrigin["origin_x"] = 0									# button_origin_x
-buttonOrigin["origin_y"] = display_origin + (buttonHeight *2)		# button_origin_y
+buttonOrigin["origin_y"] = display_origin + (buttonHeight )		# button_origin_y
 buttonOrigin["width"] = pgvar.UI_sideBar_width				# button_width
 buttonOrigin["height"] = 20									# button_height
 buttonOrigin["label_txt"] = "Origin                      +"				# button_label_txt
@@ -502,7 +499,7 @@ buttonOrigin["visible"] = True								# buttonVisible
 buttonGrid = {}
 buttonGrid["name"] = "grid"									# button_name
 buttonGrid["origin_x"] = 0									# button_origin_x
-buttonGrid["origin_y"] = display_origin + (buttonHeight * 3)	# button_origin_y
+buttonGrid["origin_y"] = display_origin + (buttonHeight * 2)	# button_origin_y
 buttonGrid["width"] = pgvar.UI_sideBar_width					# button_width
 buttonGrid["height"] = 20										# button_height
 buttonGrid["label_txt"] = "Grid                          #"					# button_label_txt
@@ -515,8 +512,8 @@ buttonGrid["visible"] = True									# buttonVisible
 buttonFPS = {}
 buttonFPS["name"] = "fps"										# button_name
 buttonFPS["origin_x"] = 0										# button_origin_x
-buttonFPS["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
-buttonFPS["width"] = pgvar.UI_sideBar_width / 2				# button_width
+buttonFPS["origin_y"] = display_origin + (buttonHeight * 3)		# button_origin_y
+buttonFPS["width"] = pgvar.UI_sideBar_width					# button_width
 buttonFPS["height"] = 20										# button_height
 buttonFPS["label_txt"] = " FPS "								# button_label_txt
 buttonFPS["type"] = "sticky"									# buttonType
@@ -527,34 +524,16 @@ buttonFPS["visible"] = True									# buttonVisible
 
 bVectors = {}
 bVectors["name"] = "bVectors"									# button_name
-bVectors["origin_x"] = pgvar.UI_sideBar_width / 2				# button_origin_x
+bVectors["origin_x"] = 0										# button_origin_x
 bVectors["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
-bVectors["width"] = pgvar.UI_sideBar_width / 2					# button_width
+bVectors["width"] = pgvar.UI_sideBar_width					# button_width
 bVectors["height"] = 20										# button_height
-bVectors["label_txt"] = " Vectors "							# button_label_txt
+bVectors["label_txt"] = " Force Vectors "						# button_label_txt
 bVectors["type"] = "sticky"									# buttonType
 bVectors["enabled"] = False									# buttonEnabled
 bVectors["color"] = pgvar.UI_button_color						# buttonColor
 bVectors["group"] = "vectors"									# buttonGroup
 bVectors["visible"] = True									# buttonVisible
-
-
-
-"""
-# old scale button, removing
-buttonScale = {}
-buttonScale["name"] = "scale"										# button_name
-buttonScale["origin_x"] = 0										# button_origin_x
-buttonScale["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
-buttonScale["width"] = pgvar.UI_sideBar_width						# button_width
-buttonScale["height"] = 20										# button_height
-buttonScale["label_txt"] = "Scale          |<-  --  ->|"					# button_label_txt
-buttonScale["type"] = "sticky"									# buttonType
-buttonScale["enabled"] = False									# buttonEnabled
-buttonScale["color"] = pgvar.UI_button_color						# buttonColor
-buttonScale["group"] = "scale"									# buttonGroup
-buttonScale["visible"] = True										# buttonVisible
-"""
 
 
 # # Scale Time
@@ -747,9 +726,6 @@ bClearSimulation["enabled"] = True
 bClearSimulation["color"] = pgvar.UI_button_color
 bClearSimulation["group"] = "SimulationControl"
 bClearSimulation["visible"] = True
-
-
-
 
 
 # # Exit Button:
@@ -1090,83 +1066,83 @@ textField01["color"] = pgvar.UI_text_entry_box_color			# buttonColor
 textField01["group"] = "text01"								# buttonGroup
 textField01["visible"] = True									# buttonVisible
 
-bMenu01 = {}
-bMenu01["name"] = "menu01"									# button_name
-bMenu01["origin_x"] = pgvar.UI_sideBar_width					# button_origin_x
-bMenu01["origin_y"] = 0										# button_origin_y
-bMenu01["width"] = 150										# button_width
-bMenu01["height"] = 20										# button_height
-bMenu01["label_txt"] = " Menu 01 Sticky"						# button_label_txt
-bMenu01["type"] = "menu"										# buttonType
-bMenu01["enabled"] = False									# buttonEnabled
-bMenu01["color"] = pgvar.UI_button_color						# buttonColor
-bMenu01["group"] = "menu01"									# buttonGroup
-bMenu01["visible"] = True										# buttonVisible
+mInsert = {}
+mInsert["name"] = "InsertMenu"								# button_name
+mInsert["origin_x"] = pgvar.UI_sideBar_width + 20				# button_origin_x
+mInsert["origin_y"] = 0										# button_origin_y
+mInsert["width"] = 150										# button_width
+mInsert["height"] = 20										# button_height
+mInsert["label_txt"] = " Insert"								# button_label_txt
+mInsert["type"] = "menu"										# buttonType
+mInsert["enabled"] = False									# buttonEnabled
+mInsert["color"] = pgvar.UI_button_color						# buttonColor
+mInsert["group"] = "InsertMenu"									# buttonGroup
+mInsert["visible"] = True										# buttonVisible
 
-bMenu01option01 = {}
-bMenu01option01["name"] = "menu01option01"					# button_name
-bMenu01option01["origin_x"] = pgvar.UI_sideBar_width			# button_origin_x
-bMenu01option01["origin_y"] = 20								# button_origin_y
-bMenu01option01["width"] = 150								# button_width
-bMenu01option01["height"] = 20								# button_height
-bMenu01option01["label_txt"] = " Monday "						# button_label_txt
-bMenu01option01["type"] = "menu"								# buttonType
-bMenu01option01["enabled"] = False							# buttonEnabled
-bMenu01option01["color"] = pgvar.UI_button_color				# buttonColor
-bMenu01option01["group"] = "menu01"							# buttonGroup
-bMenu01option01["visible"] = False							# buttonVisible
+mInsertoption01 = {}
+mInsertoption01["name"] = "menu01option01"					# button_name
+mInsertoption01["origin_x"] = pgvar.UI_sideBar_width + 20		# button_origin_x
+mInsertoption01["origin_y"] = 20								# button_origin_y
+mInsertoption01["width"] = 150								# button_width
+mInsertoption01["height"] = 20								# button_height
+mInsertoption01["label_txt"] = " Particle "					# button_label_txt
+mInsertoption01["type"] = "menu"								# buttonType
+mInsertoption01["enabled"] = False							# buttonEnabled
+mInsertoption01["color"] = pgvar.UI_button_color				# buttonColor
+mInsertoption01["group"] = "InsertMenu"							# buttonGroup
+mInsertoption01["visible"] = False							# buttonVisible
 
-bMenu01option02 = {}
-bMenu01option02["name"] = "menu01option02"					# button_name
-bMenu01option02["origin_x"] = pgvar.UI_sideBar_width			# button_origin_x
-bMenu01option02["origin_y"] = 40								# button_origin_y
-bMenu01option02["width"] = 150								# button_width
-bMenu01option02["height"] = 20								# button_height
-bMenu01option02["label_txt"] = " Tuesday "						# button_label_txt
-bMenu01option02["type"] = "menu"								# buttonType
-bMenu01option02["enabled"] = False							# buttonEnabled
-bMenu01option02["color"] = pgvar.UI_button_color				# buttonColor
-bMenu01option02["group"] = "menu01"							# buttonGroup
-bMenu01option02["visible"] = False							# buttonVisible
+mInsertoption02 = {}
+mInsertoption02["name"] = "menu01option02"					# button_name
+mInsertoption02["origin_x"] = pgvar.UI_sideBar_width + 20			# button_origin_x
+mInsertoption02["origin_y"] = 40								# button_origin_y
+mInsertoption02["width"] = 150								# button_width
+mInsertoption02["height"] = 20								# button_height
+mInsertoption02["label_txt"] = " Emitter "						# button_label_txt
+mInsertoption02["type"] = "menu"								# buttonType
+mInsertoption02["enabled"] = False							# buttonEnabled
+mInsertoption02["color"] = pgvar.UI_button_color				# buttonColor
+mInsertoption02["group"] = "InsertMenu"							# buttonGroup
+mInsertoption02["visible"] = False							# buttonVisible
 
-bMenu01option03 = {}
-bMenu01option03["name"] = "menu01option03"					# button_name
-bMenu01option03["origin_x"] = pgvar.UI_sideBar_width			# button_origin_x
-bMenu01option03["origin_y"] = 60								# button_origin_y
-bMenu01option03["width"] = 150								# button_width
-bMenu01option03["height"] = 20								# button_height
-bMenu01option03["label_txt"] = " Wednesday "					# button_label_txt
-bMenu01option03["type"] = "menu"								# buttonType
-bMenu01option03["enabled"] = False							# buttonEnabled
-bMenu01option03["color"] = pgvar.UI_button_color				# buttonColor
-bMenu01option03["group"] = "menu01"							# buttonGroup
-bMenu01option03["visible"] = False							# buttonVisible
+mInsertoption03 = {}
+mInsertoption03["name"] = "menu01option03"					# button_name
+mInsertoption03["origin_x"] = pgvar.UI_sideBar_width + 20			# button_origin_x
+mInsertoption03["origin_y"] = 60								# button_origin_y
+mInsertoption03["width"] = 150								# button_width
+mInsertoption03["height"] = 20								# button_height
+mInsertoption03["label_txt"] = " Object "					# button_label_txt
+mInsertoption03["type"] = "menu"								# buttonType
+mInsertoption03["enabled"] = False							# buttonEnabled
+mInsertoption03["color"] = pgvar.UI_button_color				# buttonColor
+mInsertoption03["group"] = "InsertMenu"							# buttonGroup
+mInsertoption03["visible"] = False							# buttonVisible
 
-bMenu01option04 = {}
-bMenu01option04["name"] = "menu01option04"					# button_name
-bMenu01option04["origin_x"] = pgvar.UI_sideBar_width			# button_origin_x
-bMenu01option04["origin_y"] = 80								# button_origin_y
-bMenu01option04["width"] = 150								# button_width
-bMenu01option04["height"] = 20								# button_height
-bMenu01option04["label_txt"] = " Thursday "					# button_label_txt
-bMenu01option04["type"] = "menu"								# buttonType
-bMenu01option04["enabled"] = False 							# buttonEnabled
-bMenu01option04["color"] = pgvar.UI_button_color				# buttonColor
-bMenu01option04["group"] = "menu01"							# buttonGroup
-bMenu01option04["visible"] = False							# buttonVisible
+mInsertoption04 = {}
+mInsertoption04["name"] = "menu01option04"					# button_name
+mInsertoption04["origin_x"] = pgvar.UI_sideBar_width	+ 20		# button_origin_x
+mInsertoption04["origin_y"] = 80								# button_origin_y
+mInsertoption04["width"] = 150								# button_width
+mInsertoption04["height"] = 20								# button_height
+mInsertoption04["label_txt"] = " Material "					# button_label_txt
+mInsertoption04["type"] = "menu"								# buttonType
+mInsertoption04["enabled"] = False 							# buttonEnabled
+mInsertoption04["color"] = pgvar.UI_button_color				# buttonColor
+mInsertoption04["group"] = "InsertMenu"							# buttonGroup
+mInsertoption04["visible"] = False							# buttonVisible
 
-bMenu01option05 = {}
-bMenu01option05["name"] = "menu01option05"					# button_name
-bMenu01option05["origin_x"] = pgvar.UI_sideBar_width			# button_origin_x
-bMenu01option05["origin_y"] = 100								# button_origin_y
-bMenu01option05["width"] = 150								# button_width
-bMenu01option05["height"] = 20								# button_height
-bMenu01option05["label_txt"] = " Friday "						# button_label_txt
-bMenu01option05["type"] = "menu"								# buttonType
-bMenu01option05["enabled"] = False							# buttonEnabled
-bMenu01option05["color"] = pgvar.UI_button_color				# buttonColor
-bMenu01option05["group"] = "menu01"							# buttonGroup
-bMenu01option05["visible"] = False							# buttonVisible
+mInsertoption05 = {}
+mInsertoption05["name"] = "menu01option05"					# button_name
+mInsertoption05["origin_x"] = pgvar.UI_sideBar_width	+ 20		# button_origin_x
+mInsertoption05["origin_y"] = 100								# button_origin_y
+mInsertoption05["width"] = 150								# button_width
+mInsertoption05["height"] = 20								# button_height
+mInsertoption05["label_txt"] = " Instrument / Environment "		# button_label_txt
+mInsertoption05["type"] = "menu"								# buttonType
+mInsertoption05["enabled"] = False							# buttonEnabled
+mInsertoption05["color"] = pgvar.UI_button_color				# buttonColor
+mInsertoption05["group"] = "InsertMenu"							# buttonGroup
+mInsertoption05["visible"] = False							# buttonVisible
 
 bMenu02 = {}
 bMenu02["name"] = "menu02"											# button_name
@@ -1452,12 +1428,12 @@ allButtons[27] = bDropdown01option01 	# Dropdown01 option 01
 allButtons[28] = bDropdown01option02 	# Dropdown01 option 02
 allButtons[29] = bDropdown01option03 	# Dropdown01 option 03
 
-allButtons[30] = bMenu01				# Menu 01
-allButtons[31] = bMenu01option01		# Menu 01 - option 01 - Monday
-allButtons[32] = bMenu01option02		# Menu 01 - option 02 - Tuesday
-allButtons[33] = bMenu01option03		# Menu 01 - option 03 - Wednesday
-allButtons[34] = bMenu01option04		# Menu 01 - option 04 - Thursday
-allButtons[35] = bMenu01option05		# Menu 01 - option 05 - Friday
+allButtons[30] = mInsert				# Menu 01
+allButtons[31] = mInsertoption01		# Menu 01 - option 01 - Monday
+allButtons[32] = mInsertoption02		# Menu 01 - option 02 - Tuesday
+allButtons[33] = mInsertoption03		# Menu 01 - option 03 - Wednesday
+allButtons[34] = mInsertoption04		# Menu 01 - option 04 - Thursday
+allButtons[35] = mInsertoption05		# Menu 01 - option 05 - Friday
 
 allButtons[36] = bMenu02				# Menu 02
 allButtons[38] = lTextField01			# Text Field - label
