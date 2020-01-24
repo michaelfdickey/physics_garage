@@ -99,6 +99,15 @@ def updateStickyButtons(selected_button):
 			pfunc.defineButtons()
 
 
+	if selected_button == "bPauseSimulation":
+		if pgui.bPauseSimulation["enabled"] == False:
+			pgui.bPauseSimulation["enabled"] = True
+			pgui.bPauseSimulation["color"] = pgvar.UI_button_selected_color
+			pgui.bPlaySimulation["enabled"] = False
+			pgui.bPlaySimulation["color"] = pgvar.UI_button_color
+
+			pfunc.defineButtons()	
+
 	
 	if selected_button == "sticky01":
 		if pgui.buttonSticky01["enabled"] == False:
