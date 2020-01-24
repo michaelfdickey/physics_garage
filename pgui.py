@@ -686,7 +686,7 @@ bPauseSimulation["height"] = 20
 bPauseSimulation["label_txt"] = "Pause Simulation"
 bPauseSimulation["type"] = "sticky"
 bPauseSimulation["enabled"] = True
-bPauseSimulation["color"] = pgvar.UI_button_color
+bPauseSimulation["color"] = pgvar.UI_button_selected_color
 bPauseSimulation["group"] = "SimulationControl"
 bPauseSimulation["visible"] = True
 
@@ -725,7 +725,7 @@ bClearSimulation["height"] = 20
 bClearSimulation["label_txt"] = "Clear Simulation"
 bClearSimulation["type"] = "sticky"
 bClearSimulation["enabled"] = True
-bClearSimulation["color"] = pgvar.UI_button_color
+bClearSimulation["color"] = pgvar.UI_button_disabled
 bClearSimulation["group"] = "SimulationControl"
 bClearSimulation["visible"] = True
 

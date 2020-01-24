@@ -81,6 +81,10 @@ def updateStickyButtons(selected_button):
 			pgui.bPlaySimulation["enabled"] = True
 			pgui.bPlaySimulation["color"] = pgvar.UI_button_selected_color
 			print moduleName, pfunc.lineNum(), "flipped bPlaySimulation from false to true"
+			
+			pgui.bPauseSimulation["enabled"] = False
+			pgui.bPauseSimulation["color"] = pgvar.UI_button_color
+
 			pfunc.defineButtons()	
 			
 		elif pgui.bPlaySimulation["enabled"] == True:
@@ -88,6 +92,10 @@ def updateStickyButtons(selected_button):
 			pgui.bPlaySimulation["enabled"] = False
 			pgui.bPlaySimulation["color"] = pgvar.UI_button_color
 			print moduleName, pfunc.lineNum(), "flipped bPlaySimulation from true to false"
+
+			pgui.bPauseSimulation["enabled"] = True
+			pgui.bPauseSimulation["color"] = pgvar.UI_button_selected_color
+
 			pfunc.defineButtons()
 
 
