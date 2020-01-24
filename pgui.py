@@ -60,6 +60,8 @@ group03_origin = pgvar.pygame_window_height - 1020
 dropdown01_origin = pgvar.pygame_window_height - 600
 dev_column_origin = pgvar.pygame_window_width - 300
 
+bMenu02_origin = pgvar.UI_sideBar_width + 20 + (pgvar.UI_menuButton_width * 2)
+
 # ************************************************************************************************************************
 # ************************************************************************************************************************
 # 	button dictionaries	#
@@ -1146,20 +1148,20 @@ mInsertoption05["visible"] = False							# buttonVisible
 
 bMenu02 = {}
 bMenu02["name"] = "menu02"											# button_name
-bMenu02["origin_x"] = pgvar.UI_sideBar_width + pgvar.UI_menuButton_width		# button_origin_x
+bMenu02["origin_x"] = bMenu02_origin									# button_origin_x
 bMenu02["origin_y"] = 0												# button_origin_y
-bMenu02["width"] = pgvar.UI_menuButton_width												# button_width
+bMenu02["width"] = pgvar.UI_menuButton_width							# button_width
 bMenu02["height"] = 20												# button_height
 bMenu02["label_txt"] = " Menu 02"										# button_label_txt
 bMenu02["type"] = "menu"												# buttonType
 bMenu02["enabled"] = False											# buttonEnabled
 bMenu02["color"] = pgvar.UI_button_color								# buttonColor
 bMenu02["group"] = "menu02"											# buttonGroup
-bMenu02["visible"] = True											# buttonVisible
+bMenu02["visible"] = True												# buttonVisible
 
 bMenu02popup01 = {}
 bMenu02popup01["name"] = "menu02popup01"										# button_name
-bMenu02popup01["origin_x"] = pgvar.UI_sideBar_width + pgvar.UI_menuButton_width		# button_origin_x
+bMenu02popup01["origin_x"] = bMenu02_origin			# button_origin_x
 bMenu02popup01["origin_y"] = 20												# button_origin_y
 bMenu02popup01["width"] = 150													# button_width
 bMenu02popup01["height"] = 20													# button_height
@@ -1173,7 +1175,7 @@ bMenu02popup01["visible"] = False												# buttonVisible
 
 bMenu02popup02 = {}
 bMenu02popup02["name"] = "menu02popup02"							# button_name
-bMenu02popup02["origin_x"] = pgvar.UI_sideBar_width + pgvar.UI_menuButton_width	# button_origin_x
+bMenu02popup02["origin_x"] = bMenu02_origin		# button_origin_x
 bMenu02popup02["origin_y"] = 40										# button_origin_y
 bMenu02popup02["width"] = 150										# button_width
 bMenu02popup02["height"] = 20										# button_height
@@ -1186,7 +1188,7 @@ bMenu02popup02["visible"] = False											# buttonVisible
 
 bMenu02popup03 = {}
 bMenu02popup03["name"] = "menu02popup03"									# button_name
-bMenu02popup03["origin_x"] = pgvar.UI_sideBar_width + pgvar.UI_menuButton_width	# button_origin_x
+bMenu02popup03["origin_x"] = bMenu02_origin		# button_origin_x
 bMenu02popup03["origin_y"] = 60											# button_origin_y
 bMenu02popup03["width"] = 150												# button_width
 bMenu02popup03["height"] = 20												# button_height
