@@ -60,7 +60,7 @@ group03_origin = pgvar.pygame_window_height - 1020
 dropdown01_origin = pgvar.pygame_window_height - 600
 dev_column_origin = pgvar.pygame_window_width - 300
 
-bMenu02_origin = pgvar.UI_sideBar_width + 20 + (pgvar.UI_menuButton_width * 2)
+bMenu02_origin = pgvar.UI_sideBar_width + 20 + (pgvar.UI_menuButton_width * 4)
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -1235,7 +1235,7 @@ menu02popup01element02["visible"] = False											# buttonVisible
 menu02popup01element03 = {}
 menu02popup01element03["name"] = "menu02popup01element03"							# button_name
 menu02popup01element03["origin_x"] = pgvar.UI_popup_small_origin_x				# button_origin_x
-menu02popup01element03["origin_y"] = pgvar.UI_popup_small_origin_y + 40			# button_origin_y
+menu02popup01element03["origin_y"] = pgvar.UI_popup_small_origin_y + 20			# button_origin_y
 menu02popup01element03["width"] = pgvar.UI_popup_small_width						# button_width
 menu02popup01element03["height"] = 20												# button_height
 menu02popup01element03["label_txt"] = " Do Something Interesting:"					# button_label_txt
@@ -1249,7 +1249,7 @@ menu02popup01element03["visible"] = False											# buttonVisible
 menu02popup01element04 = {}
 menu02popup01element04["name"] = "menu02popup01element04"					# button_name
 menu02popup01element04["origin_x"] = pgvar.UI_popup_small_origin_x + 20			# button_origin_x
-menu02popup01element04["origin_y"] = pgvar.UI_popup_small_origin_y + 80			# button_origin_y
+menu02popup01element04["origin_y"] = pgvar.UI_popup_small_origin_y + 60			# button_origin_y
 menu02popup01element04["width"] = 80										# button_width
 menu02popup01element04["height"] = 20										# button_height
 menu02popup01element04["label_txt"] = "Something"							# button_label_txt
@@ -1263,7 +1263,7 @@ menu02popup01element04["visible"] = False									# buttonVisible
 menu02popup01element05 = {}
 menu02popup01element05["name"] = "menu02popup01element05"						# button_name
 menu02popup01element05["origin_x"] = pgvar.UI_popup_small_origin_x + 20		# button_origin_x
-menu02popup01element05["origin_y"] = pgvar.UI_popup_small_origin_y + 100		# button_origin_y
+menu02popup01element05["origin_y"] = pgvar.UI_popup_small_origin_y + 80		# button_origin_y
 menu02popup01element05["width"] = 80											# button_width
 menu02popup01element05["height"] = 20											# button_height
 menu02popup01element05["label_txt"] = "Interesting"							# button_label_txt
