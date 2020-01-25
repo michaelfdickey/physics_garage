@@ -56,7 +56,7 @@ myfont = pgvar.myfont
 
 
 class Button:
-	def __init__ (self, (x,y), button_name, x_width, y_height, button_label_txt, buttonType, buttonEnabled, buttonColor, buttonVisible):
+	def __init__ (self, (x,y), button_name, x_width, y_height, button_label_txt, buttonType, buttonEnabled, buttonColor, buttonVisible, buttonAvailable):
 		self.button_name = button_name
 		self.x = x
 		self.x_width = x_width
@@ -69,6 +69,7 @@ class Button:
 		self.buttonType = buttonType  
 		self.buttonEnabled = buttonEnabled
 		self.buttonVisible = buttonVisible
+		self.buttonAvailable = buttonAvailable
 
 	# # displays buttons
 	def display(self):
@@ -78,23 +79,35 @@ class Button:
 			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
 			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	#border
 
-			label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			if self.buttonAvailable == False:
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)
+			elif self.buttonAvailable == True:
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			
 			screen.blit(label, (self.x + 5, self.y))
 
 		# render "sticky" type buttons
 		elif self.buttonType == "sticky":	
 			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
 			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	#border
-
-			label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			
+			if self.buttonAvailable == False:
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)
+			elif self.buttonAvailable == True:
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			
 			screen.blit(label, (self.x + 5, self.y))
 
 		# render "label" type buttons
 		elif self.buttonType == "label":
 			self.color = pgvar.UI_label_color																	# since self.color = buttonColor by default, this overwrites that for labels
 			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
-
-			label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			
+			if self.buttonAvailable == False:
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)
+			elif self.buttonAvailable == True:
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			
 			screen.blit(label, (self.x + 5, self.y))
 
 		# render "group" type buttons

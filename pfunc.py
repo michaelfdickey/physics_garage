@@ -129,9 +129,10 @@ def defineButtons():
 		buttonColor = buttonToDraw["color"]
 		buttonGroup = buttonToDraw["group"]
 		buttonVisible = buttonToDraw["visible"]
+		buttonAvailable = buttonToDraw["available"]
 
 		# define button then add button to display list
-		created_button = pclass.Button((button_origin_x,button_origin_y), button_name, button_width, button_height, button_label_txt, buttonType, buttonEnabled,  buttonColor, buttonVisible)
+		created_button = pclass.Button((button_origin_x,button_origin_y), button_name, button_width, button_height, button_label_txt, buttonType, buttonEnabled,  buttonColor, buttonVisible, buttonAvailable)
 		my_buttons.append(created_button)
 		#print " my_buttons length: ", len(my_buttons)
 

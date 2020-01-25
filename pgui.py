@@ -81,7 +81,8 @@ lStandard["type"] = "label"
 lStandard["enabled"] = False									
 lStandard["color"] = pgvar.UI_label_color 					
 lStandard["group"] = "Standard"						
-lStandard["visible"] = True									
+lStandard["visible"] = True
+lStandard["available"] = True						# disables the button entirely from the program						
 
 bStdMetric = {}
 bStdMetric["name"] = "bStdMetric"											
@@ -95,6 +96,8 @@ bStdMetric["enabled"] = False
 bStdMetric["color"] = pgvar.UI_button_color							
 bStdMetric["group"] = "Standard"							
 bStdMetric["visible"] = True			
+bStdMetric["available"] = True
+
 
 bStdImperial = {}
 bStdImperial["name"] = "bStdImperial"											
@@ -108,6 +111,7 @@ bStdImperial["enabled"] = False
 bStdImperial["color"] = pgvar.UI_button_color							
 bStdImperial["group"] = "Standard"							
 bStdImperial["visible"] = True		
+bStdImperial["available"] = True
 
 lUnitSystem = {}
 lUnitSystem["name"] = "lUnitSystem"						
@@ -121,6 +125,7 @@ lUnitSystem["enabled"] = False
 lUnitSystem["color"] = pgvar.UI_label_color 					
 lUnitSystem["group"] = "Standard"						
 lUnitSystem["visible"] = True									
+lUnitSystem["available"] = True
 
 tUnitSys = {}
 tUnitSys["name"] = "tUnitSys"											
@@ -134,6 +139,7 @@ tUnitSys["enabled"] = False
 tUnitSys["color"] = pgvar.UI_button_color							
 tUnitSys["group"] = "Standard"							
 tUnitSys["visible"] = True			
+tUnitSys["available"] = True
 
 bUnitSysOpener = {}
 bUnitSysOpener["name"] = "bUnitSysOpener"											
@@ -147,6 +153,7 @@ bUnitSysOpener["enabled"] = False
 bUnitSysOpener["color"] = pgvar.UI_button_color							
 bUnitSysOpener["group"] = "Standard"							
 bUnitSysOpener["visible"] = True		
+bUnitSysOpener["available"] = True
 
 # # Display Dimensions
 
@@ -162,6 +169,7 @@ lDisplayDimensions["enabled"] = False									# buttonEnabled
 lDisplayDimensions["color"] = pgvar.UI_label_color 					# buttonColor
 lDisplayDimensions["group"] = "DisplayDimensions"						# buttonGroup
 lDisplayDimensions["visible"] = True									# buttonVisible
+lDisplayDimensions["available"] = True
 
 b1D = {}
 b1D["name"] = "b1D"											# button_name
@@ -175,6 +183,7 @@ b1D["enabled"] = False										# buttonEnabled
 b1D["color"] = pgvar.UI_button_color							# buttonColor
 b1D["group"] = "displayDimensions"							# buttonGroup
 b1D["visible"] = True											# buttonVisible
+b1D["available"] = True
 
 b2D = {}
 b2D["name"] = "b2D"									# button_name
@@ -188,6 +197,7 @@ b2D["enabled"] = False								# buttonEnabled
 b2D["color"] = pgvar.UI_button_color					# buttonColor
 b2D["group"] = "displayDimensions"					# buttonGroup
 b2D["visible"] = True									# buttonVisible
+b2D["available"] = True
 
 b3D = {}
 b3D["name"] = "b3D"									# button_name
@@ -201,6 +211,7 @@ b3D["enabled"] = False								# buttonEnabled
 b3D["color"] = pgvar.UI_button_color					# buttonColor
 b3D["group"] = "displayDimensions"					# buttonGroup
 b3D["visible"] = True									# buttonVisible
+b3D["available"] = True
 
 
 # # Calculation Dimensions
@@ -217,6 +228,7 @@ lCalculationDimensions["enabled"] = False									# buttonEnabled
 lCalculationDimensions["color"] = pgvar.UI_label_color 					# buttonColor
 lCalculationDimensions["group"] = "CalculationDimensions"					# buttonGroup
 lCalculationDimensions["visible"] = True									# buttonVisible
+lCalculationDimensions["available"] = True
 
 bCalc1D = {}
 bCalc1D["name"] = "bCalc1D"											# button_name
@@ -230,6 +242,7 @@ bCalc1D["enabled"] = False										# buttonEnabled
 bCalc1D["color"] = pgvar.UI_button_color							# buttonColor
 bCalc1D["group"] = "calculationDimesions"							# buttonGroup
 bCalc1D["visible"] = True											# buttonVisible
+bCalc1D["available"] = True
 
 bCalc2D = {}
 bCalc2D["name"] = "bCalc2D"											# button_name
@@ -243,7 +256,8 @@ bCalc2D["enabled"] = False										# buttonEnabled
 bCalc2D["color"] = pgvar.UI_button_color							# buttonColor
 bCalc2D["group"] = "calculationDimesions"							# buttonGroup
 bCalc2D["visible"] = True											# buttonVisible
-	
+bCalc2D["available"] = True
+
 bCalc3D = {}		
 bCalc3D["name"] = "bCalc3D"												# button_name
 bCalc3D["origin_x"] = (pgvar.UI_sideBar_width / 3) * 2					# button_origin_x
@@ -256,6 +270,7 @@ bCalc3D["enabled"] = False											# buttonEnabled
 bCalc3D["color"] = pgvar.UI_button_color								# buttonColor
 bCalc3D["group"] = "calculationDimesions"								# buttonGroup
 bCalc3D["visible"] = True												# buttonVisible
+bCalc3D["available"] = True
 
 
 # # Forces Buttons
@@ -272,6 +287,7 @@ lForces["enabled"] = False								# buttonEnabled
 lForces["color"] = pgvar.UI_label_color 					# buttonColor
 lForces["group"] = "forces"								# buttonGroup
 lForces["visible"] = True									# buttonVisible
+lForces["available"] = True
 
 bForceGravity = {}
 bForceGravity["name"] = "bForceGravity"								
@@ -285,6 +301,7 @@ bForceGravity["enabled"] = False
 bForceGravity["color"] = pgvar.UI_button_color 					
 bForceGravity["group"] = "forces"								
 bForceGravity["visible"] = True									
+bForceGravity["available"] = True
 
 bForceGravityOpener = {}
 bForceGravityOpener["name"] = "bForceGravityOpener"								
@@ -298,6 +315,7 @@ bForceGravityOpener["enabled"] = False
 bForceGravityOpener["color"] = pgvar.UI_button_color 					
 bForceGravityOpener["group"] = "forces"								
 bForceGravityOpener["visible"] = True	
+bForceGravityOpener["available"] = True
 
 bForceElectromagnetic = {}
 bForceElectromagnetic["name"] = "bForceElectromagnetic"								
@@ -311,6 +329,7 @@ bForceElectromagnetic["enabled"] = False
 bForceElectromagnetic["color"] = pgvar.UI_button_color 					
 bForceElectromagnetic["group"] = "forces"								
 bForceElectromagnetic["visible"] = True									
+bForceElectromagnetic["available"] = True
 
 bForceElectromagneticOpener = {}
 bForceElectromagneticOpener["name"] = "bForceElectromagneticOpener"								
@@ -324,6 +343,7 @@ bForceElectromagneticOpener["enabled"] = False
 bForceElectromagneticOpener["color"] = pgvar.UI_button_color 					
 bForceElectromagneticOpener["group"] = "forces"								
 bForceElectromagneticOpener["visible"] = True	
+bForceElectromagneticOpener["available"] = True	
 
 bForceStrongNuclear = {}
 bForceStrongNuclear["name"] = "bForceStrongNuclear"								
@@ -337,6 +357,7 @@ bForceStrongNuclear["enabled"] = False
 bForceStrongNuclear["color"] = pgvar.UI_button_color 					
 bForceStrongNuclear["group"] = "forces"								
 bForceStrongNuclear["visible"] = True									
+bForceStrongNuclear["available"] = True
 
 bForceStrongNuclearOpener = {}
 bForceStrongNuclearOpener["name"] = "bForceStrongNuclearOpener"								
@@ -350,6 +371,7 @@ bForceStrongNuclearOpener["enabled"] = False
 bForceStrongNuclearOpener["color"] = pgvar.UI_button_color 					
 bForceStrongNuclearOpener["group"] = "forces"								
 bForceStrongNuclearOpener["visible"] = True	
+bForceStrongNuclearOpener["available"] = True
 
 bForceWeakNuclear = {}
 bForceWeakNuclear["name"] = "bForceWeakNuclear"								
@@ -363,6 +385,7 @@ bForceWeakNuclear["enabled"] = False
 bForceWeakNuclear["color"] = pgvar.UI_button_color 					
 bForceWeakNuclear["group"] = "forces"								
 bForceWeakNuclear["visible"] = True									
+bForceWeakNuclear["available"] = True
 
 bForceWeakNuclearOpener = {}
 bForceWeakNuclearOpener["name"] = "bForceWeakNuclearOpener"								
@@ -376,6 +399,7 @@ bForceWeakNuclearOpener["enabled"] = False
 bForceWeakNuclearOpener["color"] = pgvar.UI_button_color 					
 bForceWeakNuclearOpener["group"] = "forces"								
 bForceWeakNuclearOpener["visible"] = True	
+bForceWeakNuclearOpener["available"] = True
 
 bForceDarkEnergy = {}
 bForceDarkEnergy["name"] = "bForceDarkEnergy"								
@@ -389,6 +413,7 @@ bForceDarkEnergy["enabled"] = False
 bForceDarkEnergy["color"] = pgvar.UI_button_color 					
 bForceDarkEnergy["group"] = "forces"								
 bForceDarkEnergy["visible"] = True									
+bForceDarkEnergy["available"] = True
 
 bForceDarkEnergyOpener = {}
 bForceDarkEnergyOpener["name"] = "bForceDarkEnergyOpener"								
@@ -402,6 +427,7 @@ bForceDarkEnergyOpener["enabled"] = False
 bForceDarkEnergyOpener["color"] = pgvar.UI_button_color 					
 bForceDarkEnergyOpener["group"] = "forces"								
 bForceDarkEnergyOpener["visible"] = True	
+bForceDarkEnergyOpener["available"] = True
 
 bForceNewOther = {}
 bForceNewOther["name"] = "bForceNewOther"								
@@ -415,6 +441,7 @@ bForceNewOther["enabled"] = False
 bForceNewOther["color"] = pgvar.UI_button_color 					
 bForceNewOther["group"] = "forces"								
 bForceNewOther["visible"] = True									
+bForceNewOther["available"] = True
 
 bForceNewOtherOpener = {}
 bForceNewOtherOpener["name"] = "bForceNewOtherOpener"								
@@ -428,6 +455,7 @@ bForceNewOtherOpener["enabled"] = False
 bForceNewOtherOpener["color"] = pgvar.UI_button_color 					
 bForceNewOtherOpener["group"] = "forces"								
 bForceNewOtherOpener["visible"] = True	
+bForceNewOtherOpener["available"] = True
 
 # # Scale Time
 
@@ -443,6 +471,7 @@ lScaleTime["enabled"] = False								# buttonEnabled
 lScaleTime["color"] = pgvar.UI_label_color 					# buttonColor
 lScaleTime["group"] = "forces"								# buttonGroup
 lScaleTime["visible"] = True									# buttonVisible
+lScaleTime["available"] = True
 
 bScaleTime = {}
 bScaleTime["name"] = "bScaleTime"								
@@ -456,6 +485,7 @@ bScaleTime["enabled"] = False
 bScaleTime["color"] = pgvar.UI_button_color					
 bScaleTime["group"] = "forces"								
 bScaleTime["visible"] = True									
+bScaleTime["available"] = True
 
 bScaleTimeOpener = {}
 bScaleTimeOpener["name"] = "bScaleTimeOpener"								
@@ -469,6 +499,7 @@ bScaleTimeOpener["enabled"] = False
 bScaleTimeOpener["color"] = pgvar.UI_button_color					
 bScaleTimeOpener["group"] = "forces"								
 bScaleTimeOpener["visible"] = True			
+bScaleTimeOpener["available"] = True
 
 # # Display options buttons:
 
@@ -484,6 +515,7 @@ labelDisplay["enabled"] = False									# buttonEnabled
 labelDisplay["color"] = pgvar.UI_button_color						# buttonColor
 labelDisplay["group"] = "origin"									# buttonGroup
 labelDisplay["visible"] = True									# buttonVisible
+labelDisplay["available"] = True
 
 buttonOrigin = {}
 buttonOrigin["name"] = "origin"								# button_name
@@ -497,6 +529,7 @@ buttonOrigin["enabled"] = False								# buttonEnabled
 buttonOrigin["color"] = pgvar.UI_button_color					# buttonColor
 buttonOrigin["group"] = "origin"								# buttonGroup
 buttonOrigin["visible"] = True								# buttonVisible
+buttonOrigin["available"] = True
 
 buttonGrid = {}
 buttonGrid["name"] = "grid"									# button_name
@@ -510,6 +543,7 @@ buttonGrid["enabled"] = False									# buttonEnabled
 buttonGrid["color"] = pgvar.UI_button_color					# buttonColor
 buttonGrid["group"] = "grid"									# buttonGroup
 buttonGrid["visible"] = True									# buttonVisible
+buttonGrid["available"] = True
 
 buttonFPS = {}
 buttonFPS["name"] = "fps"										# button_name
@@ -523,6 +557,7 @@ buttonFPS["enabled"] = False									# buttonEnabled
 buttonFPS["color"] = pgvar.UI_button_color					# buttonColor
 buttonFPS["group"] = "fps"									# buttonGroup
 buttonFPS["visible"] = True									# buttonVisible
+buttonFPS["available"] = True
 
 bVectors = {}
 bVectors["name"] = "bVectors"									# button_name
@@ -536,6 +571,7 @@ bVectors["enabled"] = False									# buttonEnabled
 bVectors["color"] = pgvar.UI_button_color						# buttonColor
 bVectors["group"] = "vectors"									# buttonGroup
 bVectors["visible"] = True									# buttonVisible
+bVectors["available"] = True
 
 
 # # Scale Time
@@ -552,6 +588,7 @@ lScaleLabel["enabled"] = False								# buttonEnabled
 lScaleLabel["color"] = pgvar.UI_label_color				# buttonColor
 lScaleLabel["group"] = "Scale"								# buttonGroup
 lScaleLabel["visible"] = True									# buttonVisible
+lScaleLabel["available"] = True
 
 bScaleMinus = {}
 bScaleMinus["name"] = "bScaleMinus"							# button_name
@@ -565,6 +602,7 @@ bScaleMinus["enabled"] = False								# buttonEnabled
 bScaleMinus["color"] = pgvar.UI_button_color					# buttonColor
 bScaleMinus["group"] = "Scale"								# buttonGroup
 bScaleMinus["visible"] = True									# buttonVisible
+bScaleMinus["available"] = True
 
 bScalePlus = {}
 bScalePlus["name"] = "bScalePlus"								# button_name
@@ -578,6 +616,7 @@ bScalePlus["enabled"] = False									# buttonEnabled
 bScalePlus["color"] = pgvar.UI_button_color					# buttonColor
 bScalePlus["group"] = "Scale"									# buttonGroup
 bScalePlus["visible"] = True									# buttonVisible		
+bScalePlus["available"] = True
 
 bScaleOpener = {}
 bScaleOpener["name"] = "bScaleOpener"								# button_name
@@ -591,6 +630,7 @@ bScaleOpener["enabled"] = False									# buttonEnabled
 bScaleOpener["color"] = pgvar.UI_button_color						# buttonColor
 bScaleOpener["group"] = "Scale"									# buttonGroup
 bScaleOpener["visible"] = True									# buttonVisible	
+bScaleOpener["available"] = True
 
 tScaleSelection = {}
 tScaleSelection["name"] = "tScaleSelection"							# button_name
@@ -604,6 +644,7 @@ tScaleSelection["enabled"] = False									# buttonEnabled
 tScaleSelection["color"] = pgvar.UI_button_color						# buttonColor
 tScaleSelection["group"] = "Scale"									# buttonGroup
 tScaleSelection["visible"] = True										# buttonVisible		
+tScaleSelection["available"] = True
 
 
 
@@ -621,6 +662,7 @@ lResolution["enabled"] = True
 lResolution["color"] = pgvar.UI_label_color
 lResolution["group"] = "Resolution"
 lResolution["visible"] = True
+lResolution["available"] = True
 
 tResolution = {}												# tName = text element, lName = label, bName = button, mName = menu
 tResolution["name"] = "tResolution"							# button_name
@@ -634,6 +676,7 @@ tResolution["enabled"] = False								# buttonEnabled
 tResolution["color"] = pgvar.UI_button_color					# buttonColor
 tResolution["group"] = "Resolution"							# buttonGroup
 tResolution["visible"] = True									# buttonVisible
+tResolution["available"] = True
 
 bResolutionOpener = {}
 bResolutionOpener["name"] = "bResolutionOpener"					# button_name
@@ -647,6 +690,7 @@ bResolutionOpener["enabled"] = False								# buttonEnabled
 bResolutionOpener["color"] = pgvar.UI_button_color				# buttonColor
 bResolutionOpener["group"] = "Resolution"							# buttonGroup
 bResolutionOpener["visible"] = True								# buttonVisible
+bResolutionOpener["available"] = True
 
 
 ## Simulation Control
@@ -663,6 +707,7 @@ lSimulationControl["enabled"] = True
 lSimulationControl["color"] = pgvar.UI_label_color
 lSimulationControl["group"] = "SimulationControl"
 lSimulationControl["visible"] = True
+lSimulationControl["available"] = True
 
 bPlaySimulation = {}
 bPlaySimulation["name"] = "bPlaySimulation"
@@ -676,6 +721,7 @@ bPlaySimulation["enabled"] = False
 bPlaySimulation["color"] = pgvar.UI_button_color
 bPlaySimulation["group"] = "SimulationControl"
 bPlaySimulation["visible"] = True
+bPlaySimulation["available"] = True
 
 bPauseSimulation = {}
 bPauseSimulation["name"] = "bPauseSimulation"
@@ -689,6 +735,7 @@ bPauseSimulation["enabled"] = True
 bPauseSimulation["color"] = pgvar.UI_button_selected_color
 bPauseSimulation["group"] = "SimulationControl"
 bPauseSimulation["visible"] = True
+bPauseSimulation["available"] = True
 
 bSaveSimulation = {}
 bSaveSimulation["name"] = "bSaveSimulation"
@@ -702,6 +749,7 @@ bSaveSimulation["enabled"] = True
 bSaveSimulation["color"] = pgvar.UI_button_color
 bSaveSimulation["group"] = "SimulationControl"
 bSaveSimulation["visible"] = True
+bSaveSimulation["available"] = True
 
 bLoadSimulation = {}
 bLoadSimulation["name"] = "bLoadSimulation"
@@ -715,6 +763,7 @@ bLoadSimulation["enabled"] = True
 bLoadSimulation["color"] = pgvar.UI_button_color
 bLoadSimulation["group"] = "SimulationControl"
 bLoadSimulation["visible"] = True
+bLoadSimulation["available"] = True
 
 bClearSimulation = {}
 bClearSimulation["name"] = "bClearSimulation"
@@ -728,6 +777,7 @@ bClearSimulation["enabled"] = True
 bClearSimulation["color"] = pgvar.UI_button_disabled
 bClearSimulation["group"] = "SimulationControl"
 bClearSimulation["visible"] = True
+bClearSimulation["available"] = False
 
 
 # # Exit Button:
@@ -744,6 +794,7 @@ buttonExit["enabled"] = True
 buttonExit["color"] = pgvar.UI_button_color
 buttonExit["group"] = "buttonExit"
 buttonExit["visible"] = True
+buttonExit["available"] = True
 
 
 ####################################################################################
@@ -766,6 +817,7 @@ bPushyExample["enabled"] = True
 bPushyExample["color"] = pgvar.UI_button_color
 bPushyExample["group"] = "PushyExample"
 bPushyExample["visible"] = True
+bPushyExample["available"] = True
 
 # # Sticky Buttons 
 # # once clicked, they stay enabled, until clicked again which disables them
@@ -782,6 +834,7 @@ labelSticky["enabled"] = True
 labelSticky["color"] = pgvar.UI_label_color
 labelSticky["group"] = "sticky_buttons"
 labelSticky["visible"] = True
+labelSticky["available"] = True
 
 buttonSticky01 = {}
 buttonSticky01["name"] = "sticky01"
@@ -795,6 +848,7 @@ buttonSticky01["enabled"] = False
 buttonSticky01["color"] = pgvar.UI_button_color
 buttonSticky01["group"] = "sticky01"
 buttonSticky01["visible"] = True
+buttonSticky01["available"] = True
 
 buttonSticky02 = {}
 buttonSticky02["name"] = "sticky02"
@@ -808,6 +862,7 @@ buttonSticky02["enabled"] = False
 buttonSticky02["color"] = pgvar.UI_button_color
 buttonSticky02["group"] = "sticky02"
 buttonSticky02["visible"] = True
+buttonSticky02["available"] = True
 
 buttonSticky03 = {}
 buttonSticky03["name"] = "sticky03"								# button_name
@@ -821,6 +876,7 @@ buttonSticky03["enabled"] = False									# buttonEnabled
 buttonSticky03["color"] = pgvar.UI_button_color 					# buttonColor
 buttonSticky03["group"] = "sticky03"								# buttonGroup
 buttonSticky03["visible"] = True									# buttonVisible
+buttonSticky03["available"] = True
 
 # # Group 01 Buttons:
 # # Group buttons are buttons where only one button in the defined group can be enabled, the buttons are mutually exclusive
@@ -838,6 +894,7 @@ labelGroup01["enabled"] = False									# buttonEnabled
 labelGroup01["color"] = pgvar.UI_label_color 						# buttonColor
 labelGroup01["group"] = "group01"									# buttonGroup
 labelGroup01["visible"] = True									# buttonVisible
+labelGroup01["available"] = True
 
 bGroup01Button01 = {}
 bGroup01Button01["name"] = "Group01Button01"						# button_name
@@ -851,6 +908,7 @@ bGroup01Button01["enabled"] = True								# buttonEnabled
 bGroup01Button01["color"] = pgvar.UI_button_selected_color		# buttonColor
 bGroup01Button01["group"] = "group01"								# buttonGroup
 bGroup01Button01["visible"] = True								# buttonVisible
+bGroup01Button01["available"] = True
 
 bGroup01Button02 = {}
 bGroup01Button02["name"] = "Group01Button02"						# button_name
@@ -864,6 +922,7 @@ bGroup01Button02["enabled"] = False								# buttonEnabled
 bGroup01Button02["color"] = pgvar.UI_button_color					# buttonColor
 bGroup01Button02["group"] = "group01"								# buttonGroup
 bGroup01Button02["visible"] = True								# buttonVisible
+bGroup01Button02["available"] = True
 
 # # Group 02 Buttons:
 
@@ -879,6 +938,7 @@ labelGroup02["enabled"] = False									# buttonEnabled
 labelGroup02["color"] = pgvar.UI_label_color 						# buttonColor
 labelGroup02["group"] = "group02"									# buttonGroup
 labelGroup02["visible"] = True									# buttonVisible
+labelGroup02["available"] = True
 
 bGroup02Button01 = {}
 bGroup02Button01["name"] = "Group02Button01"						# button_name
@@ -892,6 +952,7 @@ bGroup02Button01["enabled"] = True								# buttonEnabled
 bGroup02Button01["color"] = pgvar.UI_button_selected_color		# buttonColor
 bGroup02Button01["group"] = "group02"								# buttonGroup
 bGroup02Button01["visible"] = True								# buttonVisible
+bGroup02Button01["available"] = True
 
 bGroup02Button02 = {}
 bGroup02Button02["name"] = "Group02Button02"						# button_name
@@ -905,6 +966,7 @@ bGroup02Button02["enabled"] = False								# buttonEnabled
 bGroup02Button02["color"] = pgvar.UI_button_color					# buttonColor
 bGroup02Button02["group"] = "group02"								# buttonGroup
 bGroup02Button02["visible"] = True								# buttonVisible
+bGroup02Button02["available"] = True
 
 # # Group 03 Buttons:
 
@@ -920,6 +982,7 @@ labelGroup03["enabled"] = False									# buttonEnabled
 labelGroup03["color"] = pgvar.UI_label_color 						# buttonColor
 labelGroup03["group"] = "group03"									# buttonGroup
 labelGroup03["visible"] = True									# buttonVisible
+labelGroup03["available"] = True
 
 bGroup03Button01 = {}
 bGroup03Button01["name"] = "Group03Button01"						# button_name
@@ -933,6 +996,7 @@ bGroup03Button01["enabled"] = True								# buttonEnabled
 bGroup03Button01["color"] = pgvar.UI_button_selected_color		# buttonColor
 bGroup03Button01["group"] = "group03"								# buttonGroup
 bGroup03Button01["visible"] = True								# buttonVisible
+bGroup03Button01["available"] = True
 
 bGroup03Button02 = {}
 bGroup03Button02["name"] = "Group03Button02"						# button_name
@@ -946,6 +1010,7 @@ bGroup03Button02["enabled"] = False								# buttonEnabled
 bGroup03Button02["color"] = pgvar.UI_button_color					# buttonColor
 bGroup03Button02["group"] = "group03"								# buttonGroup
 bGroup03Button02["visible"] = True								# buttonVisible
+bGroup03Button02["available"] = True
 
 bGroup03Button03 = {}
 bGroup03Button03["name"] = "Group03Button03"						# button_name
@@ -959,6 +1024,7 @@ bGroup03Button03["enabled"] = False								# buttonEnabled
 bGroup03Button03["color"] = pgvar.UI_button_color					# buttonColor
 bGroup03Button03["group"] = "group03"								# buttonGroup
 bGroup03Button03["visible"] = True								# buttonVisible
+bGroup03Button03["available"] = True
 
 
 # Dropdown 01
@@ -975,6 +1041,7 @@ labelDropdown["enabled"] = False								# buttonEnabled
 labelDropdown["color"] = pgvar.UI_button_color				# buttonColor
 labelDropdown["group"] = "dropdown01"							# buttonGroup
 labelDropdown["visible"] = True								# buttonVisible
+labelDropdown["available"] = True
 
 lDropdown01TEXT = {}
 lDropdown01TEXT["name"] = "dropdown01TEXT"						# button_name
@@ -988,6 +1055,7 @@ lDropdown01TEXT["enabled"] = False								# buttonEnabled
 lDropdown01TEXT["color"] = pgvar.UI_button_color					# buttonColor
 lDropdown01TEXT["group"] = "dropdown01"							# buttonGroup
 lDropdown01TEXT["visible"] = True									# buttonVisible
+lDropdown01TEXT["available"] = True
 
 bDropdown01opener = {}
 bDropdown01opener["name"] = "dropdown01opener"									# button_name
@@ -1001,6 +1069,7 @@ bDropdown01opener["enabled"] = False												# buttonEnabled
 bDropdown01opener["color"] = pgvar.UI_button_color								# buttonColor
 bDropdown01opener["group"] = "dropdown01"											# buttonGroup
 bDropdown01opener["visible"] = True												# buttonVisible
+bDropdown01opener["available"] = True
 
 bDropdown01option01 = {}
 bDropdown01option01["name"] = "dropdown01option01"					# button_name
@@ -1014,6 +1083,7 @@ bDropdown01option01["enabled"] = False								# buttonEnabled
 bDropdown01option01["color"] = pgvar.UI_button_color					# buttonColor
 bDropdown01option01["group"] = "dropdown01"							# buttonGroup
 bDropdown01option01["visible"] = False								# buttonVisible
+bDropdown01option01["available"] = True
 
 bDropdown01option02 = {}
 bDropdown01option02["name"] = "dropdown01option02"					# button_name
@@ -1027,6 +1097,7 @@ bDropdown01option02["enabled"] = False								# buttonEnabled
 bDropdown01option02["color"] = pgvar.UI_button_color					# buttonColor
 bDropdown01option02["group"] = "dropdown01"							# buttonGroup
 bDropdown01option02["visible"] = False								# buttonVisible
+bDropdown01option02["available"] = True
 
 bDropdown01option03 = {}
 bDropdown01option03["name"] = "dropdown01option03"					# button_name
@@ -1040,6 +1111,7 @@ bDropdown01option03["enabled"] = False								# buttonEnabled
 bDropdown01option03["color"] = pgvar.UI_button_color					# buttonColor
 bDropdown01option03["group"] = "dropdown01"							# buttonGroup
 bDropdown01option03["visible"] = False								# buttonVisible
+bDropdown01option03["available"] = True
 
 
 lTextField01 = {}
@@ -1054,6 +1126,7 @@ lTextField01["enabled"] = False									# buttonEnabled
 lTextField01["color"] = pgvar.UI_label_color						# buttonColor
 lTextField01["group"] = "text01"									# buttonGroup
 lTextField01["visible"] = True									# buttonVisible
+lTextField01["available"] = True
 
 textField01 = {}
 textField01["name"] = "textField01"							# button_name
@@ -1067,6 +1140,7 @@ textField01["enabled"] = False								# buttonEnabled
 textField01["color"] = pgvar.UI_text_entry_box_color			# buttonColor
 textField01["group"] = "text01"								# buttonGroup
 textField01["visible"] = True									# buttonVisible
+textField01["available"] = True
 
 mInsert = {}
 mInsert["name"] = "InsertMenu"								# button_name
@@ -1080,6 +1154,7 @@ mInsert["enabled"] = False									# buttonEnabled
 mInsert["color"] = pgvar.UI_button_color						# buttonColor
 mInsert["group"] = "InsertMenu"									# buttonGroup
 mInsert["visible"] = True										# buttonVisible
+mInsert["available"] = True
 
 mInsertoption01 = {}
 mInsertoption01["name"] = "menu01option01"					# button_name
@@ -1093,6 +1168,7 @@ mInsertoption01["enabled"] = False							# buttonEnabled
 mInsertoption01["color"] = pgvar.UI_button_color				# buttonColor
 mInsertoption01["group"] = "InsertMenu"							# buttonGroup
 mInsertoption01["visible"] = False							# buttonVisible
+mInsertoption01["available"] = True
 
 mInsertoption02 = {}
 mInsertoption02["name"] = "menu01option02"					# button_name
@@ -1106,6 +1182,7 @@ mInsertoption02["enabled"] = False							# buttonEnabled
 mInsertoption02["color"] = pgvar.UI_button_color				# buttonColor
 mInsertoption02["group"] = "InsertMenu"							# buttonGroup
 mInsertoption02["visible"] = False							# buttonVisible
+mInsertoption02["available"] = True
 
 mInsertoption03 = {}
 mInsertoption03["name"] = "menu01option03"					# button_name
@@ -1119,6 +1196,7 @@ mInsertoption03["enabled"] = False							# buttonEnabled
 mInsertoption03["color"] = pgvar.UI_button_color				# buttonColor
 mInsertoption03["group"] = "InsertMenu"							# buttonGroup
 mInsertoption03["visible"] = False							# buttonVisible
+mInsertoption03["available"] = True
 
 mInsertoption04 = {}
 mInsertoption04["name"] = "menu01option04"					# button_name
@@ -1132,6 +1210,7 @@ mInsertoption04["enabled"] = False 							# buttonEnabled
 mInsertoption04["color"] = pgvar.UI_button_color				# buttonColor
 mInsertoption04["group"] = "InsertMenu"							# buttonGroup
 mInsertoption04["visible"] = False							# buttonVisible
+mInsertoption04["available"] = True
 
 mInsertoption05 = {}
 mInsertoption05["name"] = "menu01option05"					# button_name
@@ -1145,6 +1224,7 @@ mInsertoption05["enabled"] = False							# buttonEnabled
 mInsertoption05["color"] = pgvar.UI_button_color				# buttonColor
 mInsertoption05["group"] = "InsertMenu"							# buttonGroup
 mInsertoption05["visible"] = False							# buttonVisible
+mInsertoption05["available"] = True
 
 bMenu02 = {}
 bMenu02["name"] = "menu02"											# button_name
@@ -1158,6 +1238,7 @@ bMenu02["enabled"] = False											# buttonEnabled
 bMenu02["color"] = pgvar.UI_button_color								# buttonColor
 bMenu02["group"] = "menu02"											# buttonGroup
 bMenu02["visible"] = True												# buttonVisible
+bMenu02["available"] = True
 
 bMenu02popup01 = {}
 bMenu02popup01["name"] = "menu02popup01"										# button_name
@@ -1171,6 +1252,7 @@ bMenu02popup01["enabled"] = False												# buttonEnabled
 bMenu02popup01["color"] = pgvar.UI_button_color								# buttonColor
 bMenu02popup01["group"] = "menu02"											# buttonGroup
 bMenu02popup01["visible"] = False												# buttonVisible
+bMenu02popup01["available"] = True
 
 
 bMenu02popup02 = {}
@@ -1185,6 +1267,7 @@ bMenu02popup02["enabled"] = False									# buttonEnabled
 bMenu02popup02["color"] = pgvar.UI_button_color							# buttonColor
 bMenu02popup02["group"] = "menu02"										# buttonGroup
 bMenu02popup02["visible"] = False											# buttonVisible
+bMenu02popup02["available"] = True
 
 bMenu02popup03 = {}
 bMenu02popup03["name"] = "menu02popup03"									# button_name
@@ -1198,6 +1281,7 @@ bMenu02popup03["enabled"] = False											# buttonEnabled
 bMenu02popup03["color"] = pgvar.UI_button_color							# buttonColor
 bMenu02popup03["group"] = "menu02"										# buttonGroup
 bMenu02popup03["visible"] = False											# buttonVisible
+bMenu02popup03["available"] = True
 
 # ************************************************************************************************#
 #	MENU 02 POPUP 01 
@@ -1216,6 +1300,7 @@ menu02popup01element01["enabled"] = False											# buttonEnabled
 menu02popup01element01["color"] = pgvar.UI_background_color						# buttonColor
 menu02popup01element01["group"] = "menu02popup01"									# buttonGroup
 menu02popup01element01["visible"] = False											# buttonVisible
+menu02popup01element01["available"] = True
 
 # Title Bar
 menu02popup01element02 = {}
@@ -1230,6 +1315,7 @@ menu02popup01element02["enabled"] = False											# buttonEnabled
 menu02popup01element02["color"] = pgvar.UI_button_selected_color					# buttonColor
 menu02popup01element02["group"] = "menu02popup01"									# buttonGroup
 menu02popup01element02["visible"] = False											# buttonVisible
+menu02popup01element02["available"] = True
 
 # description bar
 menu02popup01element03 = {}
@@ -1244,6 +1330,7 @@ menu02popup01element03["enabled"] = False											# buttonEnabled
 menu02popup01element03["color"] = pgvar.UI_label_color							# buttonColor
 menu02popup01element03["group"] = "menu02popup01"									# buttonGroup
 menu02popup01element03["visible"] = False											# buttonVisible
+menu02popup01element03["available"] = True
 
 # first button in small popup
 menu02popup01element04 = {}
@@ -1258,6 +1345,7 @@ menu02popup01element04["enabled"] = False									# buttonEnabled
 menu02popup01element04["color"] = pgvar.UI_button_color							# buttonColor
 menu02popup01element04["group"] = "menu02popup01"							# buttonGroup
 menu02popup01element04["visible"] = False									# buttonVisible
+menu02popup01element04["available"] = True
 
 # second button in small popup
 menu02popup01element05 = {}
@@ -1272,6 +1360,7 @@ menu02popup01element05["enabled"] = False										# buttonEnabled
 menu02popup01element05["color"] = pgvar.UI_button_color						# buttonColor
 menu02popup01element05["group"] = "menu02popup01"								# buttonGroup
 menu02popup01element05["visible"] = False										# buttonVisible
+menu02popup01element05["available"] = True
 
 # ok / cancel background box
 menu02popup01element06 = {}
@@ -1286,6 +1375,7 @@ menu02popup01element06["enabled"] = False																# buttonEnabled
 menu02popup01element06["color"] = pgvar.UI_label_color												# buttonColor
 menu02popup01element06["group"] = "menu02popup01"														# buttonGroup
 menu02popup01element06["visible"] = False																# buttonVisible
+menu02popup01element06["available"] = True
 
 # ok button
 menu02popup01element07 = {}
@@ -1300,6 +1390,7 @@ menu02popup01element07["enabled"] = False																# buttonEnabled
 menu02popup01element07["color"] = pgvar.UI_button_color 												# buttonColor
 menu02popup01element07["group"] = "menu02popup01"														# buttonGroup
 menu02popup01element07["visible"] = False																# buttonVisible
+menu02popup01element07["available"] = True
 
 # cancel button
 menu02popup01element08 = {}
@@ -1314,7 +1405,7 @@ menu02popup01element08["enabled"] = False																	# buttonEnabled
 menu02popup01element08["color"] = pgvar.UI_button_color 													# buttonColor
 menu02popup01element08["group"] = "menu02popup01"															# buttonGroup
 menu02popup01element08["visible"] = False																	# buttonVisible
-
+menu02popup01element08["available"] = True
 
 
 
@@ -1324,7 +1415,10 @@ menu02popup01element08["visible"] = False																	# buttonVisible
 #	Dictionary of all buttons, when you add a button / element above ^ you need to add it below as well \/
 # ************************************************************************************************#
 
+
+
 allButtons = {}
+
 
 # Display Dimensions
 allButtons[82] = lDisplayDimensions
@@ -1338,8 +1432,14 @@ allButtons[84] = bCalc1D
 allButtons[85] = bCalc2D
 allButtons[86] = bCalc3D
 
+
+
+
 # Standards
 allButtons[87] = lStandard 
+
+
+
 allButtons[88] = bStdMetric
 allButtons[89] = bStdImperial
 
@@ -1453,3 +1553,4 @@ allButtons[47] = menu02popup01element05		# Menu 02  - small popup - element 05 -
 allButtons[48] = menu02popup01element06		# Menu 02  - small popup - element 06 - ok / cancel background
 allButtons[49] = menu02popup01element07		# Menu 02  - small popup - element 06 - ok button
 allButtons[50] = menu02popup01element08		# Menu 02  - small popup - element 06 - cancel button
+
