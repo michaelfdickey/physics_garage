@@ -746,10 +746,10 @@ bSaveSimulation["height"] = 20
 bSaveSimulation["label_txt"] = "Save Simulation"
 bSaveSimulation["type"] = "sticky"
 bSaveSimulation["enabled"] = True
-bSaveSimulation["color"] = pgvar.UI_button_color
+bSaveSimulation["color"] = pgvar.UI_button_disabled
 bSaveSimulation["group"] = "SimulationControl"
 bSaveSimulation["visible"] = True
-bSaveSimulation["available"] = True
+bSaveSimulation["available"] = False
 
 bLoadSimulation = {}
 bLoadSimulation["name"] = "bLoadSimulation"
@@ -760,10 +760,10 @@ bLoadSimulation["height"] = 20
 bLoadSimulation["label_txt"] = "Load Simulation"
 bLoadSimulation["type"] = "sticky"
 bLoadSimulation["enabled"] = True
-bLoadSimulation["color"] = pgvar.UI_button_color
+bLoadSimulation["color"] = pgvar.UI_button_disabled
 bLoadSimulation["group"] = "SimulationControl"
 bLoadSimulation["visible"] = True
-bLoadSimulation["available"] = True
+bLoadSimulation["available"] = False
 
 bClearSimulation = {}
 bClearSimulation["name"] = "bClearSimulation"
