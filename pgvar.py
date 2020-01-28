@@ -50,10 +50,12 @@ import pbproc
 pygame_window_width = 1200
 pygame_window_height = 1200
 
-# # pygame font
+# # pygame fonts
 pygame.font.init()																# needs to be called at the start of the program
 myfont = pygame.font.SysFont('Arial',15)										# GUI font type and size
 fps_font = pygame.font.Font("C:\\Windows\\Fonts\\Verdana.ttf", 15)
+message_font = pygame.font.Font("C:\\Windows\\Fonts\\Verdana.ttf", 15)		# on screen message box display
+
 
 # # pre-defined colors
 color_black = (0,0,0)
@@ -108,8 +110,12 @@ FPS = 0
 selected_uiObject = None					
 selected_button = None
 
+# # on screen message text
+message_txt = "TEST"
+
 # # other
 entered_text = ""
+
 
 # ************************************************************************************************#
 #	Initial lists

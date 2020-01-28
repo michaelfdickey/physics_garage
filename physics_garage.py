@@ -65,6 +65,9 @@ while running:
 		pfunc.count_fps()
 		pfunc.show_fps()
 
+	# on screen message box
+	pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 402, pgvar.pygame_window_height - 30, 298, 20))   
+	pfunc.show_message_txt()
 
 	for event in pygame.event.get():
 

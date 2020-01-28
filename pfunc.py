@@ -215,6 +215,16 @@ def count_fps():
 
 
 ####### ---------------------------------------------------------------------##########
+####### on screen message box 									                                        ##########
+####### ---------------------------------------------------------------------##########
+def show_message_txt():
+	message_txt_overlay = pgvar.message_font.render(pgvar.message_txt, True, pgvar.UI_button_txt_color)
+	screen.blit(message_txt_overlay, (pgvar.pygame_window_width - 400, pgvar.pygame_window_height - 30))
+
+
+
+
+####### ---------------------------------------------------------------------##########
 ####### Draw Grid lines                                                                                                                                       ##########
 ####### ---------------------------------------------------------------------##########
 def drawGrid():
