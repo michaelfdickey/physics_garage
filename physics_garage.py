@@ -66,6 +66,7 @@ while running:
 		pfunc.show_fps()
 
 	# on screen message box
+	# fix to only upate when changed
 	pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 402, pgvar.pygame_window_height - 30, 298, 20))   
 	pfunc.show_message_txt()
 

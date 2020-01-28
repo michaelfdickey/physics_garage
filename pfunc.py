@@ -218,8 +218,9 @@ def count_fps():
 ####### on screen message box 									                                        ##########
 ####### ---------------------------------------------------------------------##########
 def show_message_txt():
+	pygame.draw.rect(screen, pgvar.color_blue, (pgui.onscreen_message_txt_origin, pgvar.pygame_window_height - 30, 600, 20))   
 	message_txt_overlay = pgvar.message_font.render(pgvar.message_txt, True, pgvar.UI_button_txt_color)
-	screen.blit(message_txt_overlay, (pgvar.pygame_window_width - 400, pgvar.pygame_window_height - 30))
+	screen.blit(message_txt_overlay, (pgui.onscreen_message_txt_origin, pgvar.pygame_window_height - 30))
 
 
 

@@ -53,7 +53,7 @@ scale_display_origin = pgvar.pygame_window_height -940
 display_dimensions_origin = pgvar.pygame_window_height - 1160
 calculation_dimensions_origin = pgvar.pygame_window_height - 1100
 standard_origin = pgvar.pygame_window_height - 1040
-
+onscreen_message_txt_origin = pgvar.pygame_window_width - 800
 
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
