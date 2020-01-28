@@ -460,6 +460,8 @@ def updateMenuButtons(selected_button):
 			pgui.mInsertoption04["visible"] = True
 			pgui.mInsertoption05["visible"] = True
 
+			pgvar.message_txt = "Insert"
+
 			print pfunc.lineNum(), "~", pgui.mInsertoption01["name"], "Visible=", pgui.mInsertoption01["visible"]
 			print pfunc.lineNum(), "~", pgui.mInsertoption02["name"], "Visible=", pgui.mInsertoption02["visible"]
 			print pfunc.lineNum(), "~", pgui.mInsertoption03["name"], "Visible=", pgui.mInsertoption03["visible"]			
@@ -488,11 +490,13 @@ def updateMenuButtons(selected_button):
 			pfunc.redrawEverything()
 
 	if selected_button == "menu01option01":
-		if pgui.mInsert["enabled"] == True:
-			print "~~ you clicked Monday ~~"
+		if pgui.mInsert["enabled"] == True:					# only runs if the menu is open
 			if pgui.mInsertoption01["enabled"] == False:
 				pgui.mInsertoption01["enabled"] = True
 				pgui.mInsertoption01["color"] = pgvar.UI_button_selected_color
+				
+				pgvar.message_txt = pgvar.message_txt + "  >>  Proton"
+
 				pfunc.defineButtons()
 			elif pgui.mInsertoption01["enabled"] == True:
 				pgui.mInsertoption01["enabled"] = False
