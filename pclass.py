@@ -182,3 +182,18 @@ class Button:
 
 				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
 				screen.blit(label, (self.x + 5, self.y))
+
+
+class Particle:
+	def __init__ (self,(x,y),particle_size,particle_type,particle_color):
+		self.x = x
+		self.y = y
+		self.size = particle_size
+		self.type = particle_type
+		self.color = particle_color
+		self.speedx = 0
+		self.speedy = 0
+		self.angle = 0
+		self.drag = .999
+
+	

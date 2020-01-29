@@ -43,6 +43,7 @@ import pclass
 # ************************************************************************************************#
 # ************************************************************************************************#
 
+created_particles = []	# instantiated particles
 my_buttons = []			#initializes my_buttons list, each button is added to this for display
 buttonToDraw = {}			#each button is loaded into this dictionary, added to my_buttons list
 
@@ -262,4 +263,20 @@ def drawOrigin():
 	pygame.draw.lines(screen, pgvar.color_red, False, [(0,(pgvar.pygame_window_height / 2)),(pgvar.pygame_window_width, (pgvar.pygame_window_height / 2))],2)
 
 
+####### ---------------------------------------------------------------------##########
+####### Insert Particles                                                                                                                          	##########
+####### ---------------------------------------------------------------------##########
 
+def InsertProton(mouseX, mouseY):
+	
+	# particle characteristics
+	particle_size = 7
+	particle_type = "proton"
+	particle_x = mouseX
+	particle_y = mouseY
+	particle_color = (0,255,0)
+
+	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, particle_color)
+	created_particles.append(particle_to_make)
+
+	#pgvar.message_txt = "YAY"

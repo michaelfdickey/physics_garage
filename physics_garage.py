@@ -67,7 +67,6 @@ while running:
 
 	# on screen message box
 	# fix to only upate when changed
-	pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 402, pgvar.pygame_window_height - 30, 298, 20))   
 	pfunc.show_message_txt()
 
 	for event in pygame.event.get():
@@ -137,6 +136,13 @@ while running:
 					print pfunc.lineNum(), "running menu button event"
 					pbproc.updateMenuButtons(selected_button.button_name)
 
+				# # # PROCESSING MENU ITEMS # # # 
+
+				# # # # Insert Menu:
+
+				if pgui.mInsert["enabled"] == True:
+					if pgui.mInsertoption01["enabled"] == True:
+						pfunc.InsertProton(mouseX, mouseY)
 
 
 		if event.type == pygame.KEYDOWN:
