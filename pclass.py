@@ -195,5 +195,7 @@ class Particle:
 		self.speedy = 0
 		self.angle = 0
 		self.drag = .999
+		self.thickness = 1
 
-	
+	def display(self):
+		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)

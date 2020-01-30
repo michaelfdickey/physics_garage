@@ -269,6 +269,9 @@ def drawOrigin():
 
 def InsertProton(mouseX, mouseY):
 	
+	pygame.draw.circle(screen, pgvar.color_green, (mouseX, mouseY), 6, 0)
+	pygame.draw.circle(screen, pgvar.color_green, (mouseX + 500, mouseY+500), 6, 0)
+	"""
 	# particle characteristics
 	particle_size = 7
 	particle_type = "proton"
@@ -280,3 +283,4 @@ def InsertProton(mouseX, mouseY):
 	created_particles.append(particle_to_make)
 
 	#pgvar.message_txt = "YAY"
+	"""

@@ -69,19 +69,38 @@ while running:
 	# fix to only upate when changed
 	pfunc.show_message_txt()
 
+	
+	for i, particle in enumerate(pfunc.created_particles):
+		pclass.particle.display()
+	
+
+	""" just here for testing and reference. 
+	for i, button in enumerate(pfunc.my_buttons):
+		button.display() 
+	"""
+
+
+
 	for event in pygame.event.get():
 
 		if event.type == pygame.QUIT:
 			running = False
-
-
-
 
 		if event.type == pygame.MOUSEBUTTONDOWN:		
 			(mouseX, mouseY) = pygame.mouse.get_pos()											# will run continually while button is held down
 			print moduleName, pfunc.lineNum(), "mouseX = ", mouseX, "mouseY = ", mouseY			# this if.even MOUSEBUTTONDOWN **MUST** be under the for event in pygame.event.get() to run only once
 			selected_button = pfunc.findButton(pfunc.my_buttons, mouseX, mouseY)
 			print moduleName, pfunc.lineNum(), "selected button = ", selected_button
+
+			# # # PROCESSING MENU ITEMS # # # 
+
+			# # # # Insert Menu:
+			if pgui.mInsert["enabled"] == True:
+				if pgui.mInsertoption01["enabled"] == True:
+					print "running InsertProton"
+					#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
+					pfunc.InsertProton(mouseX, mouseY)
+
 
 			if selected_button != None:
 
@@ -136,13 +155,7 @@ while running:
 					print pfunc.lineNum(), "running menu button event"
 					pbproc.updateMenuButtons(selected_button.button_name)
 
-				# # # PROCESSING MENU ITEMS # # # 
 
-				# # # # Insert Menu:
-
-				if pgui.mInsert["enabled"] == True:
-					if pgui.mInsertoption01["enabled"] == True:
-						pfunc.InsertProton(mouseX, mouseY)
 
 
 		if event.type == pygame.KEYDOWN:
@@ -191,10 +204,10 @@ while running:
 						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event bPushyExample"
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
-
+			
 			for i, button in enumerate(pfunc.my_buttons):
 				button.display()	
-
+			
 
 	# always do this last
 	pygame.display.flip()
