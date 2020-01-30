@@ -274,7 +274,7 @@ def InsertProton(mouseX, mouseY):
 	#pygame.draw.circle(screen, pgvar.color_green, (mouseX + 500, mouseY+500), 6, 0)
 
 	# particle characteristics
-	particle_size = 6
+	particle_size = 9
 	particle_type = "proton"
 	particle_x = mouseX
 	particle_y = mouseY

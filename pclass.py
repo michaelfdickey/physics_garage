@@ -197,9 +197,16 @@ class Particle:
 		#self.drag = .999
 		self.thickness = particle_thickness
 
-	
 	def display(self):
 		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
 
+	"""
+	# size of proton 
+		# the root mean square charge radius of a proton is about 0.84 - 0.87 fm (or 0.84 x 10 ^ -15 to 0.87 x 10 ^ 15m )
+		.855 fm
+		.855 x 10 ^-15 m
+		8.55 x 10 ^-16m
+		1 px = 1.0 x 10-14m or .1 fm 
+	"""
 	
 	

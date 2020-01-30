@@ -70,6 +70,35 @@ To keep in line with the style guide, keep module names short, lowercase, and be
 #	Menus
 # ************************************************************************************************#
 
+Left Main Menu
+	Display Dimensions
+		1D, 2D, 3D
+	Calculation Dimensions
+		1D, 2D, 3D
+	Calculation Domain (determines which formulas are used for the calculations)
+		Classical
+		Relativistic
+		Quantum Mechanical
+	Standard
+		Metric or Imperial
+	Unit System
+		Metric
+			MKS, cgs
+		Imperial
+			ips, fps 
+	Display scale	
+		-, +, >> (opens fixed display scales)
+		pm (1.0 x 10^12m)
+	Time Step
+		1s / frame
+	Forces
+		Gravity
+		Electromagnetic
+		Strong nuclear
+		Weak Nuclear 
+		Dark Energy
+		New / Other
+
 Insert
 	Particle
 		proton
