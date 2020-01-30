@@ -58,9 +58,9 @@ onscreen_message_txt_origin = pgvar.pygame_window_width - 800
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
 dropdown01_origin = pgvar.pygame_window_height - 600
-dev_column_origin = pgvar.pygame_window_width - 300
+dev_column_origin = pgvar.pygame_window_width - pgvar.UI_menuButton_width
 
-bMenu02_origin = pgvar.UI_sideBar_width + 20 + (pgvar.UI_menuButton_width * 4)
+bMenu02_origin = pgvar.pygame_window_width - pgvar.UI_menuButton_width
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************

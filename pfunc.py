@@ -270,7 +270,9 @@ def drawOrigin():
 def InsertProton(mouseX, mouseY):
 	
 	pygame.draw.circle(screen, pgvar.color_green, (mouseX, mouseY), 6, 0)
-	pygame.draw.circle(screen, pgvar.color_green, (mouseX + 500, mouseY+500), 6, 0)
+
+	#pygame.draw.circle(screen, pgvar.color_green, (mouseX + 500, mouseY+500), 6, 0)
+
 	"""
 	# particle characteristics
 	particle_size = 7
