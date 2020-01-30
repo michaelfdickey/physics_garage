@@ -269,20 +269,23 @@ def drawOrigin():
 
 def InsertProton(mouseX, mouseY):
 	
-	pygame.draw.circle(screen, pgvar.color_green, (mouseX, mouseY), 6, 0)
-
+	#just here for troubleshooting
+	#pygame.draw.circle(screen, pgvar.color_red, (mouseX+50, mouseY+50), 6, 0)
 	#pygame.draw.circle(screen, pgvar.color_green, (mouseX + 500, mouseY+500), 6, 0)
 
-	"""
 	# particle characteristics
-	particle_size = 7
+	particle_size = 6
 	particle_type = "proton"
 	particle_x = mouseX
 	particle_y = mouseY
 	particle_color = (0,255,0)
+	particle_thickness = 0
 
-	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, particle_color)
+	print moduleName, lineNum(), "about to append class"
+
+	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, particle_color, particle_thickness)
 	created_particles.append(particle_to_make)
 
+	print moduleName, lineNum(), "completed append class"
+
 	#pgvar.message_txt = "YAY"
-	"""

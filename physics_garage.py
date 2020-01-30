@@ -71,7 +71,7 @@ while running:
 
 	
 	for i, particle in enumerate(pfunc.created_particles):
-		pclass.particle.display()
+		particle.display()
 	
 
 	""" just here for testing and reference. 
@@ -93,7 +93,6 @@ while running:
 			print moduleName, pfunc.lineNum(), "selected button = ", selected_button
 
 			# # # PROCESSING MENU ITEMS # # # 
-
 			# # # # Insert Menu:
 			if pgui.mInsert["enabled"] == True:
 				if pgui.mInsertoption01["enabled"] == True:

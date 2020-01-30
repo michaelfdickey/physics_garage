@@ -32,7 +32,7 @@ import inspect		# for displaying the line number of the code in print commands
 
 # # unique modules for this app
 import pgvar
-#import pfunc
+import pfunc
 import pgui
 #import pclass
 #import pbproc
@@ -185,17 +185,21 @@ class Button:
 
 
 class Particle:
-	def __init__ (self,(x,y),particle_size,particle_type,particle_color):
+	def __init__ (self,(x,y),particle_size,particle_type,particle_color, particle_thickness):
 		self.x = x
 		self.y = y
 		self.size = particle_size
 		self.type = particle_type
 		self.color = particle_color
-		self.speedx = 0
-		self.speedy = 0
-		self.angle = 0
-		self.drag = .999
-		self.thickness = 1
+		#self.speedx = 0
+		#self.speedy = 0
+		#self.angle = 0
+		#self.drag = .999
+		self.thickness = particle_thickness
 
+	
 	def display(self):
 		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
+
+	
+	
