@@ -191,14 +191,20 @@ class Particle:
 		self.size = particle_size
 		self.type = particle_type
 		self.color = particle_color
-		#self.speedx = 0
-		#self.speedy = 0
+		self.speedx = 1
+		self.speedy = 1
+		self.drag = .999
 		#self.angle = 0
-		#self.drag = .999
 		self.thickness = particle_thickness
 
 	def display(self):
 		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
+
+	def move(self):
+		#if self.static == False:
+		self.x = self.x + self.speedx * self.drag
+		self.y = self.y + self.speedy * self.drag
+
 
 	"""
 	# size of proton 
