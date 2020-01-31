@@ -108,6 +108,24 @@ def updateStickyButtons(selected_button):
 
 			pfunc.defineButtons()	
 
+	if selected_button == "bForceGravity":
+		if pgui.bForceGravity["enabled"] == False:
+			print moduleName, pfunc.lineNum(), "bForceGravity button found"
+			pgui.bForceGravity["enabled"] = True
+			pgui.bForceGravity["color"] = pgvar.UI_button_selected_color
+			print moduleName, pfunc.lineNum(), "flipped bForceGravity from false to true"
+			pfunc.defineButtons()	
+			
+		elif pgui.bForceGravity["enabled"] == True:
+			print moduleName, pfunc.lineNum(), "bForceGravity button found"
+			pgui.bForceGravity["enabled"] = False
+			pgui.bForceGravity["color"] = pgvar.UI_button_color
+			print moduleName, pfunc.lineNum(), "flipped stick01 from true to false"
+			pfunc.defineButtons()
+
+
+
+
 	
 	if selected_button == "sticky01":
 		if pgui.buttonSticky01["enabled"] == False:
