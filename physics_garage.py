@@ -96,9 +96,11 @@ while running:
 			# # # # Insert Menu:
 			if pgui.mInsert["enabled"] == True:
 				if pgui.mInsertoption01["enabled"] == True:
-					print "running InsertProton"
-					#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
-					pfunc.InsertProton(mouseX, mouseY)
+					if mouseX > pgvar.UI_sideBar_width:
+						if mouseY > pgvar.UI_topBar_height:
+							print "running InsertProton"
+							#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
+							pfunc.InsertProton(mouseX, mouseY)
 
 
 			if selected_button != None:
