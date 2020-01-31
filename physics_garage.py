@@ -71,9 +71,8 @@ while running:
 
 	
 	for i, particle in enumerate(pfunc.created_particles):
-		particle.display()
 		particle.move()
-	
+		particle.display()	
 
 	""" just here for testing and reference. 
 	for i, button in enumerate(pfunc.my_buttons):

@@ -191,9 +191,9 @@ class Particle:
 		self.size = particle_size
 		self.type = particle_type
 		self.color = particle_color
-		self.speedx = 1
-		self.speedy = 1
-		self.drag = .999
+		self.speedx = .1
+		self.speedy = .1
+		self.drag = .9999
 		#self.angle = 0
 		self.thickness = particle_thickness
 
@@ -202,6 +202,9 @@ class Particle:
 
 	def move(self):
 		#if self.static == False:
+		self.color = pgvar.color_black
+		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
+		self.color = pgvar.color_green
 		self.x = self.x + self.speedx * self.drag
 		self.y = self.y + self.speedy * self.drag
 
