@@ -298,3 +298,10 @@ def InsertProton(mouseX, mouseY):
 		8.55 x 10 ^-16m
 		1 px = 1.0 x 10-14m or .1 fm 
 	"""
+
+def distanceParticles(particle1, particle2):
+	# calculates distance between each pair of particles
+	# # distance x, y, and hypotenuse
+	distance_x = abs(p1.x - p2.x)
+	distance_y = abs(p1.y - p2.y)
+	hypotenuse = math.sqrt((distance_x * disatnce_x) + (distance_y * distance_y))
