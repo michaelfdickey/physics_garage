@@ -46,7 +46,7 @@ import pgvar
 # maybe have small / medium and large button heights and widths? also move these to pgvar?
 
 buttonHeight = 20
-display_origin = pgvar.pygame_window_height - 340   #display options origin
+display_origin = pgvar.pygame_window_height - 380   #display options origin
 forces_origin = pgvar.pygame_window_height - 800
 scale_time_origin = pgvar.pygame_window_height - 860
 scale_display_origin = pgvar.pygame_window_height -940
@@ -559,19 +559,33 @@ buttonFPS["group"] = "fps"									# buttonGroup
 buttonFPS["visible"] = True									# buttonVisible
 buttonFPS["available"] = True
 
-bVectors = {}
-bVectors["name"] = "bVectors"									# button_name
-bVectors["origin_x"] = 0										# button_origin_x
-bVectors["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
-bVectors["width"] = pgvar.UI_sideBar_width					# button_width
-bVectors["height"] = 20										# button_height
-bVectors["label_txt"] = " Force Vectors "						# button_label_txt
-bVectors["type"] = "sticky"									# buttonType
-bVectors["enabled"] = False									# buttonEnabled
-bVectors["color"] = pgvar.UI_button_color						# buttonColor
-bVectors["group"] = "vectors"									# buttonGroup
-bVectors["visible"] = True									# buttonVisible
-bVectors["available"] = True
+bForceVectors = {}
+bForceVectors["name"] = "bForceVectors"									# button_name
+bForceVectors["origin_x"] = 0										# button_origin_x
+bForceVectors["origin_y"] = display_origin + (buttonHeight * 4)		# button_origin_y
+bForceVectors["width"] = pgvar.UI_sideBar_width					# button_width
+bForceVectors["height"] = 20										# button_height
+bForceVectors["label_txt"] = " Force Vectors "						# button_label_txt
+bForceVectors["type"] = "sticky"									# buttonType
+bForceVectors["enabled"] = False									# buttonEnabled
+bForceVectors["color"] = pgvar.UI_button_color						# buttonColor
+bForceVectors["group"] = "vectors"									# buttonGroup
+bForceVectors["visible"] = True									# buttonVisible
+bForceVectors["available"] = True
+
+bDistComponents = {}
+bDistComponents["name"] = "bDistComponents"							# button_name
+bDistComponents["origin_x"] = 0										# button_origin_x
+bDistComponents["origin_y"] = display_origin + (buttonHeight * 5)		# button_origin_y
+bDistComponents["width"] = pgvar.UI_sideBar_width						# button_width
+bDistComponents["height"] = 20										# button_height
+bDistComponents["label_txt"] = "Distances xyzh"						# button_label_txt
+bDistComponents["type"] = "sticky"									# buttonType
+bDistComponents["enabled"] = False									# buttonEnabled
+bDistComponents["color"] = pgvar.UI_button_color						# buttonColor
+bDistComponents["group"] = "vectors"									# buttonGroup
+bDistComponents["visible"] = True										# buttonVisible
+bDistComponents["available"] = True
 
 
 # # Scale Time
@@ -1469,7 +1483,8 @@ allButtons[81] = bScaleTimeOpener
 
 # Display Buttons
 
-allButtons[65] = bVectors
+allButtons[65] = bForceVectors
+allButtons[93] = bDistComponents
 
 # Scale
 allButtons[57] = bScaleMinus
