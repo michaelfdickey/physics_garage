@@ -212,9 +212,13 @@ class Particle:
 			pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, (self.thickness))
 			# draw new location of particle
 			self.color = oldColor
-			self.speedy = self.speedy + .001
+			self.speedy = self.speedy + .00001
 			self.x = self.x + self.speedx * self.drag
 			self.y = self.y + self.speedy * self.drag
+
+		if pgui.bForceElectromagnetic["enabled"] == True:
+			self.speedx = self.speedx + .00001
+			self.speedy = self.speedy + .00001
 
 
 
