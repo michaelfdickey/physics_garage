@@ -71,8 +71,10 @@ while running:
 
 	
 	for i, particle in enumerate(pfunc.created_particles):
-		particle.move()
 		particle.display()	
+		if pgui.bPlaySimulation["enabled"] == True:
+			particle.move()
+			particle.display()	
 
 	""" just here for testing and reference. 
 	for i, button in enumerate(pfunc.my_buttons):
