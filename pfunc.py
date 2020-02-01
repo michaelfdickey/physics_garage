@@ -112,7 +112,7 @@ def defineButtons():
 	del my_buttons[:] 	# this clears and resets the my_buttons list, other it just keeps getting appended
 
 	# source info for this part: https://realpython.com/iterate-through-dictionary-python/
-	print moduleName, lineNum(), "defineButtons() - started" 
+	#print moduleName, lineNum(), "defineButtons() - started" 
 	# iterates through the nested button dictionary, dumps each button into buttonToDraw, then displays ads to the list
 	for allButtonsID, allButtonsValue in pgui.allButtons.items():
 		for key in allButtonsValue:
@@ -138,7 +138,7 @@ def defineButtons():
 		#print " my_buttons length: ", len(my_buttons)
 
 
-	print moduleName, lineNum(), "defineButtons() - completed"
+	#print moduleName, lineNum(), "defineButtons() - completed"
 
 
 
@@ -342,3 +342,17 @@ def distanceParticles(particle1, particle2):
 		if particle1.x == particle2.x:
 			distance_x_label_origin = particle1.x
 		screen.blit(label_distance_x, (distance_x_label_origin, particle1.y))
+
+		# # # display Y
+		label_distance_y = pgvar.myfont.render(str(distance_y), 1, (255,255,0))
+		if particle1.y > particle2.y:
+			distance_y_label_origin = int(particle1.y-(distance_y/2))
+		if particle1.y < particle2.y:
+			distance_y_label_origin = int(particle2.y-(distance_y/2))
+		if particle1.y == particle2.y:
+			distance_y_label_origin = particle1.y
+		screen.blit(label_distance_y, (particle2.x, distance_y_label_origin))
+
+		# # # display hypotenuse
+		label_hypotenuse = pgvar.myfont.render(str(hypotenuse), 1, (255,255,0))
+		screen.blit(label_hypotenuse, (distance_x_label_origin, distance_y_label_origin))
