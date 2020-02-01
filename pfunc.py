@@ -170,9 +170,9 @@ def enumerateButtons():
 ####### ---------------------------------------------------------------------##########
 
 def redrawEverything():
-	print lineNum(), "redrawEverything() - started"
+	#print lineNum(), "redrawEverything() - started"
 	
-	print lineNum(), "drawing background"
+	#print lineNum(), "drawing background"
 	screen.fill(pgvar.color_background)
 
 	###*** ALERT ALERT ALERT -> re-enable below to get drid and origin working ***
@@ -186,16 +186,16 @@ def redrawEverything():
 		drawOrigin()
 
 		
-	print lineNum(), "drawing borders and frames"
+	#print lineNum(), "drawing borders and frames"
 	pygame.draw.rect(screen, pgvar.UI_background_color, (0, 0, pgvar.pygame_window_width, pgvar.UI_topBar_height))
 	pygame.draw.rect(screen, pgvar.UI_background_color, (0,0, pgvar.UI_sideBar_width, pgvar.pygame_window_height))
 
-	print lineNum(), "redifining buttons and redrawing"
+	#print lineNum(), "redifining buttons and redrawing"
 	defineButtons()
 	for i, button in enumerate(my_buttons):
 		button.display()
 
-	print lineNum(), "redrawEverything() - completed"
+	#print lineNum(), "redrawEverything() - completed"
 
 
 def redrawPortal():
@@ -320,6 +320,25 @@ def distanceParticles(particle1, particle2):
 	hypotenuse = math.sqrt((distance_x * distance_x) + (distance_y * distance_y))
 
 	# # draw reference lines
-	pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
-	pygame.draw.lines(screen, pgvar.color_red, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
-	pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse
+	if pgui.bDistComponents["enabled"] == True:
+		pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
+		pygame.draw.lines(screen, pgvar.color_red, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
+		pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse
+
+		# # paint measurements
+		# # # label points
+		label_point_1 = pgvar.myfont.render(str("P1"), 1, (255,255,0))
+		screen.blit(label_point_1, (particle1.x + 5, particle1.y + 5))
+
+		label_point_2 = pgvar.myfont.render(str("P2"), 1, (255,255,0))
+		screen.blit(label_point_2, (particle2.x + 5, particle2.y + 5))
+
+		# # # display X
+		label_distance_x = pgvar.myfont.render(str(distance_x), 1, (255,255,0))
+		if particle1.x > particle2.x:
+			distance_x_label_origin = int(particle1.x-(distance_x/2))
+		if particle1.x < particle2.x:
+			distance_x_label_origin = int(particle2.x-(distance_x/2))
+		if particle1.x == particle2.x:
+			distance_x_label_origin = particle1.x
+		screen.blit(label_distance_x, (distance_x_label_origin, particle1.y))

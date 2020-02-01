@@ -239,6 +239,19 @@ def updateStickyButtons(selected_button):
 			pfunc.defineButtons()
 			pfunc.redrawEverything()
 
+	# # # bDistance Components
+	if selected_button == "bDistComponents":
+		if pgui.bDistComponents["enabled"] == False:
+			pgui.bDistComponents["enabled"] = True
+			pgui.bDistComponents["color"] = pgvar.UI_button_selected_color
+			pfunc.defineButtons()	
+			pfunc.redrawEverything()
+			
+		elif pgui.bDistComponents["enabled"] == True:
+			pgui.bDistComponents["enabled"] = False
+			pgui.bDistComponents["color"] = pgvar.UI_button_color
+			pfunc.defineButtons()
+			pfunc.redrawEverything()
 
 
 ####### -------------------------------------##########
