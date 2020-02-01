@@ -302,6 +302,11 @@ def InsertProton(mouseX, mouseY):
 def distanceParticles(particle1, particle2):
 	# calculates distance between each pair of particles
 	# # distance x, y, and hypotenuse
-	distance_x = abs(p1.x - p2.x)
-	distance_y = abs(p1.y - p2.y)
-	hypotenuse = math.sqrt((distance_x * disatnce_x) + (distance_y * distance_y))
+	distance_x = abs(particle1.x - particle2.x)
+	distance_y = abs(particle1.y - particle2.y)
+	hypotenuse = math.sqrt((distance_x * distance_x) + (distance_y * distance_y))
+
+	# # draw reference lines
+	pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
+	pygame.draw.lines(screen, pgvar.color_red, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
+	pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse

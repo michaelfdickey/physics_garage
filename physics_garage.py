@@ -59,7 +59,6 @@ running = True
 
 while running:
 
-	
 	if pgui.buttonFPS["enabled"] == True:
 		pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 100, pgvar.pygame_window_height - 30, 80, 20))   
 		pfunc.count_fps()
@@ -71,7 +70,9 @@ while running:
 
 	
 	for i, particle in enumerate(pfunc.created_particles):
-		particle.display()	
+		for particle2 in pfunc.created_particles[i+1:]:
+			pfunc.distanceParticles(particle,particle2)
+			particle.display()	
 		if pgui.bPlaySimulation["enabled"] == True:
 			particle.move()
 			particle.display()	
