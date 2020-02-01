@@ -269,23 +269,32 @@ def drawOrigin():
 
 def InsertProton(mouseX, mouseY):
 	
-	#just here for troubleshooting
-	#pygame.draw.circle(screen, pgvar.color_red, (mouseX+50, mouseY+50), 6, 0)
-	#pygame.draw.circle(screen, pgvar.color_green, (mouseX + 500, mouseY+500), 6, 0)
-
 	# particle characteristics
-	particle_size = 9
+	particle_size = 8
 	particle_type = "proton"
 	particle_x = mouseX
 	particle_y = mouseY
+	speedx = 0
+	speedy = 0
 	particle_color = (0,255,0)
 	particle_thickness = 0
+	particle_mass = 0
+	particle_charge = 1
 
 	print moduleName, lineNum(), "about to append class"
 
-	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, particle_color, particle_thickness)
+	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass, particle_charge)
 	created_particles.append(particle_to_make)
 
 	print moduleName, lineNum(), "completed append class"
 
 	#pgvar.message_txt = "YAY"
+
+	"""
+	# size of proton 
+		# the root mean square charge radius of a proton is about 0.84 - 0.87 fm (or 0.84 x 10 ^ -15 to 0.87 x 10 ^ 15m )
+		.855 fm
+		.855 x 10 ^-15 m
+		8.55 x 10 ^-16m
+		1 px = 1.0 x 10-14m or .1 fm 
+	"""

@@ -185,42 +185,39 @@ class Button:
 
 
 class Particle:
-	def __init__ (self,(x,y),particle_size,particle_type,particle_color, particle_thickness):
+	def __init__ (self,(x,y),particle_size,particle_type,speedx,speedy, particle_color, particle_thickness, particle_mass, particle_charge):
 		self.x = x
 		self.y = y
 		self.size = particle_size
 		self.type = particle_type
 		self.color = particle_color
-		self.speedx = 0
-		self.speedy = 0
-		self.drag = .9999
-		#self.angle = 0
+		self.speedx = speedx
+		self.speedy = speedy
 		self.thickness = particle_thickness
+		self.mass = particle_mass
+		self.charge = particle_charge
+		
+		self.drag = .999
+		self.angle = 0
 
 	def display(self):
-		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
+		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness,)
 
 	def move(self):
-		#if self.static == False:
-
 		if pgui.bForceGravity["enabled"] == True:
+			print "running def move self"
+			print "self.x", self.x, "self.y", self.y, "self.speedy", self.speedy
 			# clear out old location of particle
+			oldColor = self.color
 			self.color = pgvar.color_black
-			pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
+			pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, (self.thickness+1))
 			# draw new location of particle
-			self.color = pgvar.color_green
+			self.color = oldColor
 			self.speedy = .1
 			self.x = self.x + self.speedx * self.drag
 			self.y = self.y + self.speedy * self.drag
 
 
-	"""
-	# size of proton 
-		# the root mean square charge radius of a proton is about 0.84 - 0.87 fm (or 0.84 x 10 ^ -15 to 0.87 x 10 ^ 15m )
-		.855 fm
-		.855 x 10 ^-15 m
-		8.55 x 10 ^-16m
-		1 px = 1.0 x 10-14m or .1 fm 
-	"""
+
 	
 	
