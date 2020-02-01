@@ -205,15 +205,14 @@ class Particle:
 
 	def move(self):
 		if pgui.bForceGravity["enabled"] == True:
-			print "running def move self"
-			print "self.x", self.x, "self.y", self.y, "self.speedy", self.speedy
+			#print moduleName, pfunc.lineNum(), "running def move self", "self.x", self.x, "self.y", self.y, "self.speedy", self.speedy
 			# clear out old location of particle
 			oldColor = self.color
 			self.color = pgvar.color_black
-			pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, (self.thickness+1))
+			pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, (self.thickness))
 			# draw new location of particle
 			self.color = oldColor
-			self.speedy = .1
+			self.speedy = self.speedy + .001
 			self.x = self.x + self.speedx * self.drag
 			self.y = self.y + self.speedy * self.drag
 
