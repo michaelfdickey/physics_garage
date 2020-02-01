@@ -123,7 +123,20 @@ def updateStickyButtons(selected_button):
 			print moduleName, pfunc.lineNum(), "flipped stick01 from true to false"
 			pfunc.defineButtons()
 
-
+	if selected_button == "bForceElectromagnetic":
+		if pgui.bForceElectromagnetic["enabled"] == False:
+			print moduleName, pfunc.lineNum(), "bForceElectromagnetic button found"
+			pgui.bForceElectromagnetic["enabled"] = True
+			pgui.bForceElectromagnetic["color"] = pgvar.UI_button_selected_color
+			print moduleName, pfunc.lineNum(), "flipped bForceElectromagnetic from false to true"
+			pfunc.defineButtons()	
+			
+		elif pgui.bForceElectromagnetic["enabled"] == True:
+			print moduleName, pfunc.lineNum(), "bForceElectromagnetic button found"
+			pgui.bForceElectromagnetic["enabled"] = False
+			pgui.bForceElectromagnetic["color"] = pgvar.UI_button_color
+			print moduleName, pfunc.lineNum(), "flipped stick01 from true to false"
+			pfunc.defineButtons()
 
 
 	
