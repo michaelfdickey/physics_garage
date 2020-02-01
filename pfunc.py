@@ -198,6 +198,19 @@ def redrawEverything():
 	print lineNum(), "redrawEverything() - completed"
 
 
+def redrawPortal():
+	print lineNum(), "redrawBackground() started"
+	pygame.draw.rect(screen, pgvar.color_background, (pgvar.UI_sideBar_width, pgvar.UI_topBar_height, pgvar.pygame_window_width, pgvar.pygame_window_height))
+	#screen.fill(pgvar.color_background)
+	if pgui.buttonGrid["enabled"] == True:
+		drawGrid()
+	if pgui.buttonOrigin["enabled"] == True:
+		drawOrigin()
+
+
+
+
+
 ####### ---------------------------------------------------------------------##########
 ####### Functions for counting and displaying FPS (frames per second)                               ##########
 ####### ---------------------------------------------------------------------##########
