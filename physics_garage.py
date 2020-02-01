@@ -144,6 +144,16 @@ while running:
 							button.display()
 						print moduleName, pfunc.lineNum(), "running code for Command01"
 
+					if selected_button.button_name == "bClearSimulation":
+						pgui.bClearSimulation["enabled"] = True
+						pgui.bClearSimulation["color"] = pgvar.UI_button_click_color
+						pfunc.defineButtons()	
+						pfunc.created_particles = []		#wipes all particles out of Sim. 
+						pfunc.redrawEverything()
+						for i, button in enumerate(pfunc.my_buttons):
+							button.display()
+
+
 						# bPushyExample function call goes here:
 
 						# you also need to update the MOUSEBUTTONUP section below to change the color back after releasing button
@@ -219,6 +229,14 @@ while running:
 						print moduleName, pfunc.lineNum(), "____drawing buttons from pushy event bPushyExample"
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
+
+					if selected_button.button_name == "bClearSimulation":
+						pgui.bClearSimulation["enabled"] = False
+						pgui.bClearSimulation["color"] = pgvar.UI_button_color
+						pfunc.defineButtons()	
+						for i, button in enumerate(pfunc.my_buttons):
+							button.display()
+
 			
 			for i, button in enumerate(pfunc.my_buttons):
 				button.display()	

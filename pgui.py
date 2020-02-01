@@ -786,12 +786,12 @@ bClearSimulation["origin_y"] = pgvar.pygame_window_height - 60
 bClearSimulation["width"] = pgvar.UI_sideBar_width
 bClearSimulation["height"] = 20
 bClearSimulation["label_txt"] = "Clear Simulation"
-bClearSimulation["type"] = "sticky"
+bClearSimulation["type"] = "pushy"
 bClearSimulation["enabled"] = True
-bClearSimulation["color"] = pgvar.UI_button_disabled
+bClearSimulation["color"] = pgvar.UI_button_color
 bClearSimulation["group"] = "SimulationControl"
 bClearSimulation["visible"] = True
-bClearSimulation["available"] = False
+bClearSimulation["available"] = True
 
 
 # # Exit Button:
