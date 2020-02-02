@@ -320,43 +320,43 @@ def distanceParticles(particle1, particle2):
 	hypotenuse = math.sqrt((distance_x * distance_x) + (distance_y * distance_y))
 
 	# # draw reference lines
-#	if pgui.bDistComponents["enabled"] == True:
+	if pgui.bDistComponents["enabled"] == True:
 
-	pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
-	pygame.draw.lines(screen, pgvar.color_red, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
-	pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse
+		pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
+		pygame.draw.lines(screen, pgvar.color_red, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
+		pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse
 
-	# # paint measurements
-	# # # label points
-	label_point_1 = pgvar.myfont.render(str("P1"), 1, (255,255,0))
-	screen.blit(label_point_1, (particle1.x + 5, particle1.y + 5))
+		# # paint measurements
+		# # # label points
+		label_point_1 = pgvar.myfont.render(str("P1"), 1, (255,255,0))
+		screen.blit(label_point_1, (particle1.x + 5, particle1.y + 5))
 
-	label_point_2 = pgvar.myfont.render(str("P2"), 1, (255,255,0))
-	screen.blit(label_point_2, (particle2.x - 20, particle2.y + 5))
+		label_point_2 = pgvar.myfont.render(str("P2"), 1, (255,255,0))
+		screen.blit(label_point_2, (particle2.x - 20, particle2.y + 5))
 
-	# # # display X
-	label_distance_x = pgvar.myfont.render(str(distance_x), 1, (255,255,0))
-	if particle1.x > particle2.x:
-		distance_x_label_origin = int(particle1.x-(distance_x/2))
-	if particle1.x < particle2.x:
-		distance_x_label_origin = int(particle2.x-(distance_x/2))
-	if particle1.x == particle2.x:
-		distance_x_label_origin = particle1.x
-	screen.blit(label_distance_x, (distance_x_label_origin, particle1.y))
+		# # # display X
+		label_distance_x = pgvar.myfont.render(str(distance_x), 1, (255,255,0))
+		if particle1.x > particle2.x:
+			distance_x_label_origin = int(particle1.x-(distance_x/2))
+		if particle1.x < particle2.x:
+			distance_x_label_origin = int(particle2.x-(distance_x/2))
+		if particle1.x == particle2.x:
+			distance_x_label_origin = particle1.x
+		screen.blit(label_distance_x, (distance_x_label_origin, particle1.y))
 
-	# # # display Y
-	label_distance_y = pgvar.myfont.render(str(distance_y), 1, (255,255,0))
-	if particle1.y > particle2.y:
-		distance_y_label_origin = int(particle1.y-(distance_y/2))
-	if particle1.y < particle2.y:
-		distance_y_label_origin = int(particle2.y-(distance_y/2))
-	if particle1.y == particle2.y:
-		distance_y_label_origin = particle1.y
-	screen.blit(label_distance_y, (particle2.x, distance_y_label_origin))
+		# # # display Y
+		label_distance_y = pgvar.myfont.render(str(distance_y), 1, (255,255,0))
+		if particle1.y > particle2.y:
+			distance_y_label_origin = int(particle1.y-(distance_y/2))
+		if particle1.y < particle2.y:
+			distance_y_label_origin = int(particle2.y-(distance_y/2))
+		if particle1.y == particle2.y:
+			distance_y_label_origin = particle1.y
+		screen.blit(label_distance_y, (particle2.x, distance_y_label_origin))
 
-	# # # display hypotenuse
-	label_hypotenuse = pgvar.myfont.render(str(hypotenuse), 1, (255,255,0))
-	screen.blit(label_hypotenuse, (distance_x_label_origin, distance_y_label_origin))
+		# # # display hypotenuse
+		label_hypotenuse = pgvar.myfont.render(str(hypotenuse), 1, (255,255,0))
+		screen.blit(label_hypotenuse, (distance_x_label_origin, distance_y_label_origin))
 
 	# # # calculate angles
 	dx = particle1.x - particle2.x

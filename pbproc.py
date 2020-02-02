@@ -108,6 +108,7 @@ def updateStickyButtons(selected_button):
 
 			pfunc.defineButtons()	
 
+
 	if selected_button == "bForceGravity":
 		if pgui.bForceGravity["enabled"] == False:
 			print moduleName, pfunc.lineNum(), "bForceGravity button found"
@@ -137,6 +138,7 @@ def updateStickyButtons(selected_button):
 			pgui.bForceElectromagnetic["color"] = pgvar.UI_button_color
 			print moduleName, pfunc.lineNum(), "flipped stick01 from true to false"
 			pfunc.defineButtons()
+
 
 
 	
@@ -250,6 +252,20 @@ def updateStickyButtons(selected_button):
 		elif pgui.bDistComponents["enabled"] == True:
 			pgui.bDistComponents["enabled"] = False
 			pgui.bDistComponents["color"] = pgvar.UI_button_color
+			pfunc.defineButtons()
+			pfunc.redrawEverything()
+
+	# # # bForceVectors
+	if selected_button == "bForceVectors":
+		if pgui.bForceVectors["enabled"] == False:
+			pgui.bForceVectors["enabled"] = True
+			pgui.bForceVectors["color"] = pgvar.UI_button_selected_color
+			pfunc.defineButtons()	
+			pfunc.redrawEverything()
+			
+		elif pgui.bForceVectors["enabled"] == True:
+			pgui.bForceVectors["enabled"] = False
+			pgui.bForceVectors["color"] = pgvar.UI_button_color
 			pfunc.defineButtons()
 			pfunc.redrawEverything()
 
