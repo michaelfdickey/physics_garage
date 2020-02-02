@@ -116,6 +116,10 @@ message_txt = "TEST"
 # # other
 entered_text = ""
 
+# # FORCES
+
+forceGravity = 1
+forceElectromagnetic = 5
 
 # ************************************************************************************************#
 #	Initial lists
