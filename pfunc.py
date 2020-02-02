@@ -332,7 +332,7 @@ def distanceParticles(particle1, particle2):
 	screen.blit(label_point_1, (particle1.x + 5, particle1.y + 5))
 
 	label_point_2 = pgvar.myfont.render(str("P2"), 1, (255,255,0))
-	screen.blit(label_point_2, (particle2.x + 5, particle2.y + 5))
+	screen.blit(label_point_2, (particle2.x - 20, particle2.y + 5))
 
 	# # # display X
 	label_distance_x = pgvar.myfont.render(str(distance_x), 1, (255,255,0))
@@ -395,3 +395,12 @@ def distanceParticles(particle1, particle2):
 	vector_p2_y = vector_p2[1] + math.sin(math.radians(degs)) * vector_len
 	pygame.draw.line(screen, pgvar.color_blue, vector_p2, (vector_p2_x,vector_p2_y), 2)
 	#print "vector_p2_x: ", vector_p2_x, "vector_p2_y: ", vector_p2_y
+
+	# # update particle speedx and speedy
+	particle1.speedx = particle1.speedx + ((vector_p1_x - particle1.x) *.0000001)
+	particle1.speedy = particle1.speedy + ((vector_p1_y - particle1.y) *.0000001)
+	particle2.speedx = particle2.speedx + ((vector_p2_x - particle2.x) *.0000001)
+	particle2.speedy = particle2.speedy + ((vector_p2_y - particle2.y) *.0000001) # cause speed way too high
+	#print "p1 speed x = ", p1.speedx
+	#print "p1 speed y = ", p1.speedy
+	#pause = raw_input()
