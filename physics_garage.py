@@ -25,6 +25,7 @@ import math
 import sys
 import time 			# for FPS functions
 import inspect		# for displaying the line number of the code in print commands
+import decimal
 
 # # unique modules for this app
 import pgvar
