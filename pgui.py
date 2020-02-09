@@ -54,13 +54,13 @@ display_dimensions_origin = pgvar.pygame_window_height - 1160
 calculation_dimensions_origin = pgvar.pygame_window_height - 1100
 standard_origin = pgvar.pygame_window_height - 1040
 onscreen_message_txt_origin = pgvar.pygame_window_width - 800
-
 group02_origin = pgvar.pygame_window_height - 960
 group03_origin = pgvar.pygame_window_height - 1020
 dropdown01_origin = pgvar.pygame_window_height - 600
 dev_column_origin = pgvar.pygame_window_width - pgvar.UI_menuButton_width
-
 bMenu02_origin = pgvar.pygame_window_width - pgvar.UI_menuButton_width
+bScaleOptions_width = 200
+
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -646,6 +646,52 @@ bScaleOpener["group"] = "Scale"									# buttonGroup
 bScaleOpener["visible"] = True									# buttonVisible	
 bScaleOpener["available"] = True
 
+bScaleOption19 = {}
+bScaleOption19["name"] = "bScaleOption19"												# button_name
+bScaleOption19["origin_x"] = pgvar.UI_sideBar_width									# button_origin_x
+bScaleOption19["origin_y"] = scale_display_origin + 0									# button_origin_y
+bScaleOption19["width"] = bScaleOptions_width											# button_width
+bScaleOption19["height"] = 20															# button_height
+bScaleOption19["label_txt"] = " 10e-16    0.1 femtometer (fm)"							# button_label_txt
+bScaleOption19["type"] = "dropdown"													# buttonType
+bScaleOption19["enabled"] = False														# buttonEnabled
+bScaleOption19["color"] = pgvar.UI_button_color										# buttonColor
+bScaleOption19["group"] = "Scale"														# buttonGroup
+bScaleOption19["visible"] = True														# buttonVisible
+bScaleOption19["available"] = True
+
+
+bScaleOption20 = {}
+bScaleOption20["name"] = "bScaleOption20"												# button_name
+bScaleOption20["origin_x"] = pgvar.UI_sideBar_width									# button_origin_x
+bScaleOption20["origin_y"] = scale_display_origin + 20									# button_origin_y
+bScaleOption20["width"] = bScaleOptions_width											# button_width
+bScaleOption20["height"] = 20															# button_height
+bScaleOption20["label_txt"] = " 10e-15    femtometer (fm)"								# button_label_txt
+bScaleOption20["type"] = "dropdown"													# buttonType
+bScaleOption20["enabled"] = False														# buttonEnabled
+bScaleOption20["color"] = pgvar.UI_button_color										# buttonColor
+bScaleOption20["group"] = "Scale"														# buttonGroup
+bScaleOption20["visible"] = True														# buttonVisible
+bScaleOption20["available"] = True
+
+bScaleOption21 = {}
+bScaleOption21["name"] = "bScaleOption21"												# button_name
+bScaleOption21["origin_x"] = pgvar.UI_sideBar_width									# button_origin_x
+bScaleOption21["origin_y"] = scale_display_origin + 40									# button_origin_y
+bScaleOption21["width"] = bScaleOptions_width															# button_width
+bScaleOption21["height"] = 20															# button_height
+bScaleOption21["label_txt"] = " 10e-14    10 femtometer (fm)"								# button_label_txt
+bScaleOption21["type"] = "dropdown"													# buttonType
+bScaleOption21["enabled"] = False														# buttonEnabled
+bScaleOption21["color"] = pgvar.UI_button_color										# buttonColor
+bScaleOption21["group"] = "Scale"														# buttonGroup
+bScaleOption21["visible"] = True														# buttonVisible
+bScaleOption21["available"] = True
+
+
+
+
 tScaleSelection = {}
 tScaleSelection["name"] = "tScaleSelection"							# button_name
 tScaleSelection["origin_x"] = 0										# button_origin_x
@@ -659,6 +705,7 @@ tScaleSelection["color"] = pgvar.UI_button_color						# buttonColor
 tScaleSelection["group"] = "Scale"									# buttonGroup
 tScaleSelection["visible"] = True										# buttonVisible		
 tScaleSelection["available"] = True
+
 
 
 
@@ -1452,8 +1499,6 @@ allButtons[86] = bCalc3D
 # Standards
 allButtons[87] = lStandard 
 
-
-
 allButtons[88] = bStdMetric
 allButtons[89] = bStdImperial
 
@@ -1480,6 +1525,11 @@ allButtons[78] = bForceNewOtherOpener
 allButtons[79] = lScaleTime
 allButtons[80] = bScaleTime
 allButtons[81] = bScaleTimeOpener
+
+allButtons[94] = bScaleOption19
+allButtons[95] = bScaleOption20
+allButtons[96] = bScaleOption21
+
 
 # Display Buttons
 

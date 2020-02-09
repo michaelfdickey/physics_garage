@@ -55,6 +55,8 @@ pProton["scale"] = "femtometer"
 pProton["mass"] = 1.673e-27				#kg
 pProton["charge"] = 1
 pProton["class"] = "Baryon"
+pProton["half-life"] = 0
+
 
 print "pProton mass:", pProton["mass"]
 
@@ -65,6 +67,30 @@ print "pProton mass:", pProton["mass"]
 .1 femtometer 	8.414	8
 1 femtometer 		.8414	1
 10 femto meters	.08414	1
+"""
+
+"""
+# scales:
+0	10e-35	Planck length 
+1	10e-34
+2	10e-33
+3	10e-32
+4	10e-31
+5	10e-30
+6	10e-29
+7	10e-28
+8	10e-27
+9	10e-26
+10	10e-25
+11	10e-24	yoctometre (ym)		Effective cross section radius of 1 MeV neutrino
+19	10e-16	.1 femtometer 		.8414 fm = charge radius of Proton
+20	10e-15	femtrometer (fm)		1.5 fm = Size of 11 MeV proton
+21	10e-14	10 femtometers 		1.75 fm - 15 fm Diameter range of atomic Nuclei
+
+								
+
+good list to integrate
+https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picometre_range
 """
 
 # # example proton information:
