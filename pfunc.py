@@ -180,11 +180,13 @@ def redrawEverything():
 	if pgui.buttonGrid["enabled"] == True:
 		drawGrid()
 
-	
 	# check if draw origin is enabled, and draw if so. 
 	if pgui.buttonOrigin["enabled"] == True:
 		drawOrigin()
 
+	# check is scale label is enabled, then draw scale
+	if pgui.tScaleSelection["enabled"] == True:
+		drawScale()
 		
 	#print lineNum(), "drawing borders and frames"
 	pygame.draw.rect(screen, pgvar.UI_background_color, (0, 0, pgvar.pygame_window_width, pgvar.UI_topBar_height))
@@ -206,7 +208,8 @@ def redrawPortal():
 		drawGrid()
 	if pgui.buttonOrigin["enabled"] == True:
 		drawOrigin()
-
+	if pgui.tScaleSelection["enabled"] == True:
+		drawScale()
 
 
 
@@ -272,6 +275,17 @@ def drawGrid():
 		pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,grid_center_v - (grid_width * grid_v_draw)),(pgvar.pygame_window_width,grid_center_v - (grid_width * grid_v_draw))],1)
 		pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,grid_center_v + (grid_width * grid_v_draw)),(pgvar.pygame_window_width,grid_center_v + (grid_width * grid_v_draw))],1)
 		grid_v_draw = grid_v_draw + 1		
+
+
+####### ---------------------------------------------------------------------##########
+####### Draw Scale Label                                                                                                                       	      ##########
+####### ---------------------------------------------------------------------##########
+
+
+def drawScale():
+	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,500),(1000,1000)],1)
+	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,250),(1000,1000)],3)
+
 
 
 ####### ---------------------------------------------------------------------##########

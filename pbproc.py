@@ -206,10 +206,12 @@ def updateStickyButtons(selected_button):
 			pgui.tScaleSelection["enabled"] = True
 			pgui.tScaleSelection["color"] = pgvar.UI_button_selected_color
 			pfunc.defineButtons()	
+			pfunc.redrawEverything()
 			
 		elif pgui.tScaleSelection["enabled"] == True:
 			pgui.tScaleSelection["enabled"] = False
 			pgui.tScaleSelection["color"] = pgvar.UI_button_color
+			pfunc.defineButtons()	
 			pfunc.redrawEverything()
 
 	# # # GRID BUTTON
