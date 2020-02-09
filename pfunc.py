@@ -283,10 +283,30 @@ def drawGrid():
 
 
 def drawScale():
-	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,500),(1000,1000)],1)
-	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,250),(1000,1000)],3)
+	
+	# the stuff needed to figure out where to draw the scale label. taken from the def drawGrid  function above
+	grid_width = 100
+	grid_height = 100
 
+	grid_center_h = pgvar.pygame_window_width / 2
+	grid_center_v = pgvar.pygame_window_height / 2
 
+	grid_h_units = pgvar.pygame_window_width / grid_width
+	grid_h_units = grid_h_units / 2
+
+	grid_v_units = pgvar.pygame_window_height / grid_height
+	grid_v_units = grid_v_units / 2
+	
+	#for testing reference:
+	#pygame.draw.lines(screen, pgvar.color_yellow, False, [(0,250),(1000,1000)],3)
+
+	pygame.draw.lines(screen, pgvar.color_yellow, False, [(grid_center_h - (grid_width * (grid_h_units - 2)), pgvar.pygame_window_height - 40),(grid_center_h - (grid_width * (grid_h_units - 3)),pgvar.pygame_window_height - 40)],3)
+	pygame.draw.lines(screen, pgvar.color_yellow, False, [(grid_center_h - (grid_width * (grid_h_units - 2)), pgvar.pygame_window_height - 30),(grid_center_h - (grid_width * (grid_h_units - 2)),pgvar.pygame_window_height - 50)],3)
+	pygame.draw.lines(screen, pgvar.color_yellow, False, [(grid_center_h - (grid_width * (grid_h_units - 3)), pgvar.pygame_window_height - 30),(grid_center_h - (grid_width * (grid_h_units - 3)),pgvar.pygame_window_height - 50)],3)
+
+	current_scale = pgui.tScaleSelection["label_txt"]
+	scale_label = pgvar.myfont.render(str(current_scale), 1, (255,255,0))
+	screen.blit(scale_label, (grid_center_h - (grid_width * (grid_h_units - 2)), pgvar.pygame_window_height - 30))
 
 ####### ---------------------------------------------------------------------##########
 ####### Draw Origin Lines                                                                                                                                  ##########

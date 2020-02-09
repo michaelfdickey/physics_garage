@@ -47,8 +47,8 @@ import pbproc
 
 
 # # screen size
-pygame_window_width = 1600
-pygame_window_height = 1200
+pygame_window_width = 1800
+pygame_window_height = 1300
 
 # # pygame fonts
 pygame.font.init()																# needs to be called at the start of the program
