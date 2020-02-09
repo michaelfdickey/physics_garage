@@ -260,11 +260,14 @@ def drawGrid():
 	grid_h_units = grid_h_units / 2
 	print "grid_h_units = ",grid_h_units	
 
+
+	# DRAWING THE VERTICAL GRID LINES
 	# grid center line
-	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [((pgvar.pygame_window_width / 2),0),((pgvar.pygame_window_width / 2 ),pgvar.pygame_window_height)],1)
+	#pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [((pgvar.pygame_window_width / 2),0),((pgvar.pygame_window_width / 2 ),pgvar.pygame_window_height)],1)
 
 	grid_h_draw = 0
 	while grid_h_draw <= grid_h_units:
+		# the total width of the game window is divided by grid spacing then a line is drawn on either side of the origin until count = grid spacing
 		print"drawing grid line", grid_h_draw 
 		pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(grid_center_h - (grid_width * grid_h_draw),0),(grid_center_h - (grid_width * grid_h_draw),pgvar.pygame_window_height)],1)
 		pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(grid_center_h + (grid_width * grid_h_draw),0),(grid_center_h + (grid_width * grid_h_draw),pgvar.pygame_window_height)],1)
@@ -287,6 +290,17 @@ def drawGrid():
 	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(grid_width * 12,0),(grid_width * 12,pgvar.pygame_window_height)],1)
 	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(grid_width * 13,0),(grid_width * 13,pgvar.pygame_window_height)],1)
 	"""
+
+	grid_v_units = pgvar.pygame_window_height / grid_height
+	grid_v_units = grid_v_units / 2
+
+	grid_v_draw = 0
+	while grid_v_draw <= grid_v_units:
+		print  "drwaing grid line", grid_v_draw
+		pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,grid_center_v - (grid_width * grid_v_draw)),(pgvar.pygame_window_width,grid_center_v - (grid_width * grid_v_draw))],1)
+		pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,grid_center_v + (grid_width * grid_v_draw)),(pgvar.pygame_window_width,grid_center_v + (grid_width * grid_v_draw))],1)
+		grid_v_draw = grid_v_draw + 1		
+
 
 	"""
 	pygame.draw.lines(screen, pgvar.color_yellow_grid, False, [(0,(pgvar.pygame_window_height / 2)),(pgvar.pygame_window_width, (pgvar.pygame_window_height / 2))],1)
