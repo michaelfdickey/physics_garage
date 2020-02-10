@@ -322,6 +322,8 @@ def drawOrigin():
 ####### ---------------------------------------------------------------------##########
 
 def InsertProton(mouseX, mouseY):
+
+
 	
 	# particle characteristics
 	particle_size = 8
@@ -330,7 +332,7 @@ def InsertProton(mouseX, mouseY):
 	particle_y = mouseY
 	speedx = 0
 	speedy = 0
-	particle_color = (0,255,0)
+	particle_color = (255,0,0)
 	particle_thickness = 0
 	particle_mass = 0
 	particle_charge = 1
@@ -363,9 +365,9 @@ def distanceParticles(particle1, particle2):
 	# # draw reference lines
 	if pgui.bDistComponents["enabled"] == True:
 
-		pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
-		pygame.draw.lines(screen, pgvar.color_red, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
-		pygame.draw.lines(screen, pgvar.color_red, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse
+		pygame.draw.lines(screen, pgvar.color_orange, False, [(particle1.x,particle1.y), (particle2.x,particle1.y)], 1) #p1 - particle2 X
+		pygame.draw.lines(screen, pgvar.color_orange, False, [(particle2.x,particle2.y), (particle2.x,particle1.y)], 1) #p1 - particle2 y
+		pygame.draw.lines(screen, pgvar.color_orange, False, [(particle1.x,particle1.y), (particle2.x,particle2.y)], 1) #hypotenuse
 
 		# # paint measurements
 		# # # label points

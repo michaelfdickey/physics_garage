@@ -61,6 +61,7 @@ message_font = pygame.font.Font("C:\\Windows\\Fonts\\Verdana.ttf", 15)		# on scr
 color_black = (0,0,0)
 color_red = (255,0,0)
 color_red_dark = (128,0,0)
+color_orange = (255,165,0)
 color_green = (0,255,0)
 color_green_dark = (0,128,0)
 color_blue = (0,0,255)

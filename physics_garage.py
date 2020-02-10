@@ -63,7 +63,6 @@ while running:
 	if pgui.bPlaySimulation["enabled"] == True:
 		pfunc.redrawEverything()
 
-
 	if pgui.buttonFPS["enabled"] == True:
 		pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 100, pgvar.pygame_window_height - 30, 80, 20))   
 		pfunc.count_fps()
@@ -76,12 +75,9 @@ while running:
 
 	# # # PARTICLES # # # 	
 	for i, particle in enumerate(pfunc.created_particles):
-
 		for particle2 in pfunc.created_particles[i+1:]:
 			pfunc.distanceParticles(particle,particle2)
-
 		particle.display()	
-
 		if pgui.bPlaySimulation["enabled"] == True:
 			#pfunc.redrawPortal()
 			#pfunc.redrawEverything()
@@ -134,6 +130,20 @@ while running:
 					print moduleName, pfunc.lineNum(), "selected_button.color now : ", selected_button.color			
 					selected_button.buttonEnabled = True
 					print moduleName, pfunc.lineNum(), "clicked button is a pushy temporary button"
+
+					if selected_button.button_name == "bScaleMinus":
+						pgui.bScaleMinus["enabled"] = True
+						pgui.bScaleMinus["color"] = pgvar.UI_button_click_color
+						pfunc.defineButtons()
+						for i, button in enumerate(pfunc.my_buttons):
+							button.display()
+
+					if selected_button.button_name == "bScalePlus":
+						pgui.bScalePlus["enabled"] = True
+						pgui.bScalePlus["color"] = pgvar.UI_button_click_color									
+						pfunc.defineButtons()
+						for i, button in enumerate(pfunc.my_buttons):
+							button.display()
 
 					if selected_button.button_name == "bPushyExample":
 						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
@@ -222,6 +232,21 @@ while running:
 					selected_button.color = pgvar.UI_button_color 			#reverts button back to normal color after letting go of mouse
 					print moduleName, pfunc.lineNum(), "selected_button.color now : ", selected_button.color	
 			
+					if selected_button.button_name == "bScaleMinus":
+						pgui.bScaleMinus["enabled"] = False
+						pgui.bScaleMinus["color"] = pgvar.UI_button_color
+						pfunc.defineButtons()
+						for i, button in enumerate(pfunc.my_buttons):
+							button.display()
+
+					if selected_button.button_name == "bScalePlus":
+						pgui.bScalePlus["enabled"] = False
+						pgui.bScalePlus["color"] = pgvar.UI_button_color								
+						pfunc.defineButtons()
+						for i, button in enumerate(pfunc.my_buttons):
+							button.display()
+
+
 					if selected_button.button_name == "bPushyExample":
 						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
 						pgui.bPushyExample["enabled"] = False
