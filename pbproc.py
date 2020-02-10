@@ -214,6 +214,15 @@ def updateStickyButtons(selected_button):
 			pfunc.defineButtons()	
 			pfunc.redrawEverything()
 
+
+
+
+
+
+
+
+
+
 	# # # GRID BUTTON
 	if selected_button == "grid":
 		if pgui.buttonGrid["enabled"] == False:
@@ -394,6 +403,92 @@ def updateGroupButtons(selected_button):
 
 def updateDropdownButtons(selected_button):
 	print pfunc.lineNum(), "running update Dropdown buttons"
+
+
+	# # # Scale Opener BUTTON
+	if selected_button == "bScaleOpener":
+		if pgui.bScaleOpener["enabled"] == False:
+			pgui.bScaleOpener["enabled"] = True
+			pgui.bScaleOpener["color"] = pgvar.UI_button_selected_color
+			pgui.bScaleOpener["label_txt"] = "  << "		
+
+			# update associated buttons
+			pgui.bScaleOption19["visible"] = True	
+			pgui.bScaleOption20["visible"] = True
+			pgui.bScaleOption21["visible"] = True
+
+			pfunc.defineButtons()	
+			pfunc.redrawEverything()
+			
+		elif pgui.bScaleOpener["enabled"] == True:
+			pgui.bScaleOpener["enabled"] = False
+			pgui.bScaleOpener["color"] = pgvar.UI_button_color
+			pgui.bScaleOpener["label_txt"] = "  >> "	
+
+			# update associated buttons
+			pgui.bScaleOption19["visible"] = False
+			pgui.bScaleOption20["visible"] = False
+			pgui.bScaleOption21["visible"] = False
+
+			pfunc.defineButtons()	
+			pfunc.redrawEverything()
+
+
+	# # # Scale Options Processing
+	if selected_button == "bScaleOption19":
+		if pgui.bScaleOpener["enabled"] == True:
+			if pgui.bScaleOption19["enabled"] == False:
+				pgui.bScaleOption19["enabled"] = True
+				pgui.bScaleOption19["color"] = pgvar.UI_button_selected_color
+				pgui.tScaleSelection["label_txt"] = ".1 fm (1 x 10e-16m)"	
+
+				#pgui.bScaleOption19["enabled"] = False
+				pgui.bScaleOption20["enabled"] = False
+				pgui.bScaleOption21["enabled"] = False
+
+				#pgui.bScaleOption19["color"] = pgvar.UI_button_color
+				pgui.bScaleOption20["color"] = pgvar.UI_button_color
+				pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+				pfunc.defineButtons()	
+				pfunc.redrawEverything()
+
+	if selected_button == "bScaleOption20":
+		if pgui.bScaleOpener["enabled"] == True:
+			if pgui.bScaleOption20["enabled"] == False:
+				pgui.bScaleOption20["enabled"] = True
+				pgui.bScaleOption20["color"] = pgvar.UI_button_selected_color
+				pgui.tScaleSelection["label_txt"] = "1 fm (1 x 10e-15m)"	
+
+				pgui.bScaleOption19["enabled"] = False
+				#pgui.bScaleOption20["enabled"] = False
+				pgui.bScaleOption21["enabled"] = False
+
+				pgui.bScaleOption19["color"] = pgvar.UI_button_color
+				#pgui.bScaleOption20["color"] = pgvar.UI_button_color
+				pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+				pfunc.defineButtons()	
+				pfunc.redrawEverything()
+
+	if selected_button == "bScaleOption21":
+		if pgui.bScaleOpener["enabled"] == True:
+			if pgui.bScaleOption21["enabled"] == False:
+				pgui.bScaleOption21["enabled"] = True
+				pgui.bScaleOption21["color"] = pgvar.UI_button_selected_color
+				pgui.tScaleSelection["label_txt"] = "10 fm (1 x 10e-14m)"	
+
+				pgui.bScaleOption19["enabled"] = False
+				pgui.bScaleOption20["enabled"] = False
+				#pgui.bScaleOption21["enabled"] = False
+
+				pgui.bScaleOption19["color"] = pgvar.UI_button_color
+				pgui.bScaleOption20["color"] = pgvar.UI_button_color
+				#pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+				pfunc.defineButtons()	
+				pfunc.redrawEverything()
+
 
 	if selected_button == "dropdown01opener":
 		if pgui.bDropdown01opener["enabled"] == False:

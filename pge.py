@@ -86,6 +86,8 @@ print "pProton mass:", pProton["mass"]
 19	10e-16	.1 femtometer 		.8414 fm = charge radius of Proton
 20	10e-15	femtrometer (fm)		1.5 fm = Size of 11 MeV proton
 21	10e-14	10 femtometers 		1.75 fm - 15 fm Diameter range of atomic Nuclei
+22	10e-13	.1 picometer
+23	10e-12	1 picometer (pm)		1 pm - distance between atomic nuclei in a white dwarf
 
 								
 

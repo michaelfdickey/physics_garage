@@ -639,7 +639,7 @@ bScaleOpener["origin_y"] = scale_display_origin + 20					# button_origin_y
 bScaleOpener["width"] =  pgvar.UI_sideBar_width / 3										# button_width
 bScaleOpener["height"] = 20										# button_height
 bScaleOpener["label_txt"] = "  >>"									# button_label_txt
-bScaleOpener["type"] = "textEntry"								# buttonType
+bScaleOpener["type"] = "dropdown"									# buttonType
 bScaleOpener["enabled"] = False									# buttonEnabled
 bScaleOpener["color"] = pgvar.UI_button_color						# buttonColor
 bScaleOpener["group"] = "Scale"									# buttonGroup
@@ -655,11 +655,10 @@ bScaleOption19["height"] = 20															# button_height
 bScaleOption19["label_txt"] = " 10e-16    0.1 femtometer (fm)"							# button_label_txt
 bScaleOption19["type"] = "dropdown"													# buttonType
 bScaleOption19["enabled"] = False														# buttonEnabled
-bScaleOption19["color"] = pgvar.UI_button_color										# buttonColor
+bScaleOption19["color"] = pgvar.UI_button_color									# buttonColor
 bScaleOption19["group"] = "Scale"														# buttonGroup
-bScaleOption19["visible"] = True														# buttonVisible
+bScaleOption19["visible"] = False														# buttonVisible
 bScaleOption19["available"] = True
-
 
 bScaleOption20 = {}
 bScaleOption20["name"] = "bScaleOption20"												# button_name
@@ -672,7 +671,7 @@ bScaleOption20["type"] = "dropdown"													# buttonType
 bScaleOption20["enabled"] = False														# buttonEnabled
 bScaleOption20["color"] = pgvar.UI_button_color										# buttonColor
 bScaleOption20["group"] = "Scale"														# buttonGroup
-bScaleOption20["visible"] = True														# buttonVisible
+bScaleOption20["visible"] = False														# buttonVisible
 bScaleOption20["available"] = True
 
 bScaleOption21 = {}
@@ -686,7 +685,7 @@ bScaleOption21["type"] = "dropdown"													# buttonType
 bScaleOption21["enabled"] = False														# buttonEnabled
 bScaleOption21["color"] = pgvar.UI_button_color										# buttonColor
 bScaleOption21["group"] = "Scale"														# buttonGroup
-bScaleOption21["visible"] = True														# buttonVisible
+bScaleOption21["visible"] = False														# buttonVisible
 bScaleOption21["available"] = True
 
 
@@ -698,7 +697,7 @@ tScaleSelection["origin_x"] = 0										# button_origin_x
 tScaleSelection["origin_y"] = scale_display_origin + 40				# button_origin_y
 tScaleSelection["width"] = pgvar.UI_sideBar_width						# button_width
 tScaleSelection["height"] = 20										# button_height
-tScaleSelection["label_txt"] = ".1fm (1.0 x 10^-16m)"					# button_label_txt
+tScaleSelection["label_txt"] = "1fm (1.0 x 10^-15m)"					# button_label_txt
 tScaleSelection["type"] = "sticky"									# buttonType
 tScaleSelection["enabled"] = False									# buttonEnabled
 tScaleSelection["color"] = pgvar.UI_button_color						# buttonColor
