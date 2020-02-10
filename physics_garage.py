@@ -57,7 +57,7 @@ pfunc.initializeDisplay()
 
 ####### Print Reference Variables ##########
 
-print moduleName, pfunc.lineNum(), "Current Scale: ", pge.current_scale
+print moduleName, pfunc.lineNum(), "Current Scale: ", pge.current_scale["scale"]
 
 ####### MAIN PROGRAM LOOP ##########
 

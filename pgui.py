@@ -36,6 +36,7 @@ import pgvar
 #import pgui
 #import pclass
 #import pbproc
+import pge
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -635,8 +636,8 @@ bScalePlus["available"] = True
 bScaleOpener = {}
 bScaleOpener["name"] = "bScaleOpener"								# button_name
 bScaleOpener["origin_x"] =  (pgvar.UI_sideBar_width / 3)*2			# button_origin_x
-bScaleOpener["origin_y"] = scale_display_origin + 20					# button_origin_y
-bScaleOpener["width"] =  pgvar.UI_sideBar_width / 3										# button_width
+bScaleOpener["origin_y"] = scale_display_origin + 20				# button_origin_y
+bScaleOpener["width"] =  pgvar.UI_sideBar_width / 3				# button_width
 bScaleOpener["height"] = 20										# button_height
 bScaleOpener["label_txt"] = "  >>"									# button_label_txt
 bScaleOpener["type"] = "dropdown"									# buttonType
@@ -688,16 +689,13 @@ bScaleOption21["group"] = "Scale"														# buttonGroup
 bScaleOption21["visible"] = False														# buttonVisible
 bScaleOption21["available"] = True
 
-
-
-
 tScaleSelection = {}
 tScaleSelection["name"] = "tScaleSelection"							# button_name
 tScaleSelection["origin_x"] = 0										# button_origin_x
 tScaleSelection["origin_y"] = scale_display_origin + 40				# button_origin_y
 tScaleSelection["width"] = pgvar.UI_sideBar_width						# button_width
 tScaleSelection["height"] = 20										# button_height
-tScaleSelection["label_txt"] = "1fm (1.0 x 10^-15m)"					# button_label_txt
+tScaleSelection["label_txt"] = pge.current_scale["display"]				# button_label_txt
 tScaleSelection["type"] = "sticky"									# buttonType
 tScaleSelection["enabled"] = False									# buttonEnabled
 tScaleSelection["color"] = pgvar.UI_button_color						# buttonColor

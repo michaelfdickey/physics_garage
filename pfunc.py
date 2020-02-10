@@ -329,8 +329,8 @@ def InsertProton(mouseX, mouseY):
 	print "the particle to be insterted diameter =", particle_diameter
 
 	# compare to current scale
-	print "the current scale is = ", pge.current_scale
-	particle_size = int(particle_diameter / pge.current_scale)
+	print "the current scale is = ", pge.current_scale["scale"]
+	particle_size = int(particle_diameter / pge.current_scale["scale"])
 
 	if particle_size <= 1:
 		particle_size = 1
@@ -346,8 +346,8 @@ def InsertProton(mouseX, mouseY):
 	speedy = 0
 	particle_color = (255,0,0)
 	particle_thickness = 0
-	particle_mass = 0
-	particle_charge = 1
+	particle_mass = pge.pProton["mass"]
+	particle_charge = pge.pProton["charge"]
 
 	print moduleName, lineNum(), "about to append class"
 

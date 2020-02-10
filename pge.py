@@ -72,10 +72,10 @@ https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picomet
 """
 
 
-current_scale = 1e-15
-#current_scale = 1e-2 #centimeter
-
-
+current_scale = {}
+current_scale["scale"] = 1e-15
+current_scale["dict"] = "dScale20"
+current_scale["display"] = "1 fm (1.0x10-15 m)"
 
 dScale00 = {} #Planck Length
 dScale01 = {}
@@ -83,19 +83,20 @@ dScale01 = {}
 dScale19 = {}
 dScale19["scale"] = 1e-16
 dScale19["description"] = "0.1 femtometer"
-dScale19["display"] = "1.0 x 10^-16"
+dScale19["display"] = ".1 fm (1.0x10-16 m)"
 dScale19["note"] = ".8414 fm = charge radius of Proton"
+# https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#1_femtometre
 
 dScale20 = {}
 dScale20["scale"] = 1e-15
 dScale20["description"] = "1 femtometer"
-dScale20["display"] = "1.0 x 10^-15"
+dScale20["display"] = "1 fm (1.0x10-15 m)"
 dScale20["note"] = "1.5 fm = Size of 11 MeV Proton"
 
 dScale21 = {}
 dScale21["scale"] = 1e-14
 dScale21["description"] = "10 femtometers"
-dScale21["display"] = "1.0 x 10^-14"
+dScale21["display"] = "10 fm (1.0x10-14 m)"
 dScale21["note"] = "1.75 fm - 15 fm Diameter range of atomic Nuclei"
 
 
