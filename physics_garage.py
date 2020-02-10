@@ -33,6 +33,7 @@ import pfunc
 import pgui
 import pclass
 import pbproc
+import pge
 
 # ************************************************************************************************#
 # ************************************************************************************************#
@@ -53,6 +54,10 @@ screen = pygame.display.set_mode((pgvar.pygame_window_width, pgvar.pygame_window
 
 pfunc.initializeDisplay()
 
+
+####### Print Reference Variables ##########
+
+print moduleName, pfunc.lineNum(), "Current Scale: ", pge.current_scale
 
 ####### MAIN PROGRAM LOOP ##########
 

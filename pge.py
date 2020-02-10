@@ -39,6 +39,96 @@ import pgvar
 #import pclass
 #import pbproc
 
+# ************************************************************************************************************************
+# ************************************************************************************************************************
+#  SCALES
+# ************************************************************************************************************************
+# ************************************************************************************************************************
+
+"""
+# scales:
+0	10e-35	Planck length 
+1	10e-34
+2	10e-33
+3	10e-32
+4	10e-31
+5	10e-30
+6	10e-29
+7	10e-28
+8	10e-27
+9	10e-26
+10	10e-25
+11	10e-24	yoctometre (ym)		Effective cross section radius of 1 MeV neutrino
+19	10e-16	.1 femtometer 		.8414 fm = charge radius of Proton
+20	10e-15	femtrometer (fm)		1.5 fm = Size of 11 MeV proton
+21	10e-14	10 femtometers 		1.75 fm - 15 fm Diameter range of atomic Nuclei
+22	10e-13	.1 picometer
+23	10e-12	1 picometer (pm)		1 pm - distance between atomic nuclei in a white dwarf
+
+								
+
+good list to integrate
+https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picometre_range
+"""
+
+
+current_scale = 1e-15
+#current_scale = 1e-2 #centimeter
+
+
+
+dScale00 = {} #Planck Length
+dScale01 = {}
+
+dScale19 = {}
+dScale19["scale"] = 1e-16
+dScale19["description"] = "0.1 femtometer"
+dScale19["display"] = "1.0 x 10^-16"
+dScale19["note"] = ".8414 fm = charge radius of Proton"
+
+dScale20 = {}
+dScale20["scale"] = 1e-15
+dScale20["description"] = "1 femtometer"
+dScale20["display"] = "1.0 x 10^-15"
+dScale20["note"] = "1.5 fm = Size of 11 MeV Proton"
+
+dScale21 = {}
+dScale21["scale"] = 1e-14
+dScale21["description"] = "10 femtometers"
+dScale21["display"] = "1.0 x 10^-14"
+dScale21["note"] = "1.75 fm - 15 fm Diameter range of atomic Nuclei"
+
+
+# ************************************************************************************************************************
+# ************************************************************************************************************************
+#  Particles to be inserted
+# ************************************************************************************************************************
+# ************************************************************************************************************************
+
+pProton = {}
+pProton["symbol"] = "p+"
+pProton["diameter"] = .8414e-15			#meters, but effective diameter changes based on energy
+pProton["scale"] = "femtometer"
+pProton["mass"] = 1.673e-27				#kg
+pProton["charge"] = 1
+pProton["class"] = "Baryon"
+pProton["half-life"] = 0
+
+
+
+# # example proton information:
+"""
+.8414 fm 		proton charge radius
+1.5 fm 		size of an 11 MeV proton 
+
+1 fm				Approximate limit of the gluon-mediated color force between quarks[6][7]
+1.5 fm			Size of an 11 MeV proton[8]
+2.81794 fm		Classical electron radius[9]
+3 fm				Approximate limit of the meson-mediated nuclear binding force[6][7]
+1.75 to 15 fm		Diameter range of the atomic nucleus[1][10]
+https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picometre_range
+"""
+
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -69,44 +159,7 @@ print "pProton mass:", pProton["mass"]
 10 femto meters	.08414	1
 """
 
-"""
-# scales:
-0	10e-35	Planck length 
-1	10e-34
-2	10e-33
-3	10e-32
-4	10e-31
-5	10e-30
-6	10e-29
-7	10e-28
-8	10e-27
-9	10e-26
-10	10e-25
-11	10e-24	yoctometre (ym)		Effective cross section radius of 1 MeV neutrino
-19	10e-16	.1 femtometer 		.8414 fm = charge radius of Proton
-20	10e-15	femtrometer (fm)		1.5 fm = Size of 11 MeV proton
-21	10e-14	10 femtometers 		1.75 fm - 15 fm Diameter range of atomic Nuclei
-22	10e-13	.1 picometer
-23	10e-12	1 picometer (pm)		1 pm - distance between atomic nuclei in a white dwarf
 
-								
-
-good list to integrate
-https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picometre_range
-"""
-
-# # example proton information:
-"""
-.8414 fm 		proton charge radius
-1.5 fm 		size of an 11 MeV proton 
-
-1 fm				Approximate limit of the gluon-mediated color force between quarks[6][7]
-1.5 fm			Size of an 11 MeV proton[8]
-2.81794 fm		Classical electron radius[9]
-3 fm				Approximate limit of the meson-mediated nuclear binding force[6][7]
-1.75 to 15 fm		Diameter range of the atomic nucleus[1][10]
-https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picometre_range
-"""
 
 
 

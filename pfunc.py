@@ -36,6 +36,7 @@ import pgvar
 import pgui
 import pclass
 #import pbproc
+import pge
 
 # ************************************************************************************************#
 # ************************************************************************************************#
@@ -323,10 +324,21 @@ def drawOrigin():
 
 def InsertProton(mouseX, mouseY):
 
+	# get proton diameter
+	particle_diameter = pge.pProton["diameter"]
+	print "the particle to be insterted diameter =", particle_diameter
 
-	
+	# compare to current scale
+	print "the current scale is = ", pge.current_scale
+	particle_size = int(particle_diameter / pge.current_scale)
+
+	if particle_size <= 1:
+		particle_size = 1
+
+	print "the particle size in pixels will be: ", particle_size
+
 	# particle characteristics
-	particle_size = 8
+	#particle_size = 8
 	particle_type = "proton"
 	particle_x = mouseX
 	particle_y = mouseY
