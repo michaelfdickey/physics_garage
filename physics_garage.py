@@ -119,7 +119,7 @@ while running:
 								pfunc.InsertProton(mouseX, mouseY)
 
 
-			if selected_button != None:
+			if selected_button != None and selected_button.buttonVisible == True:
 
 				if selected_button.button_label_txt == "EXIT":
 					print moduleName,  pfunc.lineNum(), "you pressed exit"

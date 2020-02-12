@@ -152,8 +152,9 @@ def findButton(buttons, x, y):
 			if x >= b.x:
 				if y >= b.y:
 					if y <= b.y + b.y_height:
-						print moduleName, lineNum(), "selected button label_txt = ", b.button_name
-						return b
+						if b.buttonVisible == True:
+							print moduleName, lineNum(), "selected button label_txt = ", b.button_name
+							return b
 	return None
 
 
