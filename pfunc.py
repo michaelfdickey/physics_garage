@@ -338,6 +338,21 @@ def InsertProton(mouseX, mouseY):
 
 	print "the particle size in pixels will be: ", particle_size
 
+	# convert to an absolute position
+
+	print "particle position X = ", mouseX 
+	print "particle position Y = ", mouseY
+	print "Scale = ", pge.current_scale["scale"]
+
+	print "X zero = ", (pgvar.pygame_window_width / 2)
+	print "Y zero = ", (pgvar.pygame_window_height / 2)
+
+	particleXabs = mouseX - (pgvar.pygame_window_width / 2)
+	particleYabs = (pgvar.pygame_window_height / 2) - mouseY 
+
+	print "absolute particle position X = ", particleXabs
+	print "absolute particle position Y = ", particleYabs
+
 	# particle characteristics
 	#particle_size = 8
 	particle_type = "proton"
@@ -349,6 +364,8 @@ def InsertProton(mouseX, mouseY):
 	particle_thickness = 0
 	particle_mass = pge.pProton["mass"]
 	particle_charge = pge.pProton["charge"]
+
+
 
 	print moduleName, lineNum(), "about to append class"
 
