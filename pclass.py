@@ -199,7 +199,6 @@ class Particle:
 		self.mass = particle_mass
 		self.charge = particle_charge
 		self.scale = particle_scale
-		
 		self.drag = .999
 		self.angle = 0
 
@@ -207,18 +206,21 @@ class Particle:
 		#print "particle_X_abs = ", self.x
 		#print "particle_Y_abs = ", self.y
 
-		# get scale modifier
+		# # Get scale modifier
 		print "current scale is :", pge.current_scale["scale"]
 		print "particle scale is: ", self.scale
 		scale_modifier = pge.current_scale["scale"] / self.scale
 		print "the scale modifier is: ", scale_modifier
+		
 		#display_scale = current_scale["scale"]
 		#particle_scale = self.scale
 
 		# # reset size of particle
-		self.size = self.size / scale_modifier
-		if self.size <= 1:
-			self.size = 1
+		print "self.size = ", self.size
+		draw_particle_size = self.size / scale_modifier
+		if draw_particle_size <= 1:
+			draw_particle_size = 1
+		print "draw_particle_size =", draw_particle_size
 
 		# # reset position of particle
 
@@ -245,7 +247,7 @@ class Particle:
 
 
 
-		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(self.size), int(self.thickness))
+		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 	def move(self):
 
@@ -255,7 +257,7 @@ class Particle:
 		# clear out old location of particle
 		oldColor = self.color
 		self.color = pgvar.color_black
-		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(self.size), int(self.thickness))
+		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 		self.color = oldColor
 
 		if pgui.bForceGravity["enabled"] == True:
@@ -274,7 +276,7 @@ class Particle:
 			positionY = positionY + self.speedy * self.drag
 
 		#draw new particle location
-		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(self.size), int(self.thickness))
+		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 	
 	
