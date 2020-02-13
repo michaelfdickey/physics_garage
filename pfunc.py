@@ -341,6 +341,9 @@ def InsertProton(mouseX, mouseY):
 	print "the particle size in pixels will be: ", particle_size
 	"""
 
+	# grab scale for repositioning on zoom
+	initial_scale = pge.current_scale["scale"]
+
 	# convert to an absolute position
 
 	print "particle position X = ", mouseX 
@@ -370,12 +373,13 @@ def InsertProton(mouseX, mouseY):
 	particle_charge = pge.pProton["charge"]
 	particle_X_abs = particleXabs
 	particle_Y_abs = particleYabs
+	created_scale = initial_scale
 
 
 	print moduleName, lineNum(), "about to append class"
 
 	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass,
-		particle_charge, particle_X_abs, particle_Y_abs, particle_scale)
+		particle_charge, particle_X_abs, particle_Y_abs, particle_scale, created_scale)
 	created_particles.append(particle_to_make)
 
 	print moduleName, lineNum(), "completed append class"

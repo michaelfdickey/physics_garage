@@ -187,7 +187,7 @@ class Button:
 
 class Particle:
 	def __init__ (self,(x,y),particle_size,particle_type,speedx,speedy, particle_color, particle_thickness, particle_mass, particle_charge, 
-		particle_X_abs, particle_Y_abs, particle_scale):
+		particle_X_abs, particle_Y_abs, particle_scale, created_scale):
 		self.x = particle_X_abs
 		self.y = particle_Y_abs
 		self.size = particle_size
@@ -201,6 +201,7 @@ class Particle:
 		self.scale = particle_scale
 		self.drag = .999
 		self.angle = 0
+		self.created_scale = created_scale
 
 	def display(self):
 
@@ -231,7 +232,7 @@ class Particle:
 
 		# # reset position of particle
 		
-		initial_scale = 1e-16
+		initial_scale = self.created_scale
 		print "the initial scale is ", initial_scale
 		position_modifier = pge.current_scale["scale"] / initial_scale
 		print "the position modifier is: ", position_modifier
