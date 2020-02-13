@@ -364,13 +364,18 @@ def InsertProton(mouseX, mouseY):
 	particle_thickness = 0
 	particle_mass = pge.pProton["mass"]
 	particle_charge = pge.pProton["charge"]
+	particle_X_abs = particleXabs
+	particle_Y_abs = particleYabs
+	particle_scale = pge.current_scale["scale"]
 
 
 
 	print moduleName, lineNum(), "about to append class"
 
-	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass, particle_charge)
+	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass,
+		particle_charge, particle_X_abs, particle_Y_abs, particle_scale)
 	created_particles.append(particle_to_make)
+
 
 	print moduleName, lineNum(), "completed append class"
 
@@ -458,7 +463,7 @@ def distanceParticles(particle1, particle2):
 	vector_len = force
 	vector_p1_x = vector_p1[0] + math.cos(math.radians(degs)) * vector_len 
 	vector_p1_y = vector_p1[1] + math.sin(math.radians(degs)) * vector_len * -1
-	pygame.draw.line(screen, pgvar.color_blue, vector_p1, (vector_p1_x,vector_p1_y), 2)
+	#pygame.draw.line(screen, pgvar.color_blue, vector_p1, (vector_p1_x,vector_p1_y), 2)
 	#print "vector_p1_x: ", vector_p1_x, "vector_p1_y: ", vector_p1_y
 	#print "p1.x =:", p1.x, "vector_p1_x: ", vector_p1_x
 
@@ -466,7 +471,7 @@ def distanceParticles(particle1, particle2):
 	vector_len = force
 	vector_p2_x = vector_p2[0] + math.cos(math.radians(degs)) * vector_len * -1
 	vector_p2_y = vector_p2[1] + math.sin(math.radians(degs)) * vector_len
-	pygame.draw.line(screen, pgvar.color_blue, vector_p2, (vector_p2_x,vector_p2_y), 2)
+	#pygame.draw.line(screen, pgvar.color_blue, vector_p2, (vector_p2_x,vector_p2_y), 2)
 	#print "vector_p2_x: ", vector_p2_x, "vector_p2_y: ", vector_p2_y
 
 	# # update particle speedx and speedy

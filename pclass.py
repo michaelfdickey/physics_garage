@@ -36,6 +36,7 @@ import pfunc
 import pgui
 #import pclass
 #import pbproc
+import pge
 
 
 # ************************************************************************************************#
@@ -185,9 +186,10 @@ class Button:
 
 
 class Particle:
-	def __init__ (self,(x,y),particle_size,particle_type,speedx,speedy, particle_color, particle_thickness, particle_mass, particle_charge):
-		self.x = x
-		self.y = y
+	def __init__ (self,(x,y),particle_size,particle_type,speedx,speedy, particle_color, particle_thickness, particle_mass, particle_charge, 
+		particle_X_abs, particle_Y_abs, particle_scale):
+		self.x = particle_X_abs
+		self.y = particle_Y_abs
 		self.size = particle_size
 		self.type = particle_type
 		self.color = particle_color
@@ -196,38 +198,83 @@ class Particle:
 		self.thickness = particle_thickness
 		self.mass = particle_mass
 		self.charge = particle_charge
+		self.scale = particle_scale
 		
 		self.drag = .999
 		self.angle = 0
 
 	def display(self):
-		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness,)
+		#print "particle_X_abs = ", self.x
+		#print "particle_Y_abs = ", self.y
+
+		# get scale modifier
+		print "current scale is :", pge.current_scale["scale"]
+		print "particle scale is: ", self.scale
+		scale_modifier = pge.current_scale["scale"] / self.scale
+		print "the scale modifier is: ", scale_modifier
+		#display_scale = current_scale["scale"]
+		#particle_scale = self.scale
+
+		# # reset size of particle
+		self.size = self.size / scale_modifier
+		if self.size <= 1:
+			self.size = 1
+
+		# # reset position of particle
+
+		positionX = self.x
+		positionY = self.y
+
+		#print "old positionX", positionX
+		#print "old positionY", positionY
+		#print "scale modifier", scale_modifier
+
+		positionX = positionX * scale_modifier
+		positionY = positionY * scale_modifier
+
+		#print "mid positionX", positionX
+		#print "mid positionY", positionY
+
+
+		positionX = self.x + (pgvar.pygame_window_width / 2)
+		positionY = (pgvar.pygame_window_height / 2) - self.y 
+
+		#print "new positionX", positionX
+		#print "new positionY", positionY
+
+
+
+
+		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(self.size), int(self.thickness))
 
 	def move(self):
+
+		positionX = self.x + (pgvar.pygame_window_width / 2)
+		positionY = (pgvar.pygame_window_height / 2) - self.y 
 
 		# clear out old location of particle
 		oldColor = self.color
 		self.color = pgvar.color_black
-		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, (self.thickness))
+		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(self.size), int(self.thickness))
 		self.color = oldColor
 
 		if pgui.bForceGravity["enabled"] == True:
 			# modify speed values
 			self.speedy = self.speedy + .00001
 			# update location
-			self.x = self.x + self.speedx * self.drag
-			self.y = self.y + self.speedy * self.drag
+			positionX = positionX + self.speedx * self.drag
+			positionY = positionY + self.speedy * self.drag
 
 		if pgui.bForceElectromagnetic["enabled"] == True:
 			# modify speed values
 			self.speedx = self.speedx + .00001
 			self.speedy = self.speedy + .00001
 			# update location
-			self.x = self.x + self.speedx * self.drag
-			self.y = self.y + self.speedy * self.drag
+			positionX = positionX + self.speedx * self.drag
+			positionY = positionY + self.speedy * self.drag
 
 		#draw new particle location
-		pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, (self.thickness))
+		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(self.size), int(self.thickness))
 
 	
 	

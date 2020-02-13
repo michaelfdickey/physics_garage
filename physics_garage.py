@@ -68,6 +68,19 @@ while running:
 	if pgui.bPlaySimulation["enabled"] == True:
 		pfunc.redrawEverything()
 
+		# # # PARTICLES # # # 	
+		# # -- This is updating the particles when the simulation is running -- # #
+		for i, particle in enumerate(pfunc.created_particles):
+			for particle2 in pfunc.created_particles[i+1:]:
+				pfunc.distanceParticles(particle,particle2)
+			particle.display()	
+			if pgui.bPlaySimulation["enabled"] == True:
+				#pfunc.redrawPortal()
+				#pfunc.redrawEverything()
+				particle.move()
+				particle.display()	
+
+
 	if pgui.buttonFPS["enabled"] == True:
 		pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 100, pgvar.pygame_window_height - 30, 80, 20))   
 		pfunc.count_fps()
@@ -78,16 +91,6 @@ while running:
 	pfunc.show_message_txt()
 
 
-	# # # PARTICLES # # # 	
-	for i, particle in enumerate(pfunc.created_particles):
-		for particle2 in pfunc.created_particles[i+1:]:
-			pfunc.distanceParticles(particle,particle2)
-		particle.display()	
-		if pgui.bPlaySimulation["enabled"] == True:
-			#pfunc.redrawPortal()
-			#pfunc.redrawEverything()
-			particle.move()
-			particle.display()	
 
 	""" just here for testing and reference. 
 	for i, button in enumerate(pfunc.my_buttons):
@@ -117,9 +120,19 @@ while running:
 								print "running InsertProton"
 								#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
 								pfunc.InsertProton(mouseX, mouseY)
+								
+								for i, particle in enumerate(pfunc.created_particles):
+									for particle2 in pfunc.created_particles[i+1:]:
+										pfunc.distanceParticles(particle,particle2)
+									particle.display()	
+									if pgui.bPlaySimulation["enabled"] == True:
+										#pfunc.redrawPortal()
+										#pfunc.redrawEverything()
+										particle.move()
+										particle.display()	
 
 
-			if selected_button != None and selected_button.buttonVisible == True:
+			if selected_button != None: 
 
 				if selected_button.button_label_txt == "EXIT":
 					print moduleName,  pfunc.lineNum(), "you pressed exit"
