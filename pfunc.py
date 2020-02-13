@@ -325,6 +325,8 @@ def drawOrigin():
 
 def InsertProton(mouseX, mouseY):
 
+	# this functionality is moved to pclass processing so the value remains absolute. pclass will adjust for scale
+	"""
 	# get proton diameter
 	particle_diameter = pge.pProton["diameter"]
 	print "the particle to be insterted diameter =", particle_diameter
@@ -337,6 +339,7 @@ def InsertProton(mouseX, mouseY):
 		particle_size = 1
 
 	print "the particle size in pixels will be: ", particle_size
+	"""
 
 	# convert to an absolute position
 
@@ -354,8 +357,9 @@ def InsertProton(mouseX, mouseY):
 	print "absolute particle position Y = ", particleYabs
 
 	# particle characteristics
-	#particle_size = 8
 	particle_type = "proton"
+	particle_size = pge.pProton["diameter"]
+	particle_scale = pge.pProton["scale"]
 	particle_x = mouseX
 	particle_y = mouseY
 	speedx = 0
@@ -366,8 +370,6 @@ def InsertProton(mouseX, mouseY):
 	particle_charge = pge.pProton["charge"]
 	particle_X_abs = particleXabs
 	particle_Y_abs = particleYabs
-	particle_scale = pge.current_scale["scale"]
-
 
 
 	print moduleName, lineNum(), "about to append class"
@@ -375,7 +377,6 @@ def InsertProton(mouseX, mouseY):
 	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass,
 		particle_charge, particle_X_abs, particle_Y_abs, particle_scale)
 	created_particles.append(particle_to_make)
-
 
 	print moduleName, lineNum(), "completed append class"
 

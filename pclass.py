@@ -203,12 +203,14 @@ class Particle:
 		self.angle = 0
 
 	def display(self):
-		#print "particle_X_abs = ", self.x
-		#print "particle_Y_abs = ", self.y
+
+		print " []** STARTING PARTICLE DRAW ** []"
 
 		# # Get scale modifier
-		print "current scale is :", pge.current_scale["scale"]
+		print "particle diameter: ", self.size
 		print "particle scale is: ", self.scale
+		print "current scale is :", pge.current_scale["scale"]
+
 		scale_modifier = pge.current_scale["scale"] / self.scale
 		print "the scale modifier is: ", scale_modifier
 		
@@ -221,6 +223,11 @@ class Particle:
 		if draw_particle_size <= 1:
 			draw_particle_size = 1
 		print "draw_particle_size =", draw_particle_size
+
+
+		#print "particle_X_abs = ", self.x
+		#print "particle_Y_abs = ", self.y
+
 
 		# # reset position of particle
 
@@ -244,10 +251,9 @@ class Particle:
 		#print "new positionX", positionX
 		#print "new positionY", positionY
 
-
-
-
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
+
+		print "COMPLETED PARTICLE DRAW"
 
 	def move(self):
 

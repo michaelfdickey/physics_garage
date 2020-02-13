@@ -108,13 +108,14 @@ dScale21["note"] = "1.75 fm - 15 fm Diameter range of atomic Nuclei"
 
 pProton = {}
 pProton["symbol"] = "p+"
-pProton["diameter"] = .8414e-15			#meters, but effective diameter changes based on energy
-pProton["scale"] = "femtometer"
+pProton["diameter"] = 8.414			#meters, but effective diameter changes based on energy
+pProton["scale"] = 1e-16
 pProton["mass"] = 1.673e-27				#kg
 pProton["charge"] = 1
 pProton["class"] = "Baryon"
 pProton["half-life"] = 0
 
+print "pProton scale type", type(pProton["scale"])
 
 
 # # example proton information:
@@ -129,27 +130,6 @@ pProton["half-life"] = 0
 1.75 to 15 fm		Diameter range of the atomic nucleus[1][10]
 https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#femtometre_to_picometre_range
 """
-
-
-# ************************************************************************************************************************
-# ************************************************************************************************************************
-#  Element that can be added to the simulation Dictionaries
-# ************************************************************************************************************************
-# ************************************************************************************************************************
-
-# Proton
-
-pProton = {}
-pProton["symbol"] = "p+"
-pProton["diameter"] = .8414e-15			#meters, but effective diameter changes based on energy
-pProton["scale"] = "femtometer"
-pProton["mass"] = 1.673e-27				#kg
-pProton["charge"] = 1
-pProton["class"] = "Baryon"
-pProton["half-life"] = 0
-
-
-print "pProton mass:", pProton["mass"]
 
 # so, scale examples
 """
