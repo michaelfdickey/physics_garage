@@ -230,26 +230,29 @@ class Particle:
 
 
 		# # reset position of particle
+		
+		initial_scale = 1e-16
+		print "the initial scale is ", initial_scale
+		position_modifier = pge.current_scale["scale"] / initial_scale
+		print "the position modifier is: ", position_modifier
 
 		positionX = self.x
 		positionY = self.y
+		print "old positionX", positionX
+		print "old positionY", positionY
+		print "scale modifier", scale_modifier
 
-		#print "old positionX", positionX
-		#print "old positionY", positionY
-		#print "scale modifier", scale_modifier
+		positionX = positionX / position_modifier
+		positionY = positionY / position_modifier
 
-		positionX = positionX * scale_modifier
-		positionY = positionY * scale_modifier
+		print "mid positionX", positionX
+		print "mid positionY", positionY
 
-		#print "mid positionX", positionX
-		#print "mid positionY", positionY
+		positionX = positionX + (pgvar.pygame_window_width / 2)
+		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
-
-		positionX = self.x + (pgvar.pygame_window_width / 2)
-		positionY = (pgvar.pygame_window_height / 2) - self.y 
-
-		#print "new positionX", positionX
-		#print "new positionY", positionY
+		print "new positionX", positionX
+		print "new positionY", positionY
 
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
