@@ -396,6 +396,38 @@ def InsertProton(mouseX, mouseY):
 	"""
 
 def distanceParticles(particle1, particle2):
+
+	print "particle1.x: ",particle1.x, "particle1.y: ",particle1.y
+	print "particle2.x: ",particle2.x, "particle2.y: ",particle2.y
+
+	"""
+
+	#### processing absolute position of particles
+
+	# get scale modifier
+	scale_modifier = pge.current_scale["scale"] / self.scale
+
+	#reset particle size
+	draw_particle_size = self.size / scale_modifier
+	if draw_particle_size <= 1:
+		draw_particle_size = 1
+
+	# # reset position of particle
+	initial_scale = self.created_scale
+	position_modifier = pge.current_scale["scale"] / initial_scale
+
+	positionX = self.x
+	positionY = self.y
+
+	positionX = positionX / position_modifier
+	positionY = positionY / position_modifier
+
+	positionX = positionX + (pgvar.pygame_window_width / 2)
+	positionY = (pgvar.pygame_window_height / 2) - positionY 
+
+	#### 
+
+
 	# calculates distance between each pair of particles
 	# # distance x, y, and hypotenuse
 	distance_x = abs(particle1.x - particle2.x)
@@ -487,3 +519,5 @@ def distanceParticles(particle1, particle2):
 	#print "p1 speed x = ", p1.speedx
 	#print "p1 speed y = ", p1.speedy
 	#pause = raw_input()
+
+	"""

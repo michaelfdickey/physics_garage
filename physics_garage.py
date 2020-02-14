@@ -73,13 +73,16 @@ while running:
 		for i, particle in enumerate(pfunc.created_particles):
 			for particle2 in pfunc.created_particles[i+1:]:
 				pfunc.distanceParticles(particle,particle2)
+			particle.move()
 			particle.display()	
+
+			"""
 			if pgui.bPlaySimulation["enabled"] == True:
 				#pfunc.redrawPortal()
 				#pfunc.redrawEverything()
 				particle.move()
-				particle.display()	
-
+				#particle.display()	
+			"""
 
 	if pgui.buttonFPS["enabled"] == True:
 		pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 100, pgvar.pygame_window_height - 30, 80, 20))   

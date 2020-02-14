@@ -199,31 +199,32 @@ class Particle:
 		self.mass = particle_mass
 		self.charge = particle_charge
 		self.scale = particle_scale
-		self.drag = .999
+		self.drag = 1
 		self.angle = 0
 		self.created_scale = created_scale
 
+
 	def display(self):
 
-		print " []** STARTING PARTICLE DRAW ** []"
+		#print " []** STARTING PARTICLE DRAW ** []"
 
 		# # Get scale modifier
-		print "particle diameter: ", self.size
-		print "particle scale is: ", self.scale
-		print "current scale is :", pge.current_scale["scale"]
+		#print "particle diameter: ", self.size
+		#print "particle scale is: ", self.scale
+		#print "current scale is :", pge.current_scale["scale"]
 
 		scale_modifier = pge.current_scale["scale"] / self.scale
-		print "the scale modifier is: ", scale_modifier
+		#print "the scale modifier is: ", scale_modifier
 		
 		#display_scale = current_scale["scale"]
 		#particle_scale = self.scale
 
 		# # reset size of particle
-		print "self.size = ", self.size
+		#print "self.size = ", self.size
 		draw_particle_size = self.size / scale_modifier
 		if draw_particle_size <= 1:
 			draw_particle_size = 1
-		print "draw_particle_size =", draw_particle_size
+		#print "draw_particle_size =", draw_particle_size
 
 
 		#print "particle_X_abs = ", self.x
@@ -231,38 +232,55 @@ class Particle:
 
 
 		# # reset position of particle
-		
 		initial_scale = self.created_scale
-		print "the initial scale is ", initial_scale
+		#print "the initial scale is ", initial_scale
 		position_modifier = pge.current_scale["scale"] / initial_scale
-		print "the position modifier is: ", position_modifier
+		#print "the position modifier is: ", position_modifier
 
 		positionX = self.x
 		positionY = self.y
-		print "old positionX", positionX
-		print "old positionY", positionY
-		print "scale modifier", scale_modifier
+		#print "old positionX", positionX
+		#print "old positionY", positionY
+		#print "scale modifier", scale_modifier
 
 		positionX = positionX / position_modifier
 		positionY = positionY / position_modifier
 
-		print "mid positionX", positionX
-		print "mid positionY", positionY
+		#print "mid positionX", positionX
+		#print "mid positionY", positionY
 
 		positionX = positionX + (pgvar.pygame_window_width / 2)
 		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
-		print "new positionX", positionX
-		print "new positionY", positionY
+		#print "new positionX", positionX
+		#print "new positionY", positionY
 
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
-		print "COMPLETED PARTICLE DRAW"
+		#print "COMPLETED PARTICLE DRAW"
 
 	def move(self):
 
-		positionX = self.x + (pgvar.pygame_window_width / 2)
-		positionY = (pgvar.pygame_window_height / 2) - self.y 
+		# get scale modifier
+		scale_modifier = pge.current_scale["scale"] / self.scale
+
+		#reset particle size
+		draw_particle_size = self.size / scale_modifier
+		if draw_particle_size <= 1:
+			draw_particle_size = 1
+
+		# # reset position of particle
+		initial_scale = self.created_scale
+		position_modifier = pge.current_scale["scale"] / initial_scale
+
+		positionX = self.x
+		positionY = self.y
+
+		positionX = positionX / position_modifier
+		positionY = positionY / position_modifier
+
+		positionX = positionX + (pgvar.pygame_window_width / 2)
+		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
 		# clear out old location of particle
 		oldColor = self.color
@@ -271,16 +289,18 @@ class Particle:
 		self.color = oldColor
 
 		if pgui.bForceGravity["enabled"] == True:
+			
+			print "before - self.speedy:", self.speedy, "positionX:", positionX, "positionY:", positionY
 			# modify speed values
-			self.speedy = self.speedy + .00001
+			self.speedy = (self.speedy + .001) * 1.01
 			# update location
-			positionX = positionX + self.speedx * self.drag
-			positionY = positionY + self.speedy * self.drag
+			positionY = positionY + self.speedy  #* self.drag
+			print "after - self.speedy:", self.speedy, "positionX:", positionX, "positionY:", positionY
 
 		if pgui.bForceElectromagnetic["enabled"] == True:
 			# modify speed values
-			self.speedx = self.speedx + .00001
-			self.speedy = self.speedy + .00001
+			self.speedx = self.speedx + .001
+			self.speedy = self.speedy + .001
 			# update location
 			positionX = positionX + self.speedx * self.drag
 			positionY = positionY + self.speedy * self.drag
