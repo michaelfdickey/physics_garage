@@ -134,12 +134,15 @@ while running:
 									for particle2 in pfunc.created_particles[i+1:]:
 										pfunc.distanceParticles(particle,particle2)
 									particle.display()	
+									
+									#I believe this was here for troubleshooting, probably can be removed. 
+									"""
 									if pgui.bPlaySimulation["enabled"] == True:
 										#pfunc.redrawPortal()
 										#pfunc.redrawEverything()
 										particle.move()
 										particle.display()	
-
+									"""
 
 			if selected_button != None: 
 
@@ -161,6 +164,13 @@ while running:
 					if selected_button.button_name == "bScaleMinus":
 						pgui.bScaleMinus["enabled"] = True
 						pgui.bScaleMinus["color"] = pgvar.UI_button_click_color
+						# pge.current_scale["scale"] = 	pge.current_scale["scale"] * 10 (this creates rounding errors like 1.00000000002e-16 sometimes) 
+						if pge.current_scale["scale"] == 1e-16:
+							pge.current_scale["scale"] = 	1e-15
+						elif pge.current_scale["scale"] == 1e-15:
+							pge.current_scale["scale"] = 	1e-14
+						print "current scale is: ", pge.current_scale
+						pge.scaleUpdate()
 						pfunc.defineButtons()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
@@ -168,6 +178,13 @@ while running:
 					if selected_button.button_name == "bScalePlus":
 						pgui.bScalePlus["enabled"] = True
 						pgui.bScalePlus["color"] = pgvar.UI_button_click_color									
+						#pge.current_scale["scale"] = 	pge.current_scale["scale"] / 10 
+						if pge.current_scale["scale"] == 1e-14:
+							pge.current_scale["scale"] = 	1e-15
+						elif pge.current_scale["scale"] == 1e-15:
+							pge.current_scale["scale"] = 	1e-16
+						print "current scale is: ", pge.current_scale
+						pge.scaleUpdate()
 						pfunc.defineButtons()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()

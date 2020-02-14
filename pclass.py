@@ -290,12 +290,11 @@ class Particle:
 
 		if pgui.bForceGravity["enabled"] == True:
 			
-			#print "before - self.speedy:", self.speedy, "positionX:", positionX, "positionY:", positionY
 			# modify speed values
-			self.speedy = (self.speedy + .01) * 1.001
+			self.speedy = (self.speedy + .01) * 1.01
 			# update location
 			positionY = positionY + self.speedy  #* self.drag
-			#print "after - self.speedy:", self.speedy, "positionX:", positionX, "positionY:", positionY
+
 
 		if pgui.bForceElectromagnetic["enabled"] == True:
 			# modify speed values

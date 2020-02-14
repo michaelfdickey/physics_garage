@@ -34,10 +34,11 @@ import decimal
 
 # # unique modules for this app
 import pgvar
-#import pfunc
-#import pgui
+import pfunc
+import pgui
 #import pclass
 #import pbproc
+#import pge
 
 # ************************************************************************************************************************
 # ************************************************************************************************************************
@@ -98,6 +99,64 @@ dScale21["scale"] = 1e-14
 dScale21["description"] = "10 femtometers"
 dScale21["display"] = "10 fm (1.0x10-14 m)"
 dScale21["note"] = "1.75 fm - 15 fm Diameter range of atomic Nuclei"
+
+
+# ****** Update scale values based on new scale selected
+
+def scaleUpdate():
+	if current_scale["scale"] == 1e-16:
+		pgui.bScaleOption19["enabled"] = True
+		pgui.bScaleOption19["color"] = pgvar.UI_button_selected_color
+		pgui.tScaleSelection["label_txt"] = dScale19["display"]
+
+		#pgui.bScaleOption19["enabled"] = False
+		pgui.bScaleOption20["enabled"] = False
+		pgui.bScaleOption21["enabled"] = False
+
+		#pgui.bScaleOption19["color"] = pgvar.UI_button_color
+		pgui.bScaleOption20["color"] = pgvar.UI_button_color
+		pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+		pfunc.defineButtons()
+		for i, button in enumerate(pfunc.my_buttons):
+			button.display()	
+		#pfunc.redrawEverything()
+
+	if current_scale["scale"] == 1e-15:
+		pgui.bScaleOption20["enabled"] = True
+		pgui.bScaleOption20["color"] = pgvar.UI_button_selected_color
+		pgui.tScaleSelection["label_txt"] = dScale20["display"]	
+	
+		pgui.bScaleOption19["enabled"] = False
+		#pgui.bScaleOption20["enabled"] = False
+		pgui.bScaleOption21["enabled"] = False
+
+		pgui.bScaleOption19["color"] = pgvar.UI_button_color
+		#pgui.bScaleOption20["color"] = pgvar.UI_button_color
+		pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+		pfunc.defineButtons()
+		for i, button in enumerate(pfunc.my_buttons):
+			button.display()	
+		#pfunc.redrawEverything()
+
+	if current_scale["scale"] == 1e-14:		
+		pgui.bScaleOption21["enabled"] = True
+		pgui.bScaleOption21["color"] = pgvar.UI_button_selected_color
+		pgui.tScaleSelection["label_txt"] = dScale21["display"]
+
+		pgui.bScaleOption19["enabled"] = False
+		pgui.bScaleOption20["enabled"] = False
+		#pgui.bScaleOption21["enabled"] = False
+
+		pgui.bScaleOption19["color"] = pgvar.UI_button_color
+		pgui.bScaleOption20["color"] = pgvar.UI_button_color
+		#pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+		pfunc.defineButtons()
+		for i, button in enumerate(pfunc.my_buttons):
+			button.display()	
+		#pfunc.redrawEverything()
 
 
 # ************************************************************************************************************************
