@@ -345,17 +345,13 @@ def InsertProton(mouseX, mouseY):
 	initial_scale = pge.current_scale["scale"]
 
 	# convert to an absolute position
-
 	print "particle position X = ", mouseX 
 	print "particle position Y = ", mouseY
 	print "Scale = ", pge.current_scale["scale"]
-
 	print "X zero = ", (pgvar.pygame_window_width / 2)
 	print "Y zero = ", (pgvar.pygame_window_height / 2)
-
 	particleXabs = mouseX - (pgvar.pygame_window_width / 2)
 	particleYabs = (pgvar.pygame_window_height / 2) - mouseY 
-
 	print "absolute particle position X = ", particleXabs
 	print "absolute particle position Y = ", particleYabs
 
@@ -397,8 +393,10 @@ def InsertProton(mouseX, mouseY):
 
 def distanceParticles(particle1, particle2):
 
-	print "particle1.x: ",particle1.x, "particle1.y: ",particle1.y
-	print "particle2.x: ",particle2.x, "particle2.y: ",particle2.y
+	misc = 1
+
+	#print "particle1.x: ",particle1.x, "particle1.y: ",particle1.y
+	#print "particle2.x: ",particle2.x, "particle2.y: ",particle2.y
 
 	"""
 

@@ -65,6 +65,12 @@ running = True
 
 while running:
 
+	if pgui.bPlaySimulation["enabled"] == False:
+		pfunc.redrawEverything()
+		for i, particle in enumerate(pfunc.created_particles):
+			particle.display()	
+
+
 	if pgui.bPlaySimulation["enabled"] == True:
 		pfunc.redrawEverything()
 
@@ -74,7 +80,7 @@ while running:
 			for particle2 in pfunc.created_particles[i+1:]:
 				pfunc.distanceParticles(particle,particle2)
 			particle.move()
-			particle.display()	
+			#particle.display()	
 
 			"""
 			if pgui.bPlaySimulation["enabled"] == True:
