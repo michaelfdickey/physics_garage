@@ -52,7 +52,11 @@ pygame_window_height = 1300
 
 # # pygame fonts
 pygame.font.init()																# needs to be called at the start of the program
-myfont = pygame.font.SysFont('Arial',15)										# GUI font type and size
+myfont = pygame.font.SysFont('Arial',15)
+font_sml = pygame.font.SysFont('Arial',13)	
+font_med = pygame.font.SysFont('Arial',15)
+font_lrg = pygame.font.SysFont('Arial',17)
+font_xlrg = pygame.font.SysFont('Arial',19)										# GUI font type and size
 fps_font = pygame.font.Font("C:\\Windows\\Fonts\\Verdana.ttf", 15)
 message_font = pygame.font.Font("C:\\Windows\\Fonts\\Verdana.ttf", 15)		# on screen message box display
 
