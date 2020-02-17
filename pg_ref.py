@@ -110,3 +110,8 @@ Insert
 	Container
 	Environment 
 	Detector
+
+
+If you want to really optimize calculation of n-body in any programming language, check out Barnes-Hut trees.
+https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation
+

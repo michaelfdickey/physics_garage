@@ -10,23 +10,19 @@
 	good
 - pause animation and resize, then resume animation
 	on resize while paused, particles appear to reset back to original position
-		(resize must run the display() )
-
-		removed 
-
-		"""
-		for i, particle in enumerate(pfunc.created_particles):
-			#particle.display()	
-			particle.move()
-		"""
-
-		from bScalePlus and bScaleMinus Puhsy processing in main loop
-
-		better, they no longer reset back to original position, but they still jump too far
-		- incorrect - resize still definitely resets back to original position
-		- and on resume jumps waay too far. 
-
 		the delta Y and X are not scaled?
-
 	on resume after pause and resize, particles jump position incorrectly or completely dissappear
 - resize animation while playing
+
+
+-----
+Places to add enumareate(created Particles)
+
+particle.display()
+particle.move()
+main loop
+on zoom in / zoom out
+on create particle
+def redraw everything
+
+translation stays the same when I rescale. 

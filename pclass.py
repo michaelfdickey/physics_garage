@@ -287,18 +287,19 @@ class Particle:
 		positionX = positionX + (pgvar.pygame_window_width / 2)
 		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
+
 		# print positon to draw with pygame:
 		positionXstr = str(int(positionX))
 		gameX = "gameX "
 		gameX = gameX + positionXstr
 		label_positionX = pgvar.font_med.render(str(gameX), 1, (255,255,0))
-		screen.blit(label_positionX, (positionX  + 20, positionY - 40))
+		screen.blit(label_positionX, (positionX  - 80, positionY - 40))
 
 		positionYstr = str(int(positionY))
 		gameY = "gameY "
 		gameY = gameY + positionYstr
 		label_positionX = pgvar.font_med.render(str(gameY), 1, (255,255,0))
-		screen.blit(label_positionX, (positionX  + 20, positionY - 20))	
+		screen.blit(label_positionX, (positionX  - 80, positionY - 20))	
 
 
 		# print absolute position of particle
@@ -306,22 +307,15 @@ class Particle:
 		absoX = "absoX "
 		absoX = absoX + absolute_pos_Xstr
 		label_positionX = pgvar.font_med.render(str(absoX), 1, (255,255,0))
-		screen.blit(label_positionX, (positionX  + 20, positionY ))
+		screen.blit(label_positionX, (positionX  - 80, positionY ))
 
 		absolute_pos_Ystr = str(int(absolute_pos_Y))
 		absoY = "absoY "
 		absoY = absoY + absolute_pos_Ystr
 		label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
-		screen.blit(label_positionY, (positionX  + 20, positionY + 20))
+		screen.blit(label_positionY, (positionX  - 80, positionY + 20))
 
 
-		"""
-		positionYstr = str(int(positionY))
-		gameY = "absoY "
-		gameY = gameY + positionYstr
-		label_positionX = pgvar.font_med.render(str(gameY), 1, (255,255,0))
-		screen.blit(label_positionX, (positionX  + 20, positionY - 20))	
-		"""
 
 		# clear out old location of particle
 		#oldColor = self.color
@@ -344,6 +338,37 @@ class Particle:
 				positionY = positionY + self.speedy  #* self.drag
 
 
+				# print positon to draw with pygame:
+				positionXstr = str(int(positionX))
+				gameX = "gameX "
+				gameX = gameX + positionXstr
+				label_positionX = pgvar.font_med.render(str(gameX), 1, (255,255,0))
+				screen.blit(label_positionX, (positionX  + 20, positionY - 40))
+
+				positionYstr = str(int(positionY))
+				gameY = "gameY "
+				gameY = gameY + positionYstr
+				label_positionX = pgvar.font_med.render(str(gameY), 1, (255,255,0))
+				screen.blit(label_positionX, (positionX  + 20, positionY - 20))	
+
+
+				# print absolute position of particle
+				absolute_pos_Xstr = str(int(absolute_pos_X))
+				absoX = "absoX "
+				absoX = absoX + absolute_pos_Xstr
+				label_positionX = pgvar.font_med.render(str(absoX), 1, (255,255,0))
+				screen.blit(label_positionX, (positionX  + 20, positionY ))
+
+				absolute_pos_Ystr = str(int(absolute_pos_Y))
+				absoY = "absoY "
+				absoY = absoY + absolute_pos_Ystr
+				label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
+				screen.blit(label_positionY, (positionX  + 20, positionY + 20))
+
+
+
+
+
 			if pgui.bForceElectromagnetic["enabled"] == True:
 				# modify speed values
 				self.speedx = self.speedx + .001
@@ -356,4 +381,12 @@ class Particle:
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 	
-	
+	def  zoomin(self):
+
+		self.x = self.x * 10
+		self.y = self.y * 10
+
+	def  zoomout(self):
+
+		self.x = self.x / 10
+		self.y = self.y / 10

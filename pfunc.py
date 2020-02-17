@@ -199,9 +199,11 @@ def redrawEverything():
 	for i, button in enumerate(my_buttons):
 		button.display()
 
+	
 	if pgui.bPlaySimulation["enabled"] == False:
 		for i, particle in enumerate(created_particles):
 			particle.move()	
+
 
 	#print lineNum(), "redrawEverything() - completed"
 
@@ -523,3 +525,17 @@ def distanceParticles(particle1, particle2):
 	#pause = raw_input()
 
 	"""
+
+def Zoom(zoomdir):
+
+	if zoomdir == "-":
+		print " ~ ~ ~ ~ ~  running zoomdir '-'   ~ ~ ~ ~ ~ "
+		for i, particle in enumerate(created_particles):
+			particle.zoomout()
+			#particle.move()
+
+	if zoomdir == "+":
+		print " ~ ~ ~ ~ ~  running zoomdir '+'   ~ ~ ~ ~ ~ "
+		for i, particle in enumerate(created_particles):
+			particle.zoomin()
+			#particle.move()

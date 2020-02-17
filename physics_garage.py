@@ -187,9 +187,8 @@ while running:
 							pge.current_scale["scale"] = 	1e-14
 						print "current scale is: ", pge.current_scale
 						pge.scaleUpdate()
-						pfunc.defineButtons()
-						pfunc.redrawEverything()
 
+						pfunc.defineButtons()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 
@@ -198,7 +197,12 @@ while running:
 							#particle.display()	
 							particle.move()
 						"""
+						zoomdir = "-"
+						pfunc.Zoom(zoomdir)
+						
+						pfunc.redrawEverything()
 
+					
 					if selected_button.button_name == "bScalePlus":
 						pgui.bScalePlus["enabled"] = True
 						pgui.bScalePlus["color"] = pgvar.UI_button_click_color									
@@ -210,7 +214,8 @@ while running:
 						print "current scale is: ", pge.current_scale
 						pge.scaleUpdate()
 						pfunc.defineButtons()
-						pfunc.redrawEverything()
+						
+						#pfunc.redrawEverything()
 						
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
@@ -220,7 +225,11 @@ while running:
 							#particle.display()	
 							particle.move()
 						"""
-						
+						zoomdir = "+"
+						pfunc.Zoom(zoomdir)
+					
+						pfunc.redrawEverything()
+
 					if selected_button.button_name == "bPushyExample":
 						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
 						pgui.bPushyExample["enabled"] = True
