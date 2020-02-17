@@ -443,8 +443,6 @@ def updateDropdownButtons(selected_button):
 				pgui.tScaleSelection["label_txt"] = pge.dScale19["display"]
 				pge.current_scale["scale"] = 1e-16
 
-
-
 				#pgui.bScaleOption19["enabled"] = False
 				pgui.bScaleOption20["enabled"] = False
 				pgui.bScaleOption21["enabled"] = False

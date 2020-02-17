@@ -65,30 +65,36 @@ running = True
 
 while running:
 
-	if pgui.bPlaySimulation["enabled"] == False:
-		pfunc.redrawEverything()
-		for i, particle in enumerate(pfunc.created_particles):
-			particle.display()	
-
-
 	if pgui.bPlaySimulation["enabled"] == True:
 		pfunc.redrawEverything()
 
-		# # # PARTICLES # # # 	
-		# # -- This is updating the particles when the simulation is running -- # #
-		for i, particle in enumerate(pfunc.created_particles):
-			for particle2 in pfunc.created_particles[i+1:]:
-				pfunc.distanceParticles(particle,particle2)
-			particle.move()
-			#particle.display()	
+	# # # PARTICLES # # # 	
+	# # -- This is updating the particles when the simulation is running -- # #
+	for i, particle in enumerate(pfunc.created_particles):
+		for particle2 in pfunc.created_particles[i+1:]:
+			pfunc.distanceParticles(particle,particle2)
+		particle.move()
 
-			"""
+	"""
+	#if pgui.bPlaySimulation["enabled"] == False:
+	pfunc.redrawEverything()
+	for i, particle in enumerate(pfunc.created_particles):
+		particle.display()	
+
+	if pgui.bPlaySimulation["enabled"] == True:
+		#pfunc.redrawEverything()
+
+
+
+			""
 			if pgui.bPlaySimulation["enabled"] == True:
 				#pfunc.redrawPortal()
 				#pfunc.redrawEverything()
 				particle.move()
 				#particle.display()	
-			"""
+			""
+	"""
+
 
 	if pgui.buttonFPS["enabled"] == True:
 		pygame.draw.rect(screen, pgvar.color_blue, (pgvar.pygame_window_width - 100, pgvar.pygame_window_height - 30, 80, 20))   
@@ -133,7 +139,8 @@ while running:
 								for i, particle in enumerate(pfunc.created_particles):
 									for particle2 in pfunc.created_particles[i+1:]:
 										pfunc.distanceParticles(particle,particle2)
-									particle.display()	
+									#particle.display()
+									particle.move()	
 									
 									#I believe this was here for troubleshooting, probably can be removed. 
 									"""
@@ -164,7 +171,7 @@ while running:
 					if selected_button.button_name == "bScaleMinus":
 						pgui.bScaleMinus["enabled"] = True
 						pgui.bScaleMinus["color"] = pgvar.UI_button_click_color
-						# pge.current_scale["scale"] = 	pge.current_scale["scale"] * 10 (this creates rounding errors like 1.00000000002e-16 sometimes) 
+						#pge.current_scale["scale"] = 	pge.current_scale["scale"] * 10  #(this creates rounding errors like 1.00000000002e-16 sometimes) 
 						if pge.current_scale["scale"] == 1e-16:
 							pge.current_scale["scale"] = 	1e-15
 						elif pge.current_scale["scale"] == 1e-15:

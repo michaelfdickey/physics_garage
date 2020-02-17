@@ -283,27 +283,30 @@ class Particle:
 		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
 		# clear out old location of particle
-		oldColor = self.color
-		self.color = pgvar.color_black
-		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
-		self.color = oldColor
+		#oldColor = self.color
+		#self.color = pgvar.color_black
+		pygame.draw.circle(screen, pgvar.color_black, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
+		#self.color = oldColor
 
-		if pgui.bForceGravity["enabled"] == True:
-			
-			# modify speed values
-			self.speedy = (self.speedy + .01) * 1.01
-			# update location
-			positionY = positionY + self.speedy  #* self.drag
+		if pgui.bPlaySimulation["enabled"] == True:
+
+			if pgui.bForceGravity["enabled"] == True:
+				
+				# modify speed values
+				self.speedy = (self.speedy + .001) * 1.001
+				# update location
+				positionY = positionY + self.speedy  #* self.drag
 
 
-		if pgui.bForceElectromagnetic["enabled"] == True:
-			# modify speed values
-			self.speedx = self.speedx + .001
-			self.speedy = self.speedy + .001
-			# update location
-			positionX = positionX + self.speedx * self.drag
-			positionY = positionY + self.speedy * self.drag
+			if pgui.bForceElectromagnetic["enabled"] == True:
+				# modify speed values
+				self.speedx = self.speedx + .001
+				self.speedy = self.speedy + .001
+				# update location
+				positionX = positionX + self.speedx * self.drag
+				positionY = positionY + self.speedy * self.drag
 
+		
 		#draw new particle location
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 

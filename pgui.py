@@ -46,13 +46,15 @@ import pge
 
 # maybe have small / medium and large button heights and widths? also move these to pgvar?
 
+display_dimensions_origin = 40
+calculation_dimensions_origin = 100
+
 buttonHeight = 20
 display_origin = pgvar.pygame_window_height - 380   #display options origin
 forces_origin = pgvar.pygame_window_height - 800
 scale_time_origin = pgvar.pygame_window_height - 860
 scale_display_origin = pgvar.pygame_window_height -940
-display_dimensions_origin = pgvar.pygame_window_height - 1160
-calculation_dimensions_origin = pgvar.pygame_window_height - 1100
+
 standard_origin = pgvar.pygame_window_height - 1040
 onscreen_message_txt_origin = pgvar.pygame_window_width - 800
 group02_origin = pgvar.pygame_window_height - 960
@@ -669,8 +671,8 @@ bScaleOption20["width"] = bScaleOptions_width											# button_width
 bScaleOption20["height"] = 20															# button_height
 bScaleOption20["label_txt"] = " 10e-15    femtometer (fm)"								# button_label_txt
 bScaleOption20["type"] = "dropdown"													# buttonType
-bScaleOption20["enabled"] = False														# buttonEnabled
-bScaleOption20["color"] = pgvar.UI_button_color										# buttonColor
+bScaleOption20["enabled"] = True													# buttonEnabled
+bScaleOption20["color"] = pgvar.UI_button_selected_color									# buttonColor
 bScaleOption20["group"] = "Scale"														# buttonGroup
 bScaleOption20["visible"] = False														# buttonVisible
 bScaleOption20["available"] = True

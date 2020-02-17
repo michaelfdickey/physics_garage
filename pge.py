@@ -60,12 +60,14 @@ import pgui
 9	10e-26
 10	10e-25
 11	10e-24	yoctometre (ym)		Effective cross section radius of 1 MeV neutrino
-19	10e-16	.1 femtometer 		.8414 fm = charge radius of Proton
+
+19	10e-16	.1 femtometer 		.8414 fm = charge radius of Proton, 2.1 fermi (femtometers) radius of Deuteron
 20	10e-15	femtrometer (fm)		1.5 fm = Size of 11 MeV proton
 21	10e-14	10 femtometers 		1.75 fm - 15 fm Diameter range of atomic Nuclei
 22	10e-13	.1 picometer
 23	10e-12	1 picometer (pm)		1 pm - distance between atomic nuclei in a white dwarf
 
+Fermi Gas Model - includes the pauli exclusion principle - the least amount of QM to add to the liquid drop model of the nuclear
 								
 
 good list to integrate
@@ -104,6 +106,9 @@ dScale21["note"] = "1.75 fm - 15 fm Diameter range of atomic Nuclei"
 # ****** Update scale values based on new scale selected
 
 def scaleUpdate():
+
+	# this needs to be smarter once I add more scales, looping through and updating accordingly. 
+
 	if current_scale["scale"] == 1e-16:
 		pgui.bScaleOption19["enabled"] = True
 		pgui.bScaleOption19["color"] = pgvar.UI_button_selected_color

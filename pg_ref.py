@@ -30,6 +30,8 @@ completed transfer of program to a modular design
 
 #	\physics_garage\version_013\pgmain.py 					IN PROGRESS
 #	\github\michaelfdickey\photon_pygui\photongui01.py 		IN PROGRESS
+#	\physics_garage\2D_vector_003-mouse_click02.py 			COMPLETED
+
 
 # ************************************************************************************************#
 #	Style Guide
