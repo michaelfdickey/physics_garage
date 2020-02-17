@@ -203,7 +203,7 @@ class Particle:
 		self.angle = 0
 		self.created_scale = created_scale
 
-
+	"""
 	def display(self):
 
 		#print " []** STARTING PARTICLE DRAW ** []"
@@ -258,6 +258,8 @@ class Particle:
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 		#print "COMPLETED PARTICLE DRAW"
+	"""
+
 
 	def move(self):
 
@@ -293,12 +295,32 @@ class Particle:
 			pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
 		"""
 
+		positionXstr = str(int(positionX))
+		gameX = "gameX"
+		gameX = gameX + positionXstr
+		label_positionX = pgvar.myfont.render(str(gameX), 1, (255,255,0))
+		screen.blit(label_positionX, (positionX  + 20, positionY - 20))
+
+		positionYstr = str(int(positionY))
+		gameY = "gameY"
+		gameY = gameY + positionYstr
+		label_positionX = pgvar.myfont.render(str(gameY), 1, (255,255,0))
+		screen.blit(label_positionX, (positionX  + 20, positionY))		
+
+		"""
+		label_positionY = pgvar.myfont.render(str("gameY", int(positionY)), 1, (255,255,0))
+		screen.blit(label_positionY, (positionY + 20, positionY))
+
+		label_point_2 = pgvar.myfont.render(str("P2"), 1, (255,255,0))
+		screen.blit(label_point_2, (particle2.x - 20, particle2.y + 5))
+		"""
+
 		if pgui.bPlaySimulation["enabled"] == True:
 
 			if pgui.bForceGravity["enabled"] == True:
 				
 				# modify speed values
-				self.speedy = (self.speedy + .002) * 1.002
+				self.speedy = (self.speedy + .03) * 1.0008
 				# update location
 				positionY = positionY + self.speedy  #* self.drag
 

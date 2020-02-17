@@ -201,7 +201,7 @@ def redrawEverything():
 
 	if pgui.bPlaySimulation["enabled"] == False:
 		for i, particle in enumerate(created_particles):
-			particle.display()	
+			particle.move()	
 
 	#print lineNum(), "redrawEverything() - completed"
 

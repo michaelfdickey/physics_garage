@@ -1,7 +1,32 @@
-- create particles then resize
-- create particles then turn on grid and origin
-- enable gravity then hit play simulation - ensure particles do not leave streaks
-- pause simulation and ensure particles do not temporarily reset back to starting positions
-- resume animation
+- create particles, then resize
+	good
+- then turn on grid and origin
+	good
+- enable gravity, then hit play simulation - ensure particles do not leave streaks
+	good
+- pause simulation, and ensure particles do not temporarily reset back to starting positions
+	good
+- resume animation, ensure particles resume at correct velocity and position
+	good
 - pause animation and resize, then resume animation
+	on resize while paused, particles appear to reset back to original position
+		(resize must run the display() )
+
+		removed 
+
+		"""
+		for i, particle in enumerate(pfunc.created_particles):
+			#particle.display()	
+			particle.move()
+		"""
+
+		from bScalePlus and bScaleMinus Puhsy processing in main loop
+
+		better, they no longer reset back to original position, but they still jump too far
+		- incorrect - resize still definitely resets back to original position
+		- and on resume jumps waay too far. 
+
+		the delta Y and X are not scaled?
+
+	on resume after pause and resize, particles jump position incorrectly or completely dissappear
 - resize animation while playing

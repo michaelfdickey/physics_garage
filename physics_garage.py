@@ -193,9 +193,11 @@ while running:
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 
+						"""
 						for i, particle in enumerate(pfunc.created_particles):
 							#particle.display()	
 							particle.move()
+						"""
 
 					if selected_button.button_name == "bScalePlus":
 						pgui.bScalePlus["enabled"] = True
@@ -213,10 +215,12 @@ while running:
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 
+						"""
 						for i, particle in enumerate(pfunc.created_particles):
 							#particle.display()	
 							particle.move()
-
+						"""
+						
 					if selected_button.button_name == "bPushyExample":
 						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
 						pgui.bPushyExample["enabled"] = True
