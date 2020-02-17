@@ -65,35 +65,39 @@ running = True
 
 while running:
 
+	
 	if pgui.bPlaySimulation["enabled"] == True:
 		pfunc.redrawEverything()
+	
 
-	# # # PARTICLES # # # 	
-	# # -- This is updating the particles when the simulation is running -- # #
-	for i, particle in enumerate(pfunc.created_particles):
-		for particle2 in pfunc.created_particles[i+1:]:
-			pfunc.distanceParticles(particle,particle2)
-		particle.move()
+		# # # PARTICLES # # # 	
+		# # -- This is updating the particles when the simulation is running -- # #
+		for i, particle in enumerate(pfunc.created_particles):
+			for particle2 in pfunc.created_particles[i+1:]:
+				pfunc.distanceParticles(particle,particle2)
+			particle.move()
 
 	"""
 	#if pgui.bPlaySimulation["enabled"] == False:
 	pfunc.redrawEverything()
 	for i, particle in enumerate(pfunc.created_particles):
 		particle.display()	
+	"""
 
+	"""
 	if pgui.bPlaySimulation["enabled"] == True:
 		#pfunc.redrawEverything()
+	"""
 
 
-
-			""
+	"""
 			if pgui.bPlaySimulation["enabled"] == True:
 				#pfunc.redrawPortal()
 				#pfunc.redrawEverything()
 				particle.move()
 				#particle.display()	
-			""
 	"""
+
 
 
 	if pgui.buttonFPS["enabled"] == True:
@@ -137,19 +141,24 @@ while running:
 								pfunc.InsertProton(mouseX, mouseY)
 								
 								for i, particle in enumerate(pfunc.created_particles):
+									#particle.display()	
+									particle.move()
+								"""		
+								for i, particle in enumerate(pfunc.created_particles):
 									for particle2 in pfunc.created_particles[i+1:]:
 										pfunc.distanceParticles(particle,particle2)
-									#particle.display()
-									particle.move()	
-									
+									particle.display()
+									#particle.move()	
+								"""
+
 									#I believe this was here for troubleshooting, probably can be removed. 
-									"""
+								"""
 									if pgui.bPlaySimulation["enabled"] == True:
 										#pfunc.redrawPortal()
 										#pfunc.redrawEverything()
 										particle.move()
 										particle.display()	
-									"""
+								"""
 
 			if selected_button != None: 
 
@@ -179,8 +188,14 @@ while running:
 						print "current scale is: ", pge.current_scale
 						pge.scaleUpdate()
 						pfunc.defineButtons()
+						pfunc.redrawEverything()
+
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
+
+						for i, particle in enumerate(pfunc.created_particles):
+							#particle.display()	
+							particle.move()
 
 					if selected_button.button_name == "bScalePlus":
 						pgui.bScalePlus["enabled"] = True
@@ -193,8 +208,14 @@ while running:
 						print "current scale is: ", pge.current_scale
 						pge.scaleUpdate()
 						pfunc.defineButtons()
+						pfunc.redrawEverything()
+						
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
+
+						for i, particle in enumerate(pfunc.created_particles):
+							#particle.display()	
+							particle.move()
 
 					if selected_button.button_name == "bPushyExample":
 						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"

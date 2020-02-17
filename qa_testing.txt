@@ -1,0 +1,7 @@
+- create particles then resize
+- create particles then turn on grid and origin
+- enable gravity then hit play simulation - ensure particles do not leave streaks
+- pause simulation and ensure particles do not temporarily reset back to starting positions
+- resume animation
+- pause animation and resize, then resume animation
+- resize animation while playing

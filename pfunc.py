@@ -199,6 +199,10 @@ def redrawEverything():
 	for i, button in enumerate(my_buttons):
 		button.display()
 
+	if pgui.bPlaySimulation["enabled"] == False:
+		for i, particle in enumerate(created_particles):
+			particle.display()	
+
 	#print lineNum(), "redrawEverything() - completed"
 
 
@@ -373,12 +377,12 @@ def InsertProton(mouseX, mouseY):
 
 
 	print moduleName, lineNum(), "about to append class"
-
 	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass,
 		particle_charge, particle_X_abs, particle_Y_abs, particle_scale, created_scale)
 	created_particles.append(particle_to_make)
-
 	print moduleName, lineNum(), "completed append class"
+
+	#particle.display()
 
 	#pgvar.message_txt = "YAY"
 
