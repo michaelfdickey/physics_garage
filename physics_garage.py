@@ -136,13 +136,18 @@ while running:
 					if mouseX > pgvar.UI_sideBar_width:
 						if mouseY > pgvar.UI_topBar_height:
 							if selected_button == None:
+								print " ~~~~~~~~~~~~~~~~~~~"
 								print "running InsertProton"
+								print " ~~~~~~~~~~~~~~~~~~~"
 								#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
 								pfunc.InsertProton(mouseX, mouseY)
 								
 								for i, particle in enumerate(pfunc.created_particles):
+									particle.printing()
 									#particle.display()	
 									particle.move()
+
+
 								"""		
 								for i, particle in enumerate(pfunc.created_particles):
 									for particle2 in pfunc.created_particles[i+1:]:
@@ -199,7 +204,6 @@ while running:
 						"""
 						zoomdir = "-"
 						pfunc.Zoom(zoomdir)
-						
 						pfunc.redrawEverything()
 
 					
@@ -227,7 +231,6 @@ while running:
 						"""
 						zoomdir = "+"
 						pfunc.Zoom(zoomdir)
-					
 						pfunc.redrawEverything()
 
 					if selected_button.button_name == "bPushyExample":

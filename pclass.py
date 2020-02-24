@@ -203,6 +203,10 @@ class Particle:
 		self.angle = 0
 		self.created_scale = created_scale
 
+	def printing(self):
+		print "~~class Particle def printing check ~~"
+		print "particleX:",self.x,"particleY:",self.y,"scale:",self.scale,"pSpeedX:",self.speedx,"pSpeedY:",self.speedy
+
 	"""
 	def display(self):
 
@@ -334,6 +338,7 @@ class Particle:
 				
 				# modify speed values
 				self.speedy = (self.speedy + .03) * 1.0008
+				
 				# update location
 				positionY = positionY + self.speedy  #* self.drag
 
@@ -365,17 +370,30 @@ class Particle:
 				label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
 				screen.blit(label_positionY, (positionX  + 20, positionY + 20))
 
+				
+				# revert number back to absolute value from value for display to update real position in list
 
+				#positionY = (pgvar.pygame_window_height / 2) - positionY
+				positionY = (pgvar.pygame_window_height * 2) + positionY
 
+				#positionY = positionY / position_modifier
+				positionY = position_modifier * positionY 
 
+				self.y = positionY + .1
+							
 
 			if pgui.bForceElectromagnetic["enabled"] == True:
+				
 				# modify speed values
 				self.speedx = self.speedx + .001
 				self.speedy = self.speedy + .001
+				
 				# update location
 				positionX = positionX + self.speedx * self.drag
 				positionY = positionY + self.speedy * self.drag
+
+				self.x = absolute_pos_Xstr
+				self.y = positionY
 
 		#draw new particle location
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))

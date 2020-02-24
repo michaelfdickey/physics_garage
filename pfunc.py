@@ -348,18 +348,22 @@ def InsertProton(mouseX, mouseY):
 	"""
 
 	# grab scale for repositioning on zoom
+	print "game position X = ", mouseX 
+	print "game position Y = ", mouseY
 	initial_scale = pge.current_scale["scale"]
+	print "scale = ", pge.current_scale["scale"]
 
-	# convert to an absolute position
-	print "particle position X = ", mouseX 
-	print "particle position Y = ", mouseY
-	print "Scale = ", pge.current_scale["scale"]
+	# get absolute 0 to convert to an absolute position
 	print "X zero = ", (pgvar.pygame_window_width / 2)
 	print "Y zero = ", (pgvar.pygame_window_height / 2)
+
 	particleXabs = mouseX - (pgvar.pygame_window_width / 2)
 	particleYabs = (pgvar.pygame_window_height / 2) - mouseY 
+	
 	print "absolute particle position X = ", particleXabs
 	print "absolute particle position Y = ", particleYabs
+
+	print "particleX: ", particleXabs, "particleY: ", particleYabs, "scale: ", initial_scale
 
 	# particle characteristics
 	particle_type = "proton"
@@ -383,6 +387,12 @@ def InsertProton(mouseX, mouseY):
 		particle_charge, particle_X_abs, particle_Y_abs, particle_scale, created_scale)
 	created_particles.append(particle_to_make)
 	print moduleName, lineNum(), "completed append class"
+
+	print "length of created_particles", len(created_particles)
+
+	print " ~~~~~~~~~~~~~~~~~~~"
+	print "completed InsertProton"
+	print " ~~~~~~~~~~~~~~~~~~~"
 
 	#particle.display()
 
