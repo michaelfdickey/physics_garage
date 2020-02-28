@@ -390,6 +390,8 @@ def InsertProton(mouseX, mouseY):
 
 	print "length of created_particles", len(created_particles)
 
+	print created_particles
+
 	print " ~~~~~~~~~~~~~~~~~~~"
 	print "completed InsertProton"
 	print " ~~~~~~~~~~~~~~~~~~~"

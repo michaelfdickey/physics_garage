@@ -198,14 +198,15 @@ class Particle:
 		self.thickness = particle_thickness
 		self.mass = particle_mass
 		self.charge = particle_charge
-		self.scale = particle_scale
+		self.particle_scale = particle_scale
+		self.created_scale = created_scale
 		self.drag = 1
 		self.angle = 0
-		self.created_scale = created_scale
+
 
 	def printing(self):
 		print "~~class Particle def printing check ~~"
-		print "particleX:",self.x,"particleY:",self.y,"scale:",self.scale,"pSpeedX:",self.speedx,"pSpeedY:",self.speedy
+		print "particleX:",self.x,"particleY:",self.y,"particle scale:",self.particle_scale,"pSpeedX:",self.speedx,"pSpeedY:",self.speedy
 
 	"""
 	def display(self):
@@ -267,18 +268,33 @@ class Particle:
 
 	def move(self):
 
-		# get scale modifier
-		scale_modifier = pge.current_scale["scale"] / self.scale
+		# displaying particle
+		# get rel org coord -> get scale -> convert to game x y -> display particle
+		
+		#print "~~class Particle def printing check ~~"
+		#print "> particleX:",self.x,"particleY:",self.y,"scale:",self.particle_scale,"pSpeedX:",self.speedx,"pSpeedY:",self.speedy
 
-		#reset particle size
+		# get scale modifier
+		#print " >current scale is:  ", pge.current_scale["scale"]
+		#print " >particle created scale: ", self.created_scale
+		#print " >particle scale: ", self.particle_scale
+		scale_modifier = pge.current_scale["scale"] / self.particle_scale
+		#print " > the scale modififier is: ", scale_modifier
+
+		#set particle display size
 		draw_particle_size = self.size / scale_modifier
+		#print "draw_particle_size:", draw_particle_size
 		if draw_particle_size <= 1:
 			draw_particle_size = 1
+		draw_particle_size = int(draw_particle_size)
+		#print "> the draw particle size = ", draw_particle_size
 
-		# # reset position of particle
+		# # figure out position modifier based on scale
 		initial_scale = self.created_scale
 		position_modifier = pge.current_scale["scale"] / initial_scale
 
+		# # set display position
+		# # self.x and self.y are the fixed absolute original position with x y 0 at the center
 		positionX = self.x
 		positionY = self.y
 
@@ -292,6 +308,7 @@ class Particle:
 		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
 
+		"""
 		# print positon to draw with pygame:
 		positionXstr = str(int(positionX))
 		gameX = "gameX "
@@ -304,8 +321,9 @@ class Particle:
 		gameY = gameY + positionYstr
 		label_positionX = pgvar.font_med.render(str(gameY), 1, (255,255,0))
 		screen.blit(label_positionX, (positionX  - 80, positionY - 20))	
+		"""
 
-
+		"""
 		# print absolute position of particle
 		absolute_pos_Xstr = str(int(absolute_pos_X))
 		absoX = "absoX "
@@ -318,7 +336,7 @@ class Particle:
 		absoY = absoY + absolute_pos_Ystr
 		label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
 		screen.blit(label_positionY, (positionX  - 80, positionY + 20))
-
+		"""
 
 
 		# clear out old location of particle
@@ -327,22 +345,56 @@ class Particle:
 		#pygame.draw.circle(screen, pgvar.color_green, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 		#self.color = oldColor
 
-		"""
+		
 		if pgui.bPlaySimulation["enabled"] == False:
 			pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
-		"""
+
+		# setting these varibles in case either of the move loops below isn't running
+		display_positionX = positionX 
+		display_positionY = positionY 
+		
 
 		if pgui.bPlaySimulation["enabled"] == True:
 
 			if pgui.bForceGravity["enabled"] == True:
 				
+				# get speed values
+				display_speed_Y = self.speedy 
+				#print "display_speed_Y: ", display_speed_Y
+
+				# update speed values
+				display_speed_Y = (display_speed_Y + .01) * 1.001
+				#print "display_speed_Y 2: ", display_speed_Y
+
+				# update location on screen
+				#print "position Y before: ", positionY
+				positionY = positionY + display_speed_Y 
+				#print "position Y after  :", positionY
+
+				# setting the display varible to update display after the loop
+				display_positionX = positionX 
+				display_positionY = positionY 
+			
+
+				# revert value back from display values to absolute values (leaving the display variable alone)
+				positionY = (pgvar.pygame_window_height * 2) + positionY
+				#print "position Y after  :", positionY
+				positionY = position_modifier * positionY 
+				#print "position Y after  :", positionY
+
+				# update actual location of particle in list
+				self.y = positionY
+				self.speedy = display_speed_Y
+
+				"""
 				# modify speed values
 				self.speedy = (self.speedy + .03) * 1.0008
 				
 				# update location
 				positionY = positionY + self.speedy  #* self.drag
+				"""
 
-
+				"""
 				# print positon to draw with pygame:
 				positionXstr = str(int(positionX))
 				gameX = "gameX "
@@ -355,8 +407,9 @@ class Particle:
 				gameY = gameY + positionYstr
 				label_positionX = pgvar.font_med.render(str(gameY), 1, (255,255,0))
 				screen.blit(label_positionX, (positionX  + 20, positionY - 20))	
+				"""
 
-
+				"""
 				# print absolute position of particle
 				absolute_pos_Xstr = str(int(absolute_pos_X))
 				absoX = "absoX "
@@ -369,10 +422,10 @@ class Particle:
 				absoY = absoY + absolute_pos_Ystr
 				label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
 				screen.blit(label_positionY, (positionX  + 20, positionY + 20))
+				"""
 
-				
+				"""
 				# revert number back to absolute value from value for display to update real position in list
-
 				#positionY = (pgvar.pygame_window_height / 2) - positionY
 				positionY = (pgvar.pygame_window_height * 2) + positionY
 
@@ -380,7 +433,7 @@ class Particle:
 				positionY = position_modifier * positionY 
 
 				self.y = positionY + .1
-							
+				"""		
 
 			if pgui.bForceElectromagnetic["enabled"] == True:
 				
@@ -396,7 +449,8 @@ class Particle:
 				self.y = positionY
 
 		#draw new particle location
-		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
+		pygame.draw.circle(screen, self.color, (int(display_positionX), int(display_positionY)), int(draw_particle_size), int(self.thickness))
+		#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 	
 	def  zoomin(self):
