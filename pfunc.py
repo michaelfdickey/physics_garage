@@ -199,18 +199,25 @@ def redrawEverything():
 	for i, button in enumerate(my_buttons):
 		button.display()
 
-	
+	""" I think I'm doing it twice for every frame
 	if pgui.bPlaySimulation["enabled"] == False:
 		for i, particle in enumerate(created_particles):
 			particle.move()	
-
+	"""
 
 	#print lineNum(), "redrawEverything() - completed"
 
+def redrawParticlesStatic():
+	for i, particle in enumerate(created_particles):
+		#particle.printing()
+		#particle.display()	
+		particle.move()
+
+
 
 def redrawPortal():
-	print lineNum(), "redrawBackground() started"
-	pygame.draw.rect(screen, pgvar.color_background, (pgvar.UI_sideBar_width, pgvar.UI_topBar_height, pgvar.pygame_window_width, pgvar.pygame_window_height))
+	#print lineNum(), "redrawBackground() started"
+	#pygame.draw.rect(screen, pgvar.color_background, (pgvar.UI_sideBar_width, pgvar.UI_topBar_height, pgvar.pygame_window_width, pgvar.pygame_window_height))
 	#screen.fill(pgvar.color_background)
 	if pgui.buttonGrid["enabled"] == True:
 		drawGrid()

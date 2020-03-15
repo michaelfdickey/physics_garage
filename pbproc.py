@@ -230,13 +230,14 @@ def updateStickyButtons(selected_button):
 			pgui.buttonGrid["color"] = pgvar.UI_button_selected_color
 			pfunc.defineButtons()	
 			pfunc.redrawEverything()
+			pfunc.redrawParticlesStatic()
 			
 		elif pgui.buttonGrid["enabled"] == True:
 			pgui.buttonGrid["enabled"] = False
 			pgui.buttonGrid["color"] = pgvar.UI_button_color
 			pfunc.defineButtons()
 			pfunc.redrawEverything()
-
+			pfunc.redrawParticlesStatic()
 
 	# # # ORIGIN BUTTON
 	if selected_button == "origin":
@@ -245,12 +246,14 @@ def updateStickyButtons(selected_button):
 			pgui.buttonOrigin["color"] = pgvar.UI_button_selected_color
 			pfunc.defineButtons()	
 			pfunc.redrawEverything()
+			pfunc.redrawParticlesStatic()
 			
 		elif pgui.buttonOrigin["enabled"] == True:
 			pgui.buttonOrigin["enabled"] = False
 			pgui.buttonOrigin["color"] = pgvar.UI_button_color
 			pfunc.defineButtons()
 			pfunc.redrawEverything()
+			pfunc.redrawParticlesStatic()
 
 	# # # bDistance Components
 	if selected_button == "bDistComponents":
