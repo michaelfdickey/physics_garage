@@ -323,7 +323,7 @@ class Particle:
 		screen.blit(label_positionX, (positionX  - 80, positionY - 20))	
 		"""
 
-		"""
+		
 		# print absolute position of particle
 		absolute_pos_Xstr = str(int(absolute_pos_X))
 		absoX = "absoX "
@@ -336,15 +336,31 @@ class Particle:
 		absoY = absoY + absolute_pos_Ystr
 		label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
 		screen.blit(label_positionY, (positionX  - 80, positionY + 20))
-		"""
+		
 
-		# draw static image of particles if simulation is off
+
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
+=======
+
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
+		# clear out old location of particle
+		#oldColor = self.color
+		#self.color = pgvar.color_black
+		#pygame.draw.circle(screen, pgvar.color_green, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
+		#self.color = oldColor
+
+		
 		if pgui.bPlaySimulation["enabled"] == False:
 			pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
 
 		# setting these varibles in case either of the move loops below isn't running
 		display_positionX = positionX 
 		display_positionY = positionY 
+		
 
 		if pgui.bPlaySimulation["enabled"] == True:
 
@@ -355,7 +371,7 @@ class Particle:
 				#print "display_speed_Y: ", display_speed_Y
 
 				# update speed values
-				display_speed_Y = (display_speed_Y + .06) * 1.0001
+				display_speed_Y = (display_speed_Y + .01) * 1.001
 				#print "display_speed_Y 2: ", display_speed_Y
 
 				# update location on screen
@@ -367,9 +383,18 @@ class Particle:
 				display_positionX = positionX 
 				display_positionY = positionY 
 			
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 				# clear out old location of particle
 				pygame.draw.circle(screen, pgvar.color_black, (int(display_positionX), int(display_positionY)), int(draw_particle_size+3), int(self.thickness))
-				pfunc.redrawPortal()
+				#pfunc.redrawPortal()
+=======
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
+=======
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
+=======
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
 
 				# revert value back from display values to absolute values (leaving the display variable alone)
 				positionY = (pgvar.pygame_window_height * 2) + positionY
@@ -380,8 +405,6 @@ class Particle:
 				# update actual location of particle in list
 				self.y = positionY
 				self.speedy = display_speed_Y
-
-
 
 				"""
 				# modify speed values
@@ -445,6 +468,7 @@ class Particle:
 				self.x = absolute_pos_Xstr
 				self.y = positionY
 
+		pfunc.redrawPortal()
 		#draw new particle location
 		pygame.draw.circle(screen, self.color, (int(display_positionX), int(display_positionY)), int(draw_particle_size), int(self.thickness))
 		#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))

@@ -67,15 +67,15 @@ while running:
 
 	
 	if pgui.bPlaySimulation["enabled"] == True:
-		#pfunc.redrawEverything()
+		pfunc.redrawEverything()
 	
+
 		# # # PARTICLES # # # 	
 		# # -- This is updating the particles when the simulation is running -- # #
 		for i, particle in enumerate(pfunc.created_particles):
 			for particle2 in pfunc.created_particles[i+1:]:
 				pfunc.distanceParticles(particle,particle2)
 			particle.move()
-	
 
 	"""
 	#if pgui.bPlaySimulation["enabled"] == False:
@@ -143,7 +143,7 @@ while running:
 								pfunc.InsertProton(mouseX, mouseY)
 								
 								for i, particle in enumerate(pfunc.created_particles):
-									#particle.printing()
+									particle.printing()
 									#particle.display()	
 									particle.move()
 
@@ -324,6 +324,7 @@ while running:
 						pgui.bScaleMinus["enabled"] = False
 						pgui.bScaleMinus["color"] = pgvar.UI_button_color
 						pfunc.defineButtons()
+						pfunc.redrawParticlesStatic()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 
@@ -331,6 +332,7 @@ while running:
 						pgui.bScalePlus["enabled"] = False
 						pgui.bScalePlus["color"] = pgvar.UI_button_color								
 						pfunc.defineButtons()
+						pfunc.redrawParticlesStatic()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 
