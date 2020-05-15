@@ -324,6 +324,7 @@ while running:
 						pgui.bScaleMinus["enabled"] = False
 						pgui.bScaleMinus["color"] = pgvar.UI_button_color
 						pfunc.defineButtons()
+						pfunc.redrawParticlesStatic()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 
@@ -331,6 +332,7 @@ while running:
 						pgui.bScalePlus["enabled"] = False
 						pgui.bScalePlus["color"] = pgvar.UI_button_color								
 						pfunc.defineButtons()
+						pfunc.redrawParticlesStatic()
 						for i, button in enumerate(pfunc.my_buttons):
 							button.display()
 

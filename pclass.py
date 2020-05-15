@@ -323,7 +323,7 @@ class Particle:
 		screen.blit(label_positionX, (positionX  - 80, positionY - 20))	
 		"""
 
-		"""
+		
 		# print absolute position of particle
 		absolute_pos_Xstr = str(int(absolute_pos_X))
 		absoX = "absoX "
@@ -336,7 +336,7 @@ class Particle:
 		absoY = absoY + absolute_pos_Ystr
 		label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
 		screen.blit(label_positionY, (positionX  - 80, positionY + 20))
-		"""
+		
 
 		# draw static image of particles if simulation is off
 		if pgui.bPlaySimulation["enabled"] == False:
@@ -369,7 +369,7 @@ class Particle:
 			
 				# clear out old location of particle
 				pygame.draw.circle(screen, pgvar.color_black, (int(display_positionX), int(display_positionY)), int(draw_particle_size+3), int(self.thickness))
-				pfunc.redrawPortal()
+				#pfunc.redrawPortal()
 
 				# revert value back from display values to absolute values (leaving the display variable alone)
 				positionY = (pgvar.pygame_window_height * 2) + positionY
@@ -445,6 +445,7 @@ class Particle:
 				self.x = absolute_pos_Xstr
 				self.y = positionY
 
+		pfunc.redrawPortal()
 		#draw new particle location
 		pygame.draw.circle(screen, self.color, (int(display_positionX), int(display_positionY)), int(draw_particle_size), int(self.thickness))
 		#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
