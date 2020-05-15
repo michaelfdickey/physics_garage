@@ -342,6 +342,10 @@ class Particle:
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
+=======
+
 >>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
 		# clear out old location of particle
 		#oldColor = self.color
@@ -381,9 +385,12 @@ class Particle:
 			
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				# clear out old location of particle
 				pygame.draw.circle(screen, pgvar.color_black, (int(display_positionX), int(display_positionY)), int(draw_particle_size+3), int(self.thickness))
 				#pfunc.redrawPortal()
+=======
+>>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
 =======
 >>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
 =======
