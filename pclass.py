@@ -338,15 +338,6 @@ class Particle:
 		screen.blit(label_positionY, (positionX  - 80, positionY + 20))
 		
 
-
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
->>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
-=======
-
->>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
 		# clear out old location of particle
 		#oldColor = self.color
 		#self.color = pgvar.color_black
@@ -382,19 +373,11 @@ class Particle:
 				# setting the display varible to update display after the loop
 				display_positionX = positionX 
 				display_positionY = positionY 
-			
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 				# clear out old location of particle
 				pygame.draw.circle(screen, pgvar.color_black, (int(display_positionX), int(display_positionY)), int(draw_particle_size+3), int(self.thickness))
 				#pfunc.redrawPortal()
-=======
->>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
-=======
->>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
-=======
->>>>>>> parent of fceac1d... displaying particles when toggling origin and grid fixed
+
 
 				# revert value back from display values to absolute values (leaving the display variable alone)
 				positionY = (pgvar.pygame_window_height * 2) + positionY
