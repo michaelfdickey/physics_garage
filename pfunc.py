@@ -63,9 +63,9 @@ screen = pygame.display.set_mode((pgvar.pygame_window_width, pgvar.pygame_window
 
 
 
-####### -------------------------------------##########
+####### -----------------------------------------##########
 ####### for printing Linu Number when debugging  ##########
-####### -------------------------------------##########
+####### -----------------------------------------##########
 
 def lineNum():
     """Returns the current line number in our program."""
@@ -73,9 +73,9 @@ def lineNum():
 
 
 
-####### -------------------------------------##########
+####### --------------------------------------------##########
 ####### Initializes the UI and display screen       ##########
-####### -------------------------------------##########
+####### --------------------------------------------##########
 
 def initializeDisplay():
 	print moduleName, lineNum(), "starting MAIN code"
@@ -96,12 +96,9 @@ def initializeDisplay():
 
 	# # draw buttons!
 	print moduleName, lineNum(), "- drawing buttons"
-
 	defineButtons()
-	
 	for i, button in enumerate(my_buttons):
 		button.display()
-	
 	print moduleName, lineNum(), "initializing display completed"
 
 
@@ -110,7 +107,7 @@ def initializeDisplay():
 ####### takes all buttons defined in dictionary and adds them to a list  for drawing   ##########
 ####### ---------------------------------------------------------------------##########
 def defineButtons():
-	del my_buttons[:] 	# this clears and resets the my_buttons list, other it just keeps getting appended
+	del my_buttons[:] 	# this clears and resets the my_buttons list, other wise it just keeps getting appended
 
 	# source info for this part: https://realpython.com/iterate-through-dictionary-python/
 	#print moduleName, lineNum(), "defineButtons() - started" 
@@ -381,7 +378,7 @@ def InsertProton(mouseX, mouseY):
 	particle_Y_abs = particleYabs
 	created_scale = initial_scale
 
-
+	# Append particle list
 	print moduleName, lineNum(), "about to append class"
 	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass,
 		particle_charge, particle_X_abs, particle_Y_abs, particle_scale, created_scale)
@@ -390,13 +387,15 @@ def InsertProton(mouseX, mouseY):
 
 	print "length of created_particles", len(created_particles)
 
-	print created_particles
+	print "Created Particles", created_particles
 
 	print " ~~~~~~~~~~~~~~~~~~~"
 	print "completed InsertProton"
 	print " ~~~~~~~~~~~~~~~~~~~"
 
-	#particle.display()
+	# call draw particle class static 
+	# pclass.particle.display()
+	# pclass.particle.move()
 
 	#pgvar.message_txt = "YAY"
 

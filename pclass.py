@@ -208,7 +208,7 @@ class Particle:
 		print "~~class Particle def printing check ~~"
 		print "particleX:",self.x,"particleY:",self.y,"particle scale:",self.particle_scale,"pSpeedX:",self.speedx,"pSpeedY:",self.speedy
 
-	"""
+	
 	def display(self):
 
 		#print " []** STARTING PARTICLE DRAW ** []"
@@ -218,7 +218,7 @@ class Particle:
 		#print "particle scale is: ", self.scale
 		#print "current scale is :", pge.current_scale["scale"]
 
-		scale_modifier = pge.current_scale["scale"] / self.scale
+		scale_modifier = pge.current_scale["scale"] / self.created_scale
 		#print "the scale modifier is: ", scale_modifier
 		
 		#display_scale = current_scale["scale"]
@@ -263,7 +263,7 @@ class Particle:
 		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 		#print "COMPLETED PARTICLE DRAW"
-	"""
+	
 
 
 	def move(self):
