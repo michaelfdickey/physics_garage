@@ -73,16 +73,20 @@ bScaleOptions_width = 200
 
 # Standard
 
+# labc123 = label
+# bStdMetric = button
+# tabc123 = text
+
 lStandard = {}
 lStandard["name"] = "lStandard"						
 lStandard["origin_x"] = 0									
 lStandard["origin_y"] = standard_origin			
-lStandard["width"] = pgvar.UI_sideBar_width					
+lStandard["width"] = pgvar.UI_sideBar_width			
 lStandard["height"] = buttonHeight							
 lStandard["label_txt"] = "Standard: "				
 lStandard["type"] = "label"									
 lStandard["enabled"] = False									
-lStandard["color"] = pgvar.UI_label_color 					
+lStandard["color"] = pgvar.UI_label_color
 lStandard["group"] = "Standard"						
 lStandard["visible"] = True
 lStandard["available"] = True						# disables the button entirely from the program						
@@ -177,16 +181,16 @@ lDisplayDimensions["available"] = True
 b1D = {}
 b1D["name"] = "b1D"											# button_name
 b1D["origin_x"] = 0											# button_origin_x
-b1D["origin_y"] = display_dimensions_origin + buttonHeight		# button_origin_y
-b1D["width"] = pgvar.UI_sideBar_width	 / 3						# button_width
+b1D["origin_y"] = display_dimensions_origin + buttonHeight	# button_origin_y
+b1D["width"] = pgvar.UI_sideBar_width	 / 3				# button_width
 b1D["height"] = 20											# button_height
-b1D["label_txt"] = "  1D"										# button_label_txt
-b1D["type"] = "group"											# buttonType
+b1D["label_txt"] = "  1D"									# button_label_txt
+b1D["type"] = "group"										# buttonType
 b1D["enabled"] = False										# buttonEnabled
-b1D["color"] = pgvar.UI_button_color							# buttonColor
+b1D["color"] = pgvar.UI_button_disabled						# buttonColor
 b1D["group"] = "displayDimensions"							# buttonGroup
-b1D["visible"] = True											# buttonVisible
-b1D["available"] = True
+b1D["visible"] = True										# buttonVisible
+b1D["available"] = False
 
 b2D = {}
 b2D["name"] = "b2D"									# button_name
@@ -211,10 +215,10 @@ b3D["height"] = 20									# button_height
 b3D["label_txt"] = "  3D"								# button_label_txt
 b3D["type"] = "group"									# buttonType
 b3D["enabled"] = False								# buttonEnabled
-b3D["color"] = pgvar.UI_button_color					# buttonColor
+b3D["color"] = pgvar.UI_button_disabled					# buttonColor
 b3D["group"] = "displayDimensions"					# buttonGroup
 b3D["visible"] = True									# buttonVisible
-b3D["available"] = True
+b3D["available"] = False
 
 
 # # Calculation Dimensions

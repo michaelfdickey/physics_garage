@@ -92,8 +92,8 @@ UI_popup_large_height = 600
 # interface colors
 color_background= (0,0,0)
 UI_background_color = (102, 0, 51)				# the color of the bar along the side and top
-UI_button_border_color = (153, 127, 76)		# color of the border box around the button
-UI_button_color = (204, 0, 102)				# the default color of the button
+UI_button_border_color = (153, 127, 76)			# color of the border box around the button
+UI_button_color = (204, 0, 102)					# the default color of the button
 UI_button_click_color = (255, 128 , 255)		# the color a button turns temporarily when clicked on
 UI_label_color = (150,50,100)					# label color 
 UI_text_entry_box_color = (100,0,50)			# the color of text entry boxes
@@ -103,7 +103,7 @@ UI_button_txt_color = (255,255,0)				# color of text label of button
 UI_button_selected_color = (225,100,225)		# color button turns to when toggled on
 
 # disabled buttons
-UI_button_disabled = (75,25,50)				# a completely disabled button / option not currently available
+UI_button_disabled = (75,25,50)					# a completely disabled button / option not currently available
 UI_button_disabled_text = (64,64,0)
 
 # # FPS related variables
