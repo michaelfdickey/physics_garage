@@ -183,10 +183,12 @@ while running:
 						pgui.bScaleMinus["enabled"] = True
 						pgui.bScaleMinus["color"] = pgvar.UI_button_click_color
 						#pge.current_scale["scale"] = 	pge.current_scale["scale"] * 10  #(this creates rounding errors like 1.00000000002e-16 sometimes) 
-						if pge.current_scale["scale"] == 1e-16:
-							pge.current_scale["scale"] = 	1e-15
+						if pge.current_scale["scale"] == 1e-17:
+							pge.current_scale["scale"] = 1e-16
+						elif pge.current_scale["scale"] == 1e-16:
+							pge.current_scale["scale"] = 1e-15
 						elif pge.current_scale["scale"] == 1e-15:
-							pge.current_scale["scale"] = 	1e-14
+							pge.current_scale["scale"] = 1e-14
 						print "current scale is: ", pge.current_scale
 						pge.scaleUpdate()
 
@@ -209,9 +211,11 @@ while running:
 						pgui.bScalePlus["color"] = pgvar.UI_button_click_color									
 						#pge.current_scale["scale"] = 	pge.current_scale["scale"] / 10 
 						if pge.current_scale["scale"] == 1e-14:
-							pge.current_scale["scale"] = 	1e-15
+							pge.current_scale["scale"] = 1e-15
 						elif pge.current_scale["scale"] == 1e-15:
-							pge.current_scale["scale"] = 	1e-16
+							pge.current_scale["scale"] = 1e-16
+						elif pge.current_scale["scale"] == 1e-16:
+							pge.current_scale["scale"] = 1e-17
 						print "current scale is: ", pge.current_scale
 						pge.scaleUpdate()
 						pfunc.defineButtons()

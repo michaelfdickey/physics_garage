@@ -7,3 +7,4 @@ adding a new scale:
 4) add it to def scaleUpdate(): in pge.py 
 5) add it to pbproc # # # Scale Options Processing
 6) also add it to # # # Scale Opener BUTTON in pbproc.py
+7) added to physics_garage.py # # #PUSHY EVENT PROCESSING # # #
