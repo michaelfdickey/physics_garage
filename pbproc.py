@@ -4,7 +4,7 @@
 # ************************************************************************************************#
 # ************************************************************************************************#
 
-#	see pg_ref.py
+# see pg_ref.py 
 
 moduleName = "pbproc.py"
 
@@ -611,6 +611,7 @@ def updateMenuButtons(selected_button):
 			pgui.mInsertoption03["visible"] = True			
 			pgui.mInsertoption04["visible"] = True
 			pgui.mInsertoption05["visible"] = True
+			pgui.mInsertoption06["visible"] = True
 
 			pgvar.message_txt = "Insert"
 
@@ -619,6 +620,7 @@ def updateMenuButtons(selected_button):
 			print pfunc.lineNum(), "~", pgui.mInsertoption03["name"], "Visible=", pgui.mInsertoption03["visible"]			
 			print pfunc.lineNum(), "~", pgui.mInsertoption04["name"], "Visible=", pgui.mInsertoption04["visible"]
 			print pfunc.lineNum(), "~", pgui.mInsertoption05["name"], "Visible=", pgui.mInsertoption05["visible"]
+			print pfunc.lineNum(), "~", pgui.mInsertoption05["name"], "Visible=", pgui.mInsertoption06["visible"]
 
 			pfunc.defineButtons()
 			
@@ -631,12 +633,14 @@ def updateMenuButtons(selected_button):
 			pgui.mInsertoption03["visible"] = False			
 			pgui.mInsertoption04["visible"] = False
 			pgui.mInsertoption05["visible"] = False		
+			pgui.mInsertoption06["visible"] = False	
 			
 			print pfunc.lineNum(), "~", pgui.mInsertoption01["name"], "Visible=", pgui.mInsertoption01["visible"]
 			print pfunc.lineNum(), "~", pgui.mInsertoption02["name"], "Visible=", pgui.mInsertoption02["visible"]
 			print pfunc.lineNum(), "~", pgui.mInsertoption03["name"], "Visible=", pgui.mInsertoption03["visible"]			
 			print pfunc.lineNum(), "~", pgui.mInsertoption04["name"], "Visible=", pgui.mInsertoption04["visible"]
 			print pfunc.lineNum(), "~", pgui.mInsertoption05["name"], "Visible=", pgui.mInsertoption05["visible"]
+			print pfunc.lineNum(), "~", pgui.mInsertoption05["name"], "Visible=", pgui.mInsertoption06["visible"]
 
 			pfunc.defineButtons()
 			pfunc.redrawEverything()
@@ -702,6 +706,18 @@ def updateMenuButtons(selected_button):
 			elif pgui.mInsertoption05["enabled"] == True:
 				pgui.mInsertoption05["enabled"] = False
 				pgui.mInsertoption05["color"] = pgvar.UI_button_color
+				pfunc.defineButtons()
+
+	if selected_button == "menu01option06":
+		if pgui.mInsert["enabled"] == True:
+			print "~~ you clicked Friday ~~"
+			if pgui.mInsertoption06["enabled"] == False:
+				pgui.mInsertoption06["enabled"] = True
+				pgui.mInsertoption06["color"] = pgvar.UI_button_selected_color
+				pfunc.defineButtons()
+			elif pgui.mInsertoption06["enabled"] == True:
+				pgui.mInsertoption06["enabled"] = False
+				pgui.mInsertoption06["color"] = pgvar.UI_button_color
 				pfunc.defineButtons()
 
 	## END MENU 01 HANDLING

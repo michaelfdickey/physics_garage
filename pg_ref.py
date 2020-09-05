@@ -109,9 +109,9 @@ Left Main Menu
 		Metric or Imperial
 	Unit System
 		Metric
-			MKS, cgs
+			M*Kg*S, Cm*g*s
 		Imperial
-			ips, fps 
+			IPS, FPS 
 	Display scale	
 		-, +, >> (opens fixed display scales)
 		pm (1.0 x 10^12m)

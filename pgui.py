@@ -135,7 +135,7 @@ tUnitSys["height"] = 20
 tUnitSys["label_txt"] = " MKS "										
 tUnitSys["type"] = "group"											
 tUnitSys["enabled"] = False										
-tUnitSys["color"] = pgvar.UI_button_color							
+tUnitSys["color"] = pgvar.UI_button_selected_color						
 tUnitSys["group"] = "Standard"							
 tUnitSys["visible"] = True			
 tUnitSys["available"] = True
@@ -1261,7 +1261,7 @@ mInsertoption04["origin_x"] = pgvar.UI_sideBar_width	+ 20		# button_origin_x
 mInsertoption04["origin_y"] = 80								# button_origin_y
 mInsertoption04["width"] = 150								# button_width
 mInsertoption04["height"] = 20								# button_height
-mInsertoption04["label_txt"] = " Material "					# button_label_txt
+mInsertoption04["label_txt"] = " Element "					# button_label_txt
 mInsertoption04["type"] = "menu"								# buttonType
 mInsertoption04["enabled"] = False 							# buttonEnabled
 mInsertoption04["color"] = pgvar.UI_button_color				# buttonColor
@@ -1275,13 +1275,34 @@ mInsertoption05["origin_x"] = pgvar.UI_sideBar_width	+ 20		# button_origin_x
 mInsertoption05["origin_y"] = 100								# button_origin_y
 mInsertoption05["width"] = 150								# button_width
 mInsertoption05["height"] = 20								# button_height
-mInsertoption05["label_txt"] = " Instrument / Environment "		# button_label_txt
+mInsertoption05["label_txt"] = " Material "					# button_label_txt
 mInsertoption05["type"] = "menu"								# buttonType
-mInsertoption05["enabled"] = False							# buttonEnabled
+mInsertoption05["enabled"] = False 							# buttonEnabled
 mInsertoption05["color"] = pgvar.UI_button_color				# buttonColor
 mInsertoption05["group"] = "InsertMenu"							# buttonGroup
 mInsertoption05["visible"] = False							# buttonVisible
 mInsertoption05["available"] = True
+
+mInsertoption06 = {}
+mInsertoption06["name"] = "menu01option06"							# button_name
+mInsertoption06["origin_x"] = pgvar.UI_sideBar_width + 20			# button_origin_x
+mInsertoption06["origin_y"] = 120									# button_origin_y
+mInsertoption06["width"] = 150										# button_width
+mInsertoption06["height"] = 20										# button_height
+mInsertoption06["label_txt"] = " Instrument / Environment "			# button_label_txt
+mInsertoption06["type"] = "menu"									# buttonType
+mInsertoption06["enabled"] = False									# buttonEnabled
+mInsertoption06["color"] = pgvar.UI_button_color					# buttonColor
+mInsertoption06["group"] = "InsertMenu"								# buttonGroup
+mInsertoption06["visible"] = False									# buttonVisible
+mInsertoption06["available"] = True
+
+'''
+^ adding a new mInsertoption button ^
+1) add above increment to next number
+2) at the end of this file, add it to allButtons e.g. allButtons[66] = mInsertoption06
+3) in pbproc.py, add it to the insert processing, so it displays it or hides it when clicked. 
+'''
 
 bMenu02 = {}
 bMenu02["name"] = "menu02"											# button_name
@@ -1592,18 +1613,19 @@ allButtons[28] = bDropdown01option02 	# Dropdown01 option 02
 allButtons[29] = bDropdown01option03 	# Dropdown01 option 03
 
 allButtons[30] = mInsert				# Menu 01
-allButtons[31] = mInsertoption01		# Menu 01 - option 01 - Monday
-allButtons[32] = mInsertoption02		# Menu 01 - option 02 - Tuesday
-allButtons[33] = mInsertoption03		# Menu 01 - option 03 - Wednesday
-allButtons[34] = mInsertoption04		# Menu 01 - option 04 - Thursday
-allButtons[35] = mInsertoption05		# Menu 01 - option 05 - Friday
+allButtons[31] = mInsertoption01		# Menu 01 - option 01 - 
+allButtons[32] = mInsertoption02		# Menu 01 - option 02 - 
+allButtons[33] = mInsertoption03		# Menu 01 - option 03 - 
+allButtons[34] = mInsertoption04		# Menu 01 - option 04 - 
+allButtons[35] = mInsertoption05		# Menu 01 - option 05 - 
+allButtons[66] = mInsertoption06		# Menu 01 - option 06 - 
 
 allButtons[36] = bMenu02				# Menu 02
 allButtons[38] = lTextField01			# Text Field - label
 allButtons[39] = textField01			# Text Field - text entry box
-allButtons[40] = bMenu02popup01		# Menu 02  - small popup
-allButtons[41] = bMenu02popup02		# Menu 02  - Medium popup
-allButtons[42] = bMenu02popup03		# Menu 02  - Large popup
+allButtons[40] = bMenu02popup01			# Menu 02  - small popup
+allButtons[41] = bMenu02popup02			# Menu 02  - Medium popup
+allButtons[42] = bMenu02popup03			# Menu 02  - Large popup
 
 # menu02 popup01 elements
 allButtons[43] = menu02popup01element01		# Menu 02  - small popup - element 01 - background box
