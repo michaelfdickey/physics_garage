@@ -4,16 +4,7 @@
 # ************************************************************************************************#
 # ************************************************************************************************#
 
-#	/photonmain.py 		# primary program
-#	/pgvar.py 			# global variable declarations
-#	/pgui.py 			# photon gui elements and buttons
-#	/pfunc.py 			# functions
-#	/pclass.py 			# button processing class that handles drawing / displaying UI
-#	/pbproc.py 			# processing sticky, group, dropdown etc button actions
-#	/photon_ref.py 		# references, dev notes, style guide, modification instructions
-#	/pge.py 				# element definitions, such as all the variables assocated with particles
-
-# pgui.py
+#	see pg_ref.py
 
 moduleName = "pge.py"
 

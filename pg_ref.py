@@ -1,3 +1,19 @@
+# ************************************************************************************************#
+# ************************************************************************************************#
+#	Directory Structure
+# ************************************************************************************************#
+# ************************************************************************************************#
+
+#	/physics_garage.py 	# primary program
+#	/pbproc.py 			# processing sticky, group, dropdown etc button actions. e.g. click one button, disable the others in the group. 
+#	/pgvar.py 			# global variable declarations
+#	/pgui.py 			# photon gui elements and buttons
+#	/pfunc.py 			# functions
+#	/pclass.py 			# button processing class that handles drawing / displaying UI
+#	/photon_ref.py 		# references, dev notes, style guide, modification instructions
+#	/pge.py 			# element definitions, such as all the variables assocated with particles
+
+
 # photon_ref.py
 
 moduleName = "photon_ref.py"

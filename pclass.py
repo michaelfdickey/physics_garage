@@ -4,15 +4,7 @@
 # ************************************************************************************************#
 # ************************************************************************************************#
 
-#	/photonmain.py 		# primary program
-#	/pgvar.py 			# global variable declarations
-#	/pgui.py 			# photon gui elements and buttons
-#	/pfunc.py 			# functions
-#	/pclass.py 			# button processing class that handles drawing / displaying UI
-#	/pbproc.py 			# processing sticky, group, dropdown etc button actions
-#	/photon_ref.py 		# references, dev notes, style guide, modification instructions
-
-# pclass.py
+#	see pg_ref.py
 
 moduleName = "pclass.py"
 
@@ -77,8 +69,8 @@ class Button:
 
 		# render "pushy" type buttons
 		if self.buttonType == "pushy":
-			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
-			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	#border
+			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))             # button
+			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	# border
 
 			if self.buttonAvailable == False:
 				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)
@@ -89,8 +81,8 @@ class Button:
 
 		# render "sticky" type buttons
 		elif self.buttonType == "sticky":	
-			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
-			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	#border
+			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))             # button
+			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	# border
 			
 			if self.buttonAvailable == False:
 				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)
@@ -101,8 +93,8 @@ class Button:
 
 		# render "label" type buttons
 		elif self.buttonType == "label":
-			self.color = pgvar.UI_label_color																	# since self.color = buttonColor by default, this overwrites that for labels
-			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
+			self.color = pgvar.UI_label_color																# since self.color = buttonColor by default, this overwrites that for labels
+			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))             # button
 			
 			if self.buttonAvailable == False:
 				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)
@@ -113,10 +105,15 @@ class Button:
 
 		# render "group" type buttons
 		elif self.buttonType == "group":	
-			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))               		#button
-			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	#border
+			pygame.draw.rect(screen, self.color, (self.x, self.y, self.x_width, self.y_height))             # button
+			pygame.draw.rect(screen, self.colorBorder, (self.x, self.y, self.x_width, self.y_height), 3)  	# border
 
-			label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)
+			if self.buttonAvailable == False:																#
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_disabled_text)			#
+			elif self.buttonAvailable == True:																# } this section darkens the text if the button is disabled, 
+				label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)				#  	needs to be added to each button type where you want to disable buttons.
+
+			#label = myfont.render(str(self.button_label_txt), 0, pgvar.UI_button_txt_color)				# <-- remove this line to let the above lines process drawing the text color and updating it if it's disabled. 
 			screen.blit(label, (self.x + 5, self.y))
 
 		# render "dropdown" type buttons
