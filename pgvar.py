@@ -114,7 +114,7 @@ selected_uiObject = None
 selected_button = None
 
 # # on screen message text
-message_txt = "TEST"
+message_txt = ""
 
 # # other
 entered_text = ""

@@ -320,6 +320,10 @@ def drawOrigin():
 
 def InsertProton(mouseX, mouseY):
 
+	print " ~~~~~~~~~~~~~~~~~~~"
+	print "starting InsertProton"
+	print " ~~~~~~~~~~~~~~~~~~~"
+
 	# this functionality is moved to pclass processing so the value remains absolute. pclass will adjust for scale
 	"""
 	# get proton diameter
@@ -393,10 +397,15 @@ def InsertProton(mouseX, mouseY):
 
 	"""
 	# size of proton 
-		# the root mean square charge radius of a proton is about 0.84 - 0.87 fm (or 0.84 x 10 ^ -15 to 0.87 x 10 ^ 15m )
+		# the root mean square charge radius of a proton is about 0.84 - 0.87 fm (or 0.84 x 10^-15 to 0.87 x 10^15m )
 		.855 fm
-		.855 x 10 ^-15 m
-		8.55 x 10 ^-16m
+		# 1 femtometer is 1 x 10^-15
+
+		.085 @ 10 ^-14m
+		.855 @ 10 ^-15m
+		8.55 @ 10 ^-16m
+		85.5 @ 10 ^-17m
+		
 		1 px = 1.0 x 10-14m or .1 fm 
 	"""
 

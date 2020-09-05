@@ -137,11 +137,13 @@ while running:
 								#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
 								pfunc.InsertProton(mouseX, mouseY)
 								
+								
+								"""
 								for i, particle in enumerate(pfunc.created_particles):
 									particle.printing()
 									#particle.display()	
 									particle.move()
-
+								"""
 
 								"""		
 								for i, particle in enumerate(pfunc.created_particles):

@@ -74,6 +74,14 @@ current_scale["display"] = "1 fm (1.0x10-15 m)"
 dScale00 = {} #Planck Length
 dScale01 = {}
 
+dScale18 = {}
+dScale18["scale"] = 1e-17
+dScale18["description"] = "0.01 femtometer"
+dScale18["display"] = ".01 fm (1.0x10-17 m)"
+dScale18["note"] = ".8414 fm = charge radius of Proton"
+# https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)#1_femtometre
+
+
 dScale19 = {}
 dScale19["scale"] = 1e-16
 dScale19["description"] = "0.1 femtometer"
@@ -162,11 +170,11 @@ def scaleUpdate():
 # ************************************************************************************************************************
 
 pProton = {}
-pProton["symbol"] = "p+"
-pProton["diameter"] = 8.414			#meters, but effective diameter changes based on energy
-pProton["scale"] = 1e-16
-pProton["mass"] = 1.673e-27				#kg
-pProton["charge"] = 1
+pProton["symbol"] = "p+"			#in program symbol ref
+pProton["diameter"] = 1.6828		#meters, but effective diameter changes based on energy
+pProton["scale"] = 1e-15			#default scale for particle where particle 1 < particle < 10
+pProton["mass"] = 1.673e-27			#kg
+pProton["charge"] = 1				#postive charge 1
 pProton["class"] = "Baryon"
 pProton["half-life"] = 0
 

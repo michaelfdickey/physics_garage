@@ -322,17 +322,24 @@ class Particle:
 
 		
 		# print absolute position of particle
+		# # link this with an enable button
 		absolute_pos_Xstr = str(int(absolute_pos_X))
 		absoX = "absoX "
 		absoX = absoX + absolute_pos_Xstr
 		label_positionX = pgvar.font_med.render(str(absoX), 1, (255,255,0))
-		screen.blit(label_positionX, (positionX  - 80, positionY ))
+		screen.blit(label_positionX, (positionX - 80, positionY ))
 
 		absolute_pos_Ystr = str(int(absolute_pos_Y))
 		absoY = "absoY "
 		absoY = absoY + absolute_pos_Ystr
 		label_positionY = pgvar.font_med.render(str(absoY), 1, (255,255,0))
-		screen.blit(label_positionY, (positionX  - 80, positionY + 20))
+		screen.blit(label_positionY, (positionX - 80, positionY + 20))
+
+		# print diameter of drawn particle
+		diam = "diam "
+		diam = diam + str(draw_particle_size)
+		label_diameter = pgvar.font_med.render(str(diam), 1, (255,255,0))
+		screen.blit(label_diameter, (positionX - 80, positionY + 40))
 		
 
 		# clear out old location of particle
@@ -448,7 +455,8 @@ class Particle:
 				self.x = absolute_pos_Xstr
 				self.y = positionY
 
-		pfunc.redrawPortal()
+		#pfunc.redrawPortal()
+		
 		#draw new particle location
 		pygame.draw.circle(screen, self.color, (int(display_positionX), int(display_positionY)), int(draw_particle_size), int(self.thickness))
 		#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
