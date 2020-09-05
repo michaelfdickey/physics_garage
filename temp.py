@@ -1,21 +1,9 @@
-# co-ordinates
+adding a new scale:
 
-creating particle:
-get game x y -> get scale ->  get relative to origin co-ordinates -> create particle. 
-
-displaying particle
-get rel org coord -> get scale -> convert to game x y -> display particle
-
-updating particle position
-get rel org coord -> get scale -> convert to game x y -> display particle -> update position -> get game x y -> get scale ->  get relative to origin co-ordinates -> create particle. 
-
-
-#temp.py
-
-# # how to concatonate strings and ints:
-
-positionX  = 50
-positionXstr = str(int(positionX))
-gameX = "gameX "
-gameX = gameX + positionXstr
-print gameX
+"""
+1) add scale option button dictionary in pgui.py 
+2) fix y origin "bScaleOption20["origin_y"] = scale_display_origin - 20"
+3) add it to allButtons[97] = bScaleOption18 at the bottom of pgui.py
+4) add it to def scaleUpdate(): in pge.py 
+5) add it to pbproc # # # Scale Options Processing
+6) also add it to # # # Scale Opener BUTTON in pbproc.py

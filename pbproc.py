@@ -405,6 +405,7 @@ def updateDropdownButtons(selected_button):
 			pgui.bScaleOpener["label_txt"] = "  << "		
 
 			# update associated buttons
+			pgui.bScaleOption18["visible"] = True	
 			pgui.bScaleOption19["visible"] = True	
 			pgui.bScaleOption20["visible"] = True
 			pgui.bScaleOption21["visible"] = True
@@ -418,6 +419,7 @@ def updateDropdownButtons(selected_button):
 			pgui.bScaleOpener["label_txt"] = "  >> "	
 
 			# update associated buttons
+			pgui.bScaleOption18["visible"] = False
 			pgui.bScaleOption19["visible"] = False
 			pgui.bScaleOption20["visible"] = False
 			pgui.bScaleOption21["visible"] = False
@@ -427,6 +429,28 @@ def updateDropdownButtons(selected_button):
 
 
 	# # # Scale Options Processing
+	if selected_button == "bScaleOption18":
+		if pgui.bScaleOpener["enabled"] == True:
+			if pgui.bScaleOption18["enabled"] == False:
+				pgui.bScaleOption18["enabled"] = True
+				pgui.bScaleOption18["color"] = pgvar.UI_button_selected_color
+				pgui.tScaleSelection["label_txt"] = pge.dScale18["display"]
+				pge.current_scale["scale"] = 1e-17
+
+				#pgui.bScaleOption18["enabled"] = False
+				pgui.bScaleOption19["enabled"] = False
+				pgui.bScaleOption20["enabled"] = False
+				pgui.bScaleOption21["enabled"] = False
+
+				#pgui.bScaleOption18["color"] = pgvar.UI_button_color
+				pgui.bScaleOption19["color"] = pgvar.UI_button_color
+				pgui.bScaleOption20["color"] = pgvar.UI_button_color
+				pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+				pfunc.defineButtons()	
+				pfunc.redrawEverything()
+
+
 	if selected_button == "bScaleOption19":
 		if pgui.bScaleOpener["enabled"] == True:
 			if pgui.bScaleOption19["enabled"] == False:
@@ -435,10 +459,12 @@ def updateDropdownButtons(selected_button):
 				pgui.tScaleSelection["label_txt"] = pge.dScale19["display"]
 				pge.current_scale["scale"] = 1e-16
 
+				pgui.bScaleOption18["enabled"] = False
 				#pgui.bScaleOption19["enabled"] = False
 				pgui.bScaleOption20["enabled"] = False
 				pgui.bScaleOption21["enabled"] = False
 
+				pgui.bScaleOption18["color"] = pgvar.UI_button_color
 				#pgui.bScaleOption19["color"] = pgvar.UI_button_color
 				pgui.bScaleOption20["color"] = pgvar.UI_button_color
 				pgui.bScaleOption21["color"] = pgvar.UI_button_color
@@ -454,10 +480,12 @@ def updateDropdownButtons(selected_button):
 				pgui.tScaleSelection["label_txt"] = pge.dScale20["display"]	
 				pge.current_scale["scale"] = 1e-15
 
+				pgui.bScaleOption18["enabled"] = False
 				pgui.bScaleOption19["enabled"] = False
 				#pgui.bScaleOption20["enabled"] = False
 				pgui.bScaleOption21["enabled"] = False
 
+				pgui.bScaleOption18["color"] = pgvar.UI_button_color
 				pgui.bScaleOption19["color"] = pgvar.UI_button_color
 				#pgui.bScaleOption20["color"] = pgvar.UI_button_color
 				pgui.bScaleOption21["color"] = pgvar.UI_button_color
@@ -473,10 +501,12 @@ def updateDropdownButtons(selected_button):
 				pgui.tScaleSelection["label_txt"] = pge.dScale21["display"]
 				pge.current_scale["scale"] = 1e-14	
 
+				pgui.bScaleOption18["enabled"] = False
 				pgui.bScaleOption19["enabled"] = False
 				pgui.bScaleOption20["enabled"] = False
 				#pgui.bScaleOption21["enabled"] = False
 
+				pgui.bScaleOption18["color"] = pgvar.UI_button_color
 				pgui.bScaleOption19["color"] = pgvar.UI_button_color
 				pgui.bScaleOption20["color"] = pgvar.UI_button_color
 				#pgui.bScaleOption21["color"] = pgvar.UI_button_color

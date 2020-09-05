@@ -646,6 +646,20 @@ bScaleOpener["group"] = "Scale"									# buttonGroup
 bScaleOpener["visible"] = True									# buttonVisible	
 bScaleOpener["available"] = True
 
+bScaleOption18 = {}
+bScaleOption18["name"] = "bScaleOption18"												# button_name
+bScaleOption18["origin_x"] = pgvar.UI_sideBar_width									# button_origin_x
+bScaleOption18["origin_y"] = scale_display_origin - 20									# button_origin_y
+bScaleOption18["width"] = bScaleOptions_width											# button_width
+bScaleOption18["height"] = 20															# button_height
+bScaleOption18["label_txt"] = " 10e-17    0.01 femtometer (fm)"							# button_label_txt
+bScaleOption18["type"] = "dropdown"													# buttonType
+bScaleOption18["enabled"] = False														# buttonEnabled
+bScaleOption18["color"] = pgvar.UI_button_color									# buttonColor
+bScaleOption18["group"] = "Scale"														# buttonGroup
+bScaleOption18["visible"] = False														# buttonVisible
+bScaleOption18["available"] = True
+
 bScaleOption19 = {}
 bScaleOption19["name"] = "bScaleOption19"												# button_name
 bScaleOption19["origin_x"] = pgvar.UI_sideBar_width									# button_origin_x
@@ -1543,22 +1557,22 @@ allButtons[79] = lScaleTime
 allButtons[80] = bScaleTime
 allButtons[81] = bScaleTimeOpener
 
-allButtons[94] = bScaleOption19
-allButtons[95] = bScaleOption20
-allButtons[96] = bScaleOption21
-
-
-# Display Buttons
-
-allButtons[65] = bForceVectors
-allButtons[93] = bDistComponents
-
-# Scale
+# Scale Labels
 allButtons[57] = bScaleMinus
 allButtons[58] = lScaleLabel
 allButtons[59] = bScalePlus
 allButtons[60] = tScaleSelection
-allButtons[61] = bScaleOpener		
+allButtons[61] = bScaleOpener	
+
+# Display Scale
+allButtons[94] = bScaleOption18
+allButtons[95] = bScaleOption19
+allButtons[96] = bScaleOption20
+allButtons[97] = bScaleOption21
+
+# Display Buttons
+allButtons[65] = bForceVectors
+allButtons[93] = bDistComponents
 
 # Simulation Control Buttons
 allButtons[1] = bPlaySimulation		
@@ -1618,7 +1632,7 @@ allButtons[32] = mInsertoption02		# Menu 01 - option 02 -
 allButtons[33] = mInsertoption03		# Menu 01 - option 03 - 
 allButtons[34] = mInsertoption04		# Menu 01 - option 04 - 
 allButtons[35] = mInsertoption05		# Menu 01 - option 05 - 
-allButtons[66] = mInsertoption06		# Menu 01 - option 06 - 
+allButtons[98] = mInsertoption06		# Menu 01 - option 06 - 
 
 allButtons[36] = bMenu02				# Menu 02
 allButtons[38] = lTextField01			# Text Field - label
@@ -1637,3 +1651,4 @@ allButtons[48] = menu02popup01element06		# Menu 02  - small popup - element 06 -
 allButtons[49] = menu02popup01element07		# Menu 02  - small popup - element 06 - ok button
 allButtons[50] = menu02popup01element08		# Menu 02  - small popup - element 06 - cancel button
 
+# currently on 99

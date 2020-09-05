@@ -108,15 +108,38 @@ def scaleUpdate():
 
 	# this needs to be smarter once I add more scales, looping through and updating accordingly. 
 
+	if current_scale["scale"] == 1e-17:
+		pgui.bScaleOption18["enabled"] = True
+		pgui.bScaleOption18["color"] = pgvar.UI_button_selected_color
+		pgui.tScaleSelection["label_txt"] = dScale18["display"]
+
+		#pgui.bScaleOption18["enabled"] = False
+		pgui.bScaleOption19["enabled"] = False
+		pgui.bScaleOption20["enabled"] = False
+		pgui.bScaleOption21["enabled"] = False
+
+		#pgui.bScaleOption18["color"] = pgvar.UI_button_color
+		pgui.bScaleOption19["color"] = pgvar.UI_button_color
+		pgui.bScaleOption20["color"] = pgvar.UI_button_color
+		pgui.bScaleOption21["color"] = pgvar.UI_button_color
+
+		pfunc.defineButtons()
+		for i, button in enumerate(pfunc.my_buttons):
+			button.display()	
+		#pfunc.redrawEverything()
+
+
 	if current_scale["scale"] == 1e-16:
 		pgui.bScaleOption19["enabled"] = True
 		pgui.bScaleOption19["color"] = pgvar.UI_button_selected_color
 		pgui.tScaleSelection["label_txt"] = dScale19["display"]
 
+		pgui.bScaleOption18["enabled"] = False
 		#pgui.bScaleOption19["enabled"] = False
 		pgui.bScaleOption20["enabled"] = False
 		pgui.bScaleOption21["enabled"] = False
 
+		pgui.bScaleOption18["color"] = pgvar.UI_button_color
 		#pgui.bScaleOption19["color"] = pgvar.UI_button_color
 		pgui.bScaleOption20["color"] = pgvar.UI_button_color
 		pgui.bScaleOption21["color"] = pgvar.UI_button_color
@@ -131,10 +154,12 @@ def scaleUpdate():
 		pgui.bScaleOption20["color"] = pgvar.UI_button_selected_color
 		pgui.tScaleSelection["label_txt"] = dScale20["display"]	
 	
+		pgui.bScaleOption18["enabled"] = False
 		pgui.bScaleOption19["enabled"] = False
 		#pgui.bScaleOption20["enabled"] = False
 		pgui.bScaleOption21["enabled"] = False
 
+		pgui.bScaleOption18["color"] = pgvar.UI_button_color
 		pgui.bScaleOption19["color"] = pgvar.UI_button_color
 		#pgui.bScaleOption20["color"] = pgvar.UI_button_color
 		pgui.bScaleOption21["color"] = pgvar.UI_button_color
@@ -149,10 +174,12 @@ def scaleUpdate():
 		pgui.bScaleOption21["color"] = pgvar.UI_button_selected_color
 		pgui.tScaleSelection["label_txt"] = dScale21["display"]
 
+		pgui.bScaleOption18["enabled"] = False
 		pgui.bScaleOption19["enabled"] = False
 		pgui.bScaleOption20["enabled"] = False
 		#pgui.bScaleOption21["enabled"] = False
 
+		pgui.bScaleOption18["color"] = pgvar.UI_button_color
 		pgui.bScaleOption19["color"] = pgvar.UI_button_color
 		pgui.bScaleOption20["color"] = pgvar.UI_button_color
 		#pgui.bScaleOption21["color"] = pgvar.UI_button_color
