@@ -98,6 +98,12 @@ UI_button_selected_color = (225,100,225)		# color button turns to when toggled o
 UI_button_disabled = (75,25,50)					# a completely disabled button / option not currently available
 UI_button_disabled_text = (64,64,0)
 
+# pygame keys pressed
+key_pressed_space = False
+
+
+
+
 # # FPS related variables
 cSec = 0
 cFrame = 0

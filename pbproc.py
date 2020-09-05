@@ -653,6 +653,14 @@ def updateMenuButtons(selected_button):
 				
 				pgvar.message_txt = pgvar.message_txt + "  >>  Proton - [Left Click - Add Proton] / [ENTER - Done]"
 
+				# close all the other menu options
+				pgui.mInsertoption01["visible"] = False
+				pgui.mInsertoption02["visible"] = False
+				pgui.mInsertoption03["visible"] = False			
+				pgui.mInsertoption04["visible"] = False
+				pgui.mInsertoption05["visible"] = False		
+				pgui.mInsertoption06["visible"] = False
+
 				pfunc.defineButtons()
 
 			elif pgui.mInsertoption01["enabled"] == True:

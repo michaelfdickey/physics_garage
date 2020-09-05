@@ -279,6 +279,12 @@ while running:
 
 		if event.type == pygame.KEYDOWN:
 		 	print "you pressed a key"
+		 	
+			if event.key == pygame.K_SPACE:
+				print " ~~~~~  SPACE KEY HAS BEEN PRESSED ~~~~~ "
+				pgvar.key_pressed_space = True
+				pgui.mInsert["enabled"] == False
+
 		 	if pgui.textField01["enabled"] == True:
 
 			 	if event.key == pygame.K_RETURN:
