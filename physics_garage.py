@@ -280,10 +280,24 @@ while running:
 		if event.type == pygame.KEYDOWN:
 		 	print "you pressed a key"
 		 	
+			# if space key is pressed:
 			if event.key == pygame.K_SPACE:
 				print " ~~~~~  SPACE KEY HAS BEEN PRESSED ~~~~~ "
+				
+				# cancel insert proton functioning (probably need to improve this with more insert options)
 				pgvar.key_pressed_space = True
-				pgui.mInsert["enabled"] == False
+				
+				pgui.mInsert["enabled"] = False
+				pgui.mInsert["color"] = pgvar.UI_button_color
+				
+				pgui.mInsertoption01["enabled"] = False
+				pgui.mInsertoption01["visible"] = False
+				pgui.mInsertoption01["color"] = pgvar.UI_button_color
+				
+				pgvar.message_txt = "" # clear out the blue info text line
+
+				pfunc.defineButtons()
+				pfunc.enumerateButtons()
 
 		 	if pgui.textField01["enabled"] == True:
 

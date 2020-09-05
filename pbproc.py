@@ -651,7 +651,7 @@ def updateMenuButtons(selected_button):
 				pgui.mInsertoption01["enabled"] = True
 				pgui.mInsertoption01["color"] = pgvar.UI_button_selected_color
 				
-				pgvar.message_txt = pgvar.message_txt + "  >>  Proton - [Left Click - Add Proton] / [ENTER - Done]"
+				pgvar.message_txt = pgvar.message_txt + "  >>  Proton - [Left Click=Add Proton] / [SPACE=Done]"
 
 				# close all the other menu options
 				pgui.mInsertoption01["visible"] = False
