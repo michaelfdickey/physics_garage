@@ -91,6 +91,7 @@ def initializeDisplay():
 	defineButtons()
 	for i, button in enumerate(my_buttons):
 		button.display()
+	
 	print moduleName, lineNum(), "initializing display completed"
 
 
@@ -193,8 +194,18 @@ def redrawEverything():
 		for i, particle in enumerate(created_particles):
 			particle.move()	
 
-
 	#print lineNum(), "redrawEverything() - completed"
+
+
+def redrawUI():
+	
+	# draw borders and frames
+	pygame.draw.rect(screen, pgvar.UI_background_color, (0, 0, pgvar.pygame_window_width, pgvar.UI_topBar_height))
+	pygame.draw.rect(screen, pgvar.UI_background_color, (0,0, pgvar.UI_sideBar_width, pgvar.pygame_window_height))
+
+	defineButtons()
+	for i, button in enumerate(my_buttons):
+		button.display()
 
 
 def redrawPortal():
@@ -384,6 +395,9 @@ def InsertProton(mouseX, mouseY):
 	print "length of created_particles", len(created_particles)
 
 	print "Created Particles", created_particles
+
+	#eredrawEverything()
+	#redrawUI()
 
 	print " ~~~~~~~~~~~~~~~~~~~"
 	print "completed InsertProton"

@@ -23,7 +23,9 @@ moduleName = "photon_ref.py"
 # ************************************************************************************************#
 
 # # TO DO
-- Insert particle proton should draw correct size based on current scale (in progress)
+#- Insert particle proton should draw correct size based on current scale (in progress) 
+- test each scale ^ to be sure
+- sizes of particles should correctly change size and position when zooming in and out. 
 - link print absolute position of particle and diam with an enabme button in pbclass.py 
 
 

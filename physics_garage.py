@@ -104,6 +104,8 @@ while running:
 	# fix to only upate when changed
 	pfunc.show_message_txt()
 
+	# ensures large particle drawings do not overlap UI
+	pfunc.redrawUI()
 
 
 	""" just here for testing and reference. 

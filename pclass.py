@@ -257,7 +257,8 @@ class Particle:
 		#print "new positionX", positionX
 		#print "new positionY", positionY
 
-		pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
+		#09-04-20 is this the only particle drawing display?
+		#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 		#print "COMPLETED PARTICLE DRAW"
 	
@@ -351,6 +352,8 @@ class Particle:
 		
 		if pgui.bPlaySimulation["enabled"] == False:
 			pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
+		
+
 
 		# setting these varibles in case either of the move loops below isn't running
 		display_positionX = positionX 
@@ -458,7 +461,7 @@ class Particle:
 		#pfunc.redrawPortal()
 		
 		#draw new particle location
-		pygame.draw.circle(screen, self.color, (int(display_positionX), int(display_positionY)), int(draw_particle_size), int(self.thickness))
+		#pygame.draw.circle(screen, self.color, (int(display_positionX), int(display_positionY)), int(draw_particle_size), int(self.thickness))
 		#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
 
 	
