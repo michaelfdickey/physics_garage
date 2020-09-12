@@ -322,6 +322,17 @@ class Particle:
 		"""
 
 		
+		# clear out old location of particle
+		#oldColor = self.color
+		#self.color = pgvar.color_black
+		#pygame.draw.circle(screen, pgvar.color_green, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
+		#self.color = oldColor
+
+		
+		if pgui.bPlaySimulation["enabled"] == False:
+			pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
+		
+
 		# print absolute position of particle
 		# # link this with an enable button
 		absolute_pos_Xstr = str(int(absolute_pos_X))
@@ -341,18 +352,6 @@ class Particle:
 		diam = diam + str(draw_particle_size)
 		label_diameter = pgvar.font_med.render(str(diam), 1, (255,255,0))
 		screen.blit(label_diameter, (positionX - 80, positionY + 40))
-		
-
-		# clear out old location of particle
-		#oldColor = self.color
-		#self.color = pgvar.color_black
-		#pygame.draw.circle(screen, pgvar.color_green, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))
-		#self.color = oldColor
-
-		
-		if pgui.bPlaySimulation["enabled"] == False:
-			pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
-		
 
 
 		# setting these varibles in case either of the move loops below isn't running
@@ -383,6 +382,7 @@ class Particle:
 
 				# clear out old location of particle
 				pygame.draw.circle(screen, pgvar.color_black, (int(display_positionX), int(display_positionY)), int(draw_particle_size+3), int(self.thickness))
+				#pygame.draw.circle(screen, self.color, (int(positionX), int(positionY)), int(draw_particle_size), int(self.thickness))			
 				#pfunc.redrawPortal()
 
 
@@ -396,6 +396,8 @@ class Particle:
 				self.y = positionY
 				self.speedy = display_speed_Y
 
+
+
 				"""
 				# modify speed values
 				self.speedy = (self.speedy + .03) * 1.0008
@@ -403,6 +405,8 @@ class Particle:
 				# update location
 				positionY = positionY + self.speedy  #* self.drag
 				"""
+
+
 
 				"""
 				# print positon to draw with pygame:
@@ -419,6 +423,8 @@ class Particle:
 				screen.blit(label_positionX, (positionX  + 20, positionY - 20))	
 				"""
 
+
+
 				"""
 				# print absolute position of particle
 				absolute_pos_Xstr = str(int(absolute_pos_X))
@@ -434,6 +440,8 @@ class Particle:
 				screen.blit(label_positionY, (positionX  + 20, positionY + 20))
 				"""
 
+
+
 				"""
 				# revert number back to absolute value from value for display to update real position in list
 				#positionY = (pgvar.pygame_window_height / 2) - positionY
@@ -445,6 +453,7 @@ class Particle:
 				self.y = positionY + .1
 				"""		
 
+			
 			if pgui.bForceElectromagnetic["enabled"] == True:
 				
 				# modify speed values

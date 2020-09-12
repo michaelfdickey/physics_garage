@@ -61,8 +61,7 @@ while running:
 
 	
 	if pgui.bPlaySimulation["enabled"] == True:
-		pfunc.redrawEverything()
-	
+		#pfunc.redrawEverything()
 
 		# # # PARTICLES # # # 	
 		# # -- This is updating the particles when the simulation is running -- # #
@@ -78,6 +77,7 @@ while running:
 	for i, particle in enumerate(pfunc.created_particles):
 		particle.display()	
 	
+
 
 	"""
 	if pgui.bPlaySimulation["enabled"] == True:
