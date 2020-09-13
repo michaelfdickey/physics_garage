@@ -299,9 +299,11 @@ class Particle:
 		absolute_pos_X = positionX
 		absolute_pos_Y = positionY
 
+		"""
 		positionX = positionX / position_modifier
 		positionY = positionY / position_modifier
-
+		"""
+		
 		positionX = positionX + (pgvar.pygame_window_width / 2)
 		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
@@ -476,10 +478,20 @@ class Particle:
 	
 	def  zoomin(self):
 
+		print "UPDATE particle X was ", self.x
 		self.x = self.x * 10
+		print "UPDATE particle X is ", self.x
+
+		print "UPDATE particle Y was ", self.y
 		self.y = self.y * 10
+		print "UPDATE particle Y is ", self.y
 
 	def  zoomout(self):
 
+		print "UPDATE particle X was ", self.x
 		self.x = self.x / 10
+		print "UPDATE particle X is ", self.x
+		
+		print "UPDATE particle Y was ", self.y
 		self.y = self.y / 10
+		print "UPDATE particle Y is ", self.y
