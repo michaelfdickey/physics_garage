@@ -19,6 +19,25 @@
 moduleName = "photon_ref.py"
 
 # ************************************************************************************************#
+#	Particle Placement Flow
+# ************************************************************************************************#
+
+# Create
+			[Create Particle]    -->    [Record Position] --> 
+|"physics_garage.py"   |
+|"pfunc.InsertProton"  |  -->  
+
+# Display
+[query particle position and scale] --> [round position for display] --> [display position]
+
+# move
+[query particle real position and scale] --> [move particle and update position] --> [round position for display] --> [display position]
+
+[query particle real position and scale] --> [round position for display] [hide old position] --> [move particle and update real position] 
+--> [round position for display] --> [display new position]
+
+
+# ************************************************************************************************#
 #	DEV log
 # ************************************************************************************************#
 

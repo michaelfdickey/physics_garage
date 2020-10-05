@@ -276,7 +276,9 @@ class Particle:
 		#print " >current scale is:  ", pge.current_scale["scale"]
 		#print " >particle created scale: ", self.created_scale
 		#print " >particle scale: ", self.particle_scale
+		
 		scale_modifier = pge.current_scale["scale"] / self.particle_scale
+		
 		#print " > the scale modififier is: ", scale_modifier
 
 		#set particle display size
@@ -300,10 +302,11 @@ class Particle:
 		absolute_pos_Y = positionY
 
 		"""
+		# removed to fix the particle position being incorrect when zooming in / out. This is calculated in 
 		positionX = positionX / position_modifier
 		positionY = positionY / position_modifier
 		"""
-		
+
 		positionX = positionX + (pgvar.pygame_window_width / 2)
 		positionY = (pgvar.pygame_window_height / 2) - positionY 
 
@@ -478,6 +481,7 @@ class Particle:
 	
 	def  zoomin(self):
 
+		# update position of particle
 		print "UPDATE particle X was ", self.x
 		self.x = self.x * 10
 		print "UPDATE particle X is ", self.x
@@ -485,9 +489,12 @@ class Particle:
 		print "UPDATE particle Y was ", self.y
 		self.y = self.y * 10
 		print "UPDATE particle Y is ", self.y
+		# this updates the display position and real position in the list =/ 
+		# display position needs to be udpated seperately
 
 	def  zoomout(self):
 
+		# update position of particle
 		print "UPDATE particle X was ", self.x
 		self.x = self.x / 10
 		print "UPDATE particle X is ", self.x
@@ -495,3 +502,5 @@ class Particle:
 		print "UPDATE particle Y was ", self.y
 		self.y = self.y / 10
 		print "UPDATE particle Y is ", self.y
+		# this updates the display position and real position in the list =/
+		# display position needs to be udpated seperately

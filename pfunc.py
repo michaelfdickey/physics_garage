@@ -189,12 +189,16 @@ def redrawEverything():
 	for i, button in enumerate(my_buttons):
 		button.display()
 
-	
-	if pgui.bPlaySimulation["enabled"] == False:
-		for i, particle in enumerate(created_particles):
-			particle.move()	
 
 	#print lineNum(), "redrawEverything() - completed"
+
+
+def redrawParticles():
+
+	#if pgui.bPlaySimulation["enabled"] == False:
+	for i, particle in enumerate(created_particles):
+		particle.move()	
+	
 
 
 def redrawUI():
@@ -332,8 +336,10 @@ def drawOrigin():
 def InsertProton(mouseX, mouseY):
 
 	print " ~~~~~~~~~~~~~~~~~~~"
+	print " ~~~~~~~~~~~~~~~~~~~"
 	print "starting InsertProton"
 	print " ~~~~~~~~~~~~~~~~~~~"
+	print " ~~~~~~~~~~~~~~~~~~~"	
 
 	# this functionality is moved to pclass processing so the value remains absolute. pclass will adjust for scale
 	"""
@@ -387,9 +393,11 @@ def InsertProton(mouseX, mouseY):
 
 	# Append particle list
 	print moduleName, lineNum(), "about to append class"
-	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, particle_mass,
-		particle_charge, particle_X_abs, particle_Y_abs, particle_scale, created_scale)
+	
+	particle_to_make = pclass.Particle((particle_x,particle_y), particle_size, particle_type, speedx, speedy, particle_color, particle_thickness, 
+		particle_mass, particle_charge, particle_X_abs, particle_Y_abs, particle_scale, created_scale)
 	created_particles.append(particle_to_make)
+	
 	print moduleName, lineNum(), "completed append class"
 
 	print "length of created_particles", len(created_particles)
@@ -400,7 +408,9 @@ def InsertProton(mouseX, mouseY):
 	#redrawUI()
 
 	print " ~~~~~~~~~~~~~~~~~~~"
+	print " ~~~~~~~~~~~~~~~~~~~"
 	print "completed InsertProton"
+	print " ~~~~~~~~~~~~~~~~~~~"
 	print " ~~~~~~~~~~~~~~~~~~~"
 
 	# call draw particle class static 

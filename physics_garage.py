@@ -60,6 +60,8 @@ running = True
 while running:
 
 	
+	# if simulation is not enabled - only refresh everything on button click
+
 	if pgui.bPlaySimulation["enabled"] == True:
 		#pfunc.redrawEverything()
 
@@ -73,10 +75,13 @@ while running:
 	
 	
 	#if pgui.bPlaySimulation["enabled"] == False:
-	pfunc.redrawEverything()
+	#pfunc.redrawEverything()
+	#pfunc.redrawParticles()
+	
+	""" # today
 	for i, particle in enumerate(pfunc.created_particles):
 		particle.display()	
-	
+	"""
 
 
 	"""
@@ -138,7 +143,7 @@ while running:
 								print " ~~~~~~~~~~~~~~~~~~~"
 								#pygame.draw.circle(screen, pgvar.color_green, (400, 400), 6, 0)
 								pfunc.InsertProton(mouseX, mouseY)
-								
+								pfunc.redrawParticles()
 								
 								"""
 								for i, particle in enumerate(pfunc.created_particles):
@@ -181,6 +186,8 @@ while running:
 					selected_button.buttonEnabled = True
 					print moduleName, pfunc.lineNum(), "clicked button is a pushy temporary button"
 
+				
+					# zoom out:
 					if selected_button.button_name == "bScaleMinus":
 						pgui.bScaleMinus["enabled"] = True
 						pgui.bScaleMinus["color"] = pgvar.UI_button_click_color
@@ -208,6 +215,7 @@ while running:
 						pfunc.redrawEverything()
 
 					
+					# zoom in:
 					if selected_button.button_name == "bScalePlus":
 						pgui.bScalePlus["enabled"] = True
 						pgui.bScalePlus["color"] = pgvar.UI_button_click_color									
@@ -236,6 +244,7 @@ while running:
 						pfunc.Zoom(zoomdir)
 						pfunc.redrawEverything()
 
+					
 					if selected_button.button_name == "bPushyExample":
 						print moduleName, pfunc.lineNum(), "you clicked bPushyExample"
 						pgui.bPushyExample["enabled"] = True
@@ -246,6 +255,7 @@ while running:
 							button.display()
 						print moduleName, pfunc.lineNum(), "running code for Command01"
 
+					
 					if selected_button.button_name == "bClearSimulation":
 						pgui.bClearSimulation["enabled"] = True
 						pgui.bClearSimulation["color"] = pgvar.UI_button_click_color
@@ -282,7 +292,12 @@ while running:
 					print pfunc.lineNum(), "running menu button event"
 					pbproc.updateMenuButtons(selected_button.button_name)
 
-
+			
+			# What to redraw upon button click
+			pfunc.defineButtons()
+			pfunc.redrawEverything()
+			pfunc.redrawParticles()
+			pfunc.redrawUI()
 
 
 		if event.type == pygame.KEYDOWN:
